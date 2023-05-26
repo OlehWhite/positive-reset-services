@@ -8,7 +8,7 @@ export const Container = styled(Box)(() => {
     '& .css-17rmgsd-MuiLinearProgress-bar1': {
       background: '#3498db'
     },
-    '& .css-1nymkz7-MuiLinearProgress-root': {
+    '& .css-3dcd8y-MuiLinearProgress-root': {
       background: 'white',
       height: 9
     },
