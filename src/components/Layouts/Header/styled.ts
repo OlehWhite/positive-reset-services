@@ -12,8 +12,8 @@ export const Background = styled(Slider)(() => {
 export const HeaderContainer = styled('header')(() => {
   return {
     height: '80vh'
-  }
-})
+  };
+});
 
 export const Img = styled('img')(() => {
   return {
@@ -46,5 +46,21 @@ export const RightButton = styled('img')(() => {
   return {
     width: 48,
     cursor: 'pointer'
+  };
+});
+
+export const Title = styled('h2')(() => {
+  return {
+    fontSize: 28,
+    fontWeight: 600,
+    color: '#fff'
+  };
+});
+
+export const Text = styled('p')(() => {
+  return {
+    fontSize: 22,
+    fontWeight: 400,
+    color: '#fff'
   };
 });
