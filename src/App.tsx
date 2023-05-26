@@ -6,7 +6,7 @@ import {
   RouterProvider
 } from 'react-router-dom';
 import ROUTES from './routers/path';
-import { Home } from './routers/Home';
+import { Home } from './routers/home';
 import { Layout } from './components/Layouts';
 import { GlobalStyle } from 'components/Layouts/styled';
 
