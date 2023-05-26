@@ -29,7 +29,7 @@ export const Wrapper = styled(Box)(() => {
   return {
     display: 'flex',
     justifyContent: 'space-evenly',
-    maxWidth: 1300,
+    maxWidth: 1303,
     margin: '115px auto 155px'
   };
 });

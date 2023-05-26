@@ -6,10 +6,10 @@ export function LinearProgressWithLabel(props: LinearProgressProps & { value: nu
   return (
     <Container>
       <Box sx={{ width: '600px', mr: 1 }}>
-        <LinearProgress variant="determinate" {...props} />
+        <LinearProgress variant="determinate" {...props} sx={{ height: 9 }} />
       </Box>
       <Box sx={{ minWidth: 35 }}>
-        <Typography variant="body2" color="text.secondary">{`${Math.round(
+        <Typography variant="subtitle1" color="secondary.contrastText">{`${Math.round(
           props.value
         )}%`}</Typography>
       </Box>
