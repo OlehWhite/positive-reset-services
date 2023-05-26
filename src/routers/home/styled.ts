@@ -1,5 +1,10 @@
-import { styled, Box } from '@mui/material';
+import { styled} from '@mui/material';
 
-const Wrapper = styled(Box)(() => {
-  return {};
+export const Main = styled('main')(() => {
+  return {
+    // height: '100vh'
+  };
 });
+
+
+

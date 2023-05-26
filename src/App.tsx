@@ -6,14 +6,22 @@ import {
   RouterProvider
 } from 'react-router-dom';
 import ROUTES from './routers/path';
-import { Home } from './routers/home';
+import { Home } from './routers/Home';
+import { Layout } from './components/Layouts';
+import { GlobalStyle } from 'components/Layouts/styled';
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path={ROUTES.HOME} element={<Home />}></Route>)
+  createRoutesFromElements(
+    <Route path={ROUTES.HOME} element={<Layout />}>
+      <Route index element={<Home />} />
+    </Route>
+  )
 );
+
 function App() {
   return (
     <>
+      <GlobalStyle />
       <RouterProvider router={router} />
     </>
   );
