@@ -15,10 +15,10 @@ import {
 } from './styled';
 import IMGLeft from 'assets/icons/arrow-point-to-left.png';
 import IMGRight from 'assets/icons/arrow-point-to-right.png';
-import { useRef } from 'react';
-import Slider from 'react-slick';
 import { DATA_CLINICALS } from './mocData';
 import { Box } from '@mui/material';
+import Slider from 'react-slick';
+import { useRef } from 'react';
 
 const settings = {
   dots: false,
