@@ -18,7 +18,7 @@ import IMGRight from 'assets/icons/arrow-point-to-right.png';
 import { DATA_CLINICALS } from './mocData';
 import { Box } from '@mui/material';
 import Slider from 'react-slick';
-import { useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 
 const settings = {
   dots: false,
@@ -30,8 +30,18 @@ const settings = {
   useTransform: false
 };
 
-export const Location = () => {
+export const Location: FC = () => {
   const ref = useRef<Slider | null>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      onNext();
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   const onNext = (): void => {
     ref.current?.slickNext();

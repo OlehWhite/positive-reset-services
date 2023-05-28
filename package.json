@@ -64,6 +64,7 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
+    "contentful": "^10.2.1",
     "prettier": "2.8.4"
   }
 }
