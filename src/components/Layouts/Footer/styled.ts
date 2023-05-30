@@ -14,7 +14,14 @@ export const Wrapper = styled(Box)(() => {
     maxWidth: 1300,
     width: '100%',
     margin: '0 auto',
-    padding: '74px 0 49px'
+    padding: '74px 0 49px',
+
+    '@media (max-width: 1335px)': {
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      textAlign: 'center',
+      justifyContent: 'center'
+    }
   };
 });
 
@@ -162,7 +169,11 @@ export const Menu = styled('nav')(() => {
   return {
     margin: '0 24px 0',
     maxWidth: '100%',
-    width: 390
+    width: 390,
+
+    '@media (max-width: 1335px)': {
+      marginTop: 34
+    }
   };
 });
 
@@ -170,16 +181,24 @@ export const RecentPosts = styled(Box)(() => {
   return {
     maxWidth: 300,
     width: '100%',
-    margin: '0 16px 0'
+    margin: '0 16px 0',
+
+    '@media (max-width: 1335px)': {
+      marginTop: 34
+    }
   };
 });
 
 export const WorkingHours = styled(Box)(() => {
   return {
-    maxWidth: '100%',
-    width: 430,
+    maxWidth: 285,
+    width: '100%',
     marginLeft: 24,
-    backgroundColor: '#34495e'
+    backgroundColor: '#34495e',
+
+    '@media (max-width: 1335px)': {
+      marginTop: 34
+    }
   };
 });
 
@@ -207,7 +226,11 @@ export const WrapperAlarm = styled('div')(() => {
     textAlign: 'center',
     position: 'relative',
     bottom: 33,
-    left: 110
+    left: 110,
+
+    '@media (max-width: 1335px)': {
+     left: 115
+    }
   };
 });
 
@@ -291,8 +314,4 @@ export const TitleFooter = styled('p')(() => {
     padding: '14px 0',
     fontSize: 14
   };
-});
-
-export const Link = styled('p')(() => {
-  return {};
 });

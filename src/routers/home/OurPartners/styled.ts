@@ -15,6 +15,18 @@ export const Wrapper = styled(Box)(() => {
   };
 });
 
+export const Block = styled(Box)(() => {
+  return {
+    display: 'flex',
+    justifyContent: 'center',
+
+    '@media (max-width: 845px)': {
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
+  };
+});
+
 export const Title = styled(Box)(() => {
   return {
     textAlign: 'center',
@@ -27,8 +39,7 @@ export const Title = styled(Box)(() => {
 
 export const WrapperImg = styled(Box)(() => {
   return {
-    padding: '0 20px',
-
+    padding: '24px 20px'
   };
 });
 

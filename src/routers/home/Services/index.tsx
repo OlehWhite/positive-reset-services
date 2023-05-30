@@ -1,7 +1,6 @@
 import { FC, useState } from 'react';
-import { Container, Video, VideoLogo, PlayLogo, WrapperVideo, BoxVideo, Wrapper } from './styled';
+import { VideoLogo, WrapperVideo, Wrapper } from './styled';
 import IMGVideoLogo from 'assets/icons/video-logo.jpg';
-import IMGPlayLogo from 'assets/icons/play-button.png';
 import { AboutFranchise } from './AboutFranchise/AboutFranchise';
 import { Box, Modal } from '@mui/material';
 
@@ -22,21 +21,11 @@ export const Services: FC = () => {
   const handleClose = () => setOpenModalWindow(false);
 
   return (
-    <Container>
+    <>
       <Wrapper>
-        <Video>
-          <WrapperVideo>
-            <BoxVideo>
-              <VideoLogo
-                onClick={handleOpen}
-                src={IMGVideoLogo}
-                alt="Video Logo"
-                title="Video Logo"
-              />
-              <PlayLogo onClick={handleOpen} src={IMGPlayLogo} alt="Play Logo" title="Play Logo" />
-            </BoxVideo>
-          </WrapperVideo>
-        </Video>
+        <WrapperVideo>
+          <VideoLogo onClick={handleOpen} src={IMGVideoLogo} alt="Video Logo" title="Video Logo" />
+        </WrapperVideo>
         <AboutFranchise />
         <Modal
           open={openModalWindow}
@@ -55,6 +44,6 @@ export const Services: FC = () => {
           </Box>
         </Modal>
       </Wrapper>
-    </Container>
+    </>
   );
 };
