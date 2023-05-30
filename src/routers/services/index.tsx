@@ -1,9 +1,9 @@
-import MenuItem from '@mui/material/MenuItem';
-
+import { MUIButton, Container } from './styled';
+import { DATA_LINKS } from './constants';
+import { Ul, Li, Nav } from './styled';
 import Menu from '@mui/material/Menu';
-import { MUIButton } from './styled';
 import * as React from 'react';
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 
 interface TServices {
   color?: string;
@@ -15,16 +15,13 @@ export const Services: FC<TServices> = ({ color }) => {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
 
-  useEffect(() => {
-    console.log(color);
-  }, [color]);
-
   return (
-    <>
+    <Container>
       <MUIButton
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
@@ -42,10 +39,16 @@ export const Services: FC<TServices> = ({ color }) => {
         MenuListProps={{
           'aria-labelledby': 'basic-button'
         }}>
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <Ul>
+          {DATA_LINKS.map((link, index) => (
+            <Li key={index}>
+              <Nav to={link.path} onClick={handleClose}>
+                {link.name}
+              </Nav>
+            </Li>
+          ))}
+        </Ul>
       </Menu>
-    </>
+    </Container>
   );
 };

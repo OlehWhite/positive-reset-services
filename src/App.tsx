@@ -22,6 +22,16 @@ const router = createBrowserRouter(
         <Route path={ROUTES.TELEHEALTH} element={<Telehealth />} />
         <Route path={ROUTES.ABOUT_US} element={<AboutUs />} />
         <Route path={ROUTES.CONTACT_US} element={<ContactUs />} />
+
+        <Route path={ROUTES.HOW_TO_START} element={<div>How to Start</div>} />
+        <Route path={ROUTES.START_LICENSE} element={<div>tart License</div>} />
+        <Route path={ROUTES.TRAINING} element={<div>Training</div>} />
+        <Route path={ROUTES.INTERVIEWS} element={<div>Interviews</div>} />
+        <Route path={ROUTES.ERM} element={<div>ERM</div>} />
+        <Route path={ROUTES.FIND_LOCATION} element={<div>Find Location</div>} />
+        <Route path={ROUTES.COMMUNITY_INTEGRATION} element={<div>Community Integration</div>} />
+        <Route path={ROUTES.OFFICE_LAYOUT_SETUP} element={<div>Office Layout/Setup</div>} />
+        <Route path={ROUTES.WEBSITE} element={<div>HWebsite</div>} />
       </Route>
     </Route>
   )

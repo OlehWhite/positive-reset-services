@@ -43,7 +43,11 @@ export const ContactAndFollow = styled(Box)(() => {
     justifyContent: 'space-between',
     maxWidth: 450,
     width: '100%',
-    alignItems: 'center'
+    alignItems: 'center',
+
+    '@media (max-width: 769px)': {
+      display: 'none'
+    }
   };
 });
 
