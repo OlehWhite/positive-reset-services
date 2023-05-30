@@ -6,3 +6,14 @@ export const Container = styled(Box)(() => {
     alignItems: 'center'
   };
 });
+
+export const Wrapper = styled(Box)(() => {
+  return {
+    width: '600px',
+    marginRight: 10,
+
+    '@media (max-width: 768px)': {
+      width: '300px',
+    }
+  };
+});

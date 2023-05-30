@@ -1,13 +1,13 @@
 import LinearProgress, { LinearProgressProps } from '@mui/material/LinearProgress';
 import { Box, Typography } from '@mui/material';
-import { Container } from './style';
+import { Container, Wrapper } from './style';
 
 export function LinearProgressWithLabel(props: LinearProgressProps & { value: number }) {
   return (
     <Container>
-      <Box sx={{ width: '600px', mr: 1 }}>
+      <Wrapper>
         <LinearProgress variant="determinate" {...props} sx={{ height: 9 }} />
-      </Box>
+      </Wrapper>
       <Box sx={{ minWidth: 35 }}>
         <Typography variant="subtitle1" color="secondary.contrastText">{`${Math.round(
           props.value

@@ -34,17 +34,16 @@ import {
   Facebook,
   TitleFooter
 } from './styled';
-import React, { FC } from 'react';
+import { PRIVATE_DATA } from '../../../routers/privateData';
+import IMGFacebook from 'assets/icons/facebook-footer.svg';
+import IMGLinkedin from 'assets/icons/linkedin-footer.svg';
+import IMGAlarmClock from 'assets/icons/alarm-clock.png';
+import IMGTwitter from 'assets/icons/twitter-footer.svg';
+import React, { FC, useEffect, useState } from 'react';
 import IMGPhoneLogo from 'assets/icons/phone-icon.svg';
 import IMGLogoFooter from 'assets/icons/logo.png';
-import IMGPostOne from 'assets/icons/post-1.jpg';
-import IMGPostTwo from 'assets/icons/post-2.jpg';
-import IMGPostThree from 'assets/icons/post-3.jpg';
-import IMGAlarmClock from 'assets/icons/alarm-clock.png';
-import IMGFacebook from 'assets/icons/facebook-footer.svg';
-import IMGTwitter from 'assets/icons/twitter-footer.svg';
-import IMGLinkedin from 'assets/icons/linkedin-footer.svg';
 import { Box } from '@mui/material';
+import axios from 'axios';
 
 const BASE_MENU = [
   'Home',
@@ -57,7 +56,72 @@ const BASE_MENU = [
   'Career Opportunities'
 ];
 
+interface Post {
+  img: string;
+  text: string;
+  button: string;
+}
+
+const ID = 'telephoneNumber';
+const IDPosts = 'aboutFranchising';
+
 export const Footer: FC = () => {
+  const [telNum, setTelNum] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [linkFacebook, setLinkFaceBook] = useState<string>('');
+  const [linkLinkedin, setLinkLinkedin] = useState<string>('');
+  const [linkTwitter, setTwitter] = useState<string>('');
+  const [posts, setPosts] = useState<Post[]>([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/entries?content_type=${IDPosts}&access_token=${PRIVATE_DATA.accessId}`
+      )
+      .then((response) => {
+        if (response.data.items.length > 0) {
+          response.data.items.map((post?: any) => {
+            const imgID = post.fields.img.sys.id;
+            const text = post.fields.text.content[0].content[0].value;
+            const button = post.fields.button.content[0].content[0].value;
+
+            return axios
+              .get(
+                `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/assets/${imgID}?access_token=${PRIVATE_DATA.accessId}`
+              )
+              .then((response) => {
+                const newPost: Post = {
+                  img: response.data.fields.file.url,
+                  text,
+                  button
+                };
+                setPosts((prevPost) => [...prevPost, newPost]);
+              });
+          });
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching posts:', error);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/entries?content_type=${ID}&access_token=${PRIVATE_DATA.accessId}`
+      )
+      .then((response) => {
+        setTelNum(response.data.items[0].fields.telephoneNumber.content[0].content[0].value);
+        setEmail(response.data.items[0].fields.email.content[0].content[0].value);
+        setLinkFaceBook(response.data.items[0].fields.facebookLink.content[0].content[0].value);
+        setLinkLinkedin(response.data.items[0].fields.linkedinLink.content[0].content[0].value);
+        setTwitter(response.data.items[0].fields.twitterLink.content[0].content[0].value);
+      })
+      .catch((error) => {
+        console.error('Error fetching posts:', error);
+      });
+  }, []);
+
   return (
     <Container>
       <Wrapper>
@@ -73,8 +137,8 @@ export const Footer: FC = () => {
               <ImgPhone src={IMGPhoneLogo} alt="Phone" title="Phone" />
             </WrapperImg>
             <ContactInfo>
-              <Tel>+1 (848) 228-3388</Tel>
-              <Email>Admin@positiveresetservices.com</Email>
+              <Tel>{telNum}</Tel>
+              <Email>{email}</Email>
             </ContactInfo>
           </Contact>
         </Logo>
@@ -91,30 +155,16 @@ export const Footer: FC = () => {
         <RecentPosts>
           <Title>RECENT POST</Title>
           <WrapperPost>
-            <Post>
-              <ImgPost src={IMGPostOne} alt="First Post" title="Second Post" />
-              <Box>
-                <Text>
-                  Cognitive Function Rapidly Restored After Ketamine Treatment, Decreases
-                  Suicidality
-                </Text>
-                <Date>December 13, 2021</Date>
-              </Box>
-            </Post>
-            <Post>
-              <ImgPost src={IMGPostTwo} alt="First Post" title="Second Post" />
-              <Box>
-                <Text>The Impact of COVID-19 on Suicide Death Rates</Text>
-                <Date>December 13, 2021</Date>
-              </Box>
-            </Post>
-            <Post>
-              <ImgPost src={IMGPostThree} alt="First Post" title="Second Post" />
-              <Box>
-                <Text>Drugs That Boost Mood: Do You Even Have a Mood Disorder?</Text>
-                <Date>December 13, 2021</Date>
-              </Box>
-            </Post>
+            {posts.length > 0 &&
+              posts.slice(0, 3).map((post: Post, index: number) => (
+                <Post key={index}>
+                  <ImgPost src={post.img} alt="First Post" title="Second Post" />
+                  <Box>
+                    <Text>{post.text}</Text>
+                    <Date>{post.button}</Date>
+                  </Box>
+                </Post>
+              ))}
           </WrapperPost>
         </RecentPosts>
         <WorkingHours>
@@ -137,13 +187,13 @@ export const Footer: FC = () => {
       <Copyright>
         <TitleFooter>Copyright © 2021 Vimax LLC. All rights reserved</TitleFooter>
         <Links>
-          <a href="https://www.facebook.com/">
+          <a href={linkFacebook}>
             <Facebook src={IMGFacebook} alt="Facebook" title="Facebook" />
           </a>
-          <a href="https://twitter.com/">
+          <a href={linkTwitter}>
             <Twitter src={IMGTwitter} alt="Twitter" title="Twitter" />
           </a>
-          <a href="https://www.linkedin.com/">
+          <a href={linkLinkedin}>
             <Linkedin src={IMGLinkedin} alt="Linkedin" title="Linkedin" />
           </a>
         </Links>

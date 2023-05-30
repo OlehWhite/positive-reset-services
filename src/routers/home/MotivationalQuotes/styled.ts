@@ -2,7 +2,7 @@ import { styled, Box } from '@mui/material';
 
 export const Container = styled(Box)(() => {
   return {
-    backgroundColor:'#f7f7f7'
+    backgroundColor: '#f7f7f7'
   };
 });
 
@@ -13,7 +13,12 @@ export const Wrapper = styled(Box)(() => {
     maxWidth: 1300,
     width: '100%',
     margin: '0 auto',
-    paddingTop: 60
+    paddingTop: 60,
+
+    '@media (max-width: 1335px)': {
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
   };
 });
 
@@ -36,7 +41,7 @@ export const WrapperPicture = styled(Box)(() => {
 export const Picture = styled('img')(() => {
   return {
     maxWidth: 359,
-    width: '100%',
+    width: '100%'
   };
 });
 
@@ -51,10 +56,6 @@ export const WrapperImg = styled(Box)(() => {
   return {
     padding: '0 28px 28px 0'
   };
-});
-
-export const WrapperInfo = styled(Box)(() => {
-  return {};
 });
 
 export const Title = styled('h2')(() => {

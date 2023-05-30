@@ -1,9 +1,5 @@
 import { Box, styled } from '@mui/material';
 
-export const Video = styled(Box)(() => {
-  return {};
-});
-
 export const VideoLogo = styled('img')(() => {
   return {
     width: '100%',
@@ -19,43 +15,26 @@ export const VideoLogo = styled('img')(() => {
   };
 });
 
-export const Container = styled(Box)(() => {
-  return {
-    height: '470px'
-  };
-});
-
 export const Wrapper = styled(Box)(() => {
   return {
     display: 'flex',
     justifyContent: 'space-evenly',
     maxWidth: 1303,
-    margin: '115px auto 155px'
-  };
-});
+    margin: '115px auto 155px',
 
-export const PlayLogo = styled('img')(() => {
-  return {
-    position: 'relative',
-    bottom: 150,
-    right: 355,
-    pointerEvents: 'none'
+    '@media (max-width: 1335px)': {
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
   };
 });
 
 export const WrapperVideo = styled(Box)(() => {
   return {
-    width: 670,
     cursor: 'pointer',
 
     '&:hover': {
       background: 'white'
     }
-  };
-});
-
-export const BoxVideo = styled(Box)(() => {
-  return {
-    position: 'absolute'
   };
 });
