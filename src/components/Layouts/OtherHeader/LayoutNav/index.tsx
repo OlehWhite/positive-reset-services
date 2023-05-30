@@ -1,4 +1,4 @@
-import { Container, Wrapper, Nav } from './styled';
+import { Container, Wrapper, Nav, WrapperSidebar } from './styled';
 import { Sidebar } from 'routers/home/Sidebar';
 import { FC, useState } from 'react';
 import { Box } from '@mui/material';
@@ -42,9 +42,9 @@ export const LayoutNav: FC = () => {
             </Box>
           ))}
         </Box>
-        <Box>
+        <WrapperSidebar>
           <Sidebar />
-        </Box>
+        </WrapperSidebar>
       </Wrapper>
     </Container>
   );

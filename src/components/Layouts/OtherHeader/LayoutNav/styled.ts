@@ -35,3 +35,13 @@ export const Nav = styled(NavLink)(() => {
     }
   };
 });
+
+export const WrapperSidebar = styled(Box)(() => {
+  return {
+    '@media (max-width: 769px)': {
+      display: 'flex',
+      alignItems: 'center'
+    }
+  };
+});
+
