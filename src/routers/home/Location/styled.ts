@@ -5,8 +5,7 @@ export const Container = styled(Box)(() => {
   return {
     maxWidth: 1300,
     width: '100%',
-    margin: '0 auto',
-    marginTop: 105
+    margin: '105px auto 100px',
   };
 });
 
@@ -43,16 +42,26 @@ export const Text = styled('p')(() => {
   };
 });
 
-export const Clinicals = styled(Slider)({
-  maxWidth: 1150,
-  margin: '0 auto',
-  textAlign: 'center'
+export const Clinicals = styled(Slider)(() => {
+  return {
+    maxWidth: 1150,
+    margin: '0 auto',
+    textAlign: 'center',
+
+    '@media (max-width: 1335px)': {
+     width: 370
+    }
+  };
 });
 
 export const LeftButton = styled('img')(() => {
   return {
     width: 48,
-    cursor: 'pointer'
+    cursor: 'pointer',
+
+    '@media (max-width: 1335px)': {
+      display: 'none'
+    }
   };
 });
 
@@ -60,7 +69,11 @@ export const RightButton = styled('img')(() => {
   return {
     width: 48,
     height: 48,
-    cursor: 'pointer'
+    cursor: 'pointer',
+
+    '@media (max-width: 1335px)': {
+      display: 'none'
+    }
   };
 });
 

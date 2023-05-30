@@ -12,10 +12,17 @@ export const Container = styled(Box)(() => {
 export const Wrapper = styled(Box)(() => {
   return {
     display: 'flex',
-    width: 1300,
     backgroundSize: 'cover',
+    justifyContent: 'space-between',
     margin: '0 auto',
-    padding: '114px 0'
+    padding: '114px 0',
+    maxWidth: 1300,
+
+    '@media (max-width: 1335px)': {
+      flexDirection: 'column',
+      alignItems: 'center',
+      textAlign: 'center'
+    }
   };
 });
 
