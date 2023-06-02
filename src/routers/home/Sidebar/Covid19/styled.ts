@@ -1,6 +1,6 @@
 import { styled, Box } from '@mui/material';
 
-export const Wrapper = styled(Box)(() => {
+export const Wrapper = styled('aside')(() => {
   return {
     padding: 24,
     width: '100%',

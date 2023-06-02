@@ -1,7 +1,7 @@
 import { styled, Box } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
-export const Container = styled(Box)(() => {
+export const Container = styled('footer')(() => {
   return {
     backgroundColor: '#2c3e50'
   };
