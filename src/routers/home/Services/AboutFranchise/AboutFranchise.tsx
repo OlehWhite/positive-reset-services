@@ -1,6 +1,6 @@
-import { Box, Tab, Tabs } from '@mui/material';
+import { Box, Tab} from '@mui/material';
 import { SyntheticEvent, useState } from 'react';
-import { Container, Title, Text } from './styled';
+import {Container, Title, Text, MUITabs} from './styled';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -44,11 +44,11 @@ export const AboutFranchise = () => {
   return (
     <Container>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+        <MUITabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="FRANCHISE OPPORTUNITY" {...a11yProps(0)} />
           <Tab label="BUSINESS OPPORTUNITY" {...a11yProps(1)} />
           <Tab label="INVESTMENT OPPORTUNITY" {...a11yProps(2)} />
-        </Tabs>
+        </MUITabs>
       </Box>
       <TabPanel value={value} index={0}>
         <Title>WHAT MAKES A FRANCHISE AN ATTRACTIVE OPPORTUNITY?</Title>

@@ -1,4 +1,4 @@
-import { styled, Box } from '@mui/material';
+import { styled, Box, Tabs } from '@mui/material';
 
 export const Container = styled(Box)(() => {
   return {
@@ -6,23 +6,34 @@ export const Container = styled(Box)(() => {
     width: '100%',
     border: '1px solid #e9e9e9',
 
-
     '& .css-14novro-MuiButtonBase-root-MuiTab-root.Mui-selected': {
       color: '#3498db',
       width: 190,
-      textAlign: 'left',
+      textAlign: 'left'
     },
+
     '& .css-14novro-MuiButtonBase-root-MuiTab-root': {
       width: 190,
-      textAlign: 'left',
+      textAlign: 'left'
     },
+
     '& .css-heg063-MuiTabs-flexContainer': {
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+
+      '@media (max-width: 669px)': {
+        flexDirection: 'column',
+        alignItems: 'center'
+      }
     },
+
     '& .css-kqu0uj-MuiTabs-indicator': {
       backgroundColor: '#3498db'
     }
   };
+});
+
+export const MUITabs = styled(Tabs)(() => {
+  return {};
 });
 
 export const Title = styled('h2')(() => {

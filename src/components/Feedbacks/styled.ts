@@ -22,7 +22,7 @@ export const Text = styled('p')(() => {
     fontSize: 18,
     lineHeight: '26px',
     maxWidth: 1000,
-    width: '100%',
+    // width: '100%',
     color: '#959595',
     margin: '0 auto',
     padding: 34,

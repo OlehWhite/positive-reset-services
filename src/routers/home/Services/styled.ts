@@ -11,6 +11,14 @@ export const VideoLogo = styled('img')(() => {
     '&:hover': {
       transition: '.3s',
       boxShadow: '0px 0px 20px 10px silver'
+    },
+    '@media (max-width: 661px)': {
+      width: 440,
+      maxWidth: '100%'
+    },
+    '@media (max-width: 500px)': {
+      width: 350,
+      maxWidth: '100%'
     }
   };
 });
