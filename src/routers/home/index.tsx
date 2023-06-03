@@ -6,14 +6,14 @@ import { Feedbacks } from 'components/Feedbacks';
 import { OurPartners } from './OurPartners';
 import { Location } from './Location';
 import { Services } from './Services';
+import { Box } from '@mui/material';
 import React, { FC } from 'react';
-import { Main } from './styled';
 
 export const Home: FC = () => {
   return (
     <>
       <HomeHeader />
-      <Main>
+      <Box>
         <Services />
         <MotivationalQuotes />
         <Location />
@@ -21,7 +21,7 @@ export const Home: FC = () => {
         <FranchiseOptions />
         <AboutFranchising />
         <OurPartners />
-      </Main>
+      </Box>
     </>
   );
 };

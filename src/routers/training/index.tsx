@@ -27,7 +27,7 @@ export const Training = () => {
       <Wrapper>
         <Block>
           <Box>
-            <Img src={IMGThee} alt="Logo" title="Logo" />
+            <Img src={IMGThee} alt="FRANCHISE TRAINING IS IMPORTANT" title="FRANCHISE TRAINING IS IMPORTANT" />
           </Box>
           <WrapperBlock>
             <Title>FRANCHISE TRAINING IS IMPORTANT</Title>
@@ -51,7 +51,7 @@ export const Training = () => {
             </Text>
           </WrapperBlock>
           <Box>
-            <Img src={IMGTwo} alt="Logo" title="Logo" />
+            <Img src={IMGTwo} alt="LEARN TO DUPLICATE" title="LEARN TO DUPLICATE" />
           </Box>
         </Block>
         <Block>
@@ -73,7 +73,7 @@ export const Training = () => {
             </Text>
           </WrapperBlock>
           <Box>
-            <Img src={IMGFour} alt="Logo" title="Logo" />
+            <Img src={IMGFour} alt="WHY TRAINING IS IMPORTANT?" title="WHY TRAINING IS IMPORTANT?" />
           </Box>
         </Block>
       </Wrapper>

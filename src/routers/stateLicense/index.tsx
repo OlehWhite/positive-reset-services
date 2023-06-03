@@ -10,9 +10,9 @@ import {
   WrapperBlock
 } from './styled';
 import React from 'react';
-import IMGOne from '../../assets/icons/StateLicense-01.jpg';
-import IMGTwo from '../../assets/icons/StateLicense-02.jpg';
-import IMGThee from '../../assets/icons/StateLicense-03.jpg';
+import IMGOne from 'assets/icons/StateLicense-01.jpg';
+import IMGTwo from 'assets/icons/StateLicense-02.jpg';
+import IMGThee from 'assets/icons/StateLicense-03.jpg';
 import { Box } from '@mui/material';
 import { Feedbacks } from 'components/Feedbacks';
 
@@ -25,7 +25,7 @@ export const StateLicense = () => {
       <Wrapper>
         <Block>
           <Box>
-            <Img src={IMGThee} alt="Logo" title="Logo" />
+            <Img src={IMGThee} alt="GETTING STATE LINCENSE" title="GETTING STATE LINCENSE" />
           </Box>
           <WrapperBlock>
             <Title>GETTING STATE LINCENSE</Title>
@@ -48,12 +48,16 @@ export const StateLicense = () => {
             </Text>
           </WrapperBlock>
           <Box>
-            <Img src={IMGOne} alt="Logo" title="Logo" />
+            <Img src={IMGOne} alt="UNIVERSAL SYSTEM" title="UNIVERSAL SYSTEM" />
           </Box>
         </Block>
         <Block>
           <Box>
-            <Img src={IMGTwo} alt="Logo" title="Logo" />
+            <Img
+              src={IMGTwo}
+              alt="LICENSE OF BEHAVIORAL HEALTH CLINIC | HOW CAN WE HELP?"
+              title="LICENSE OF BEHAVIORAL HEALTH CLINIC | HOW CAN WE HELP?"
+            />
           </Box>
           <WrapperBlock>
             <Title>LICENSE OF BEHAVIORAL HEALTH CLINIC | HOW CAN WE HELP?</Title>

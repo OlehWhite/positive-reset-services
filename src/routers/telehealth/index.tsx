@@ -8,7 +8,7 @@ import { Box } from '@mui/material';
 
 export const Telehealth = () => {
   return (
-    <main>
+    <Box>
       <WrapperHeader>
         <Title>TELEHEALTH: AN EXCITING NEW SEGMENT FOR FRANCHISING OPPORTUNITY</Title>
       </WrapperHeader>
@@ -89,6 +89,6 @@ export const Telehealth = () => {
         </Post>
       </Container>
       <Feedbacks />
-    </main>
+    </Box>
   );
 };

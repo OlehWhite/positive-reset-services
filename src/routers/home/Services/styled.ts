@@ -15,10 +15,6 @@ export const VideoLogo = styled('img')(() => {
     '@media (max-width: 661px)': {
       width: 440,
       maxWidth: '100%'
-    },
-    '@media (max-width: 500px)': {
-      width: 350,
-      maxWidth: '100%'
     }
   };
 });

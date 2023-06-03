@@ -1,6 +1,6 @@
-import { styled } from '@mui/material';
+import { styled, Box } from '@mui/material';
 
-export const Container = styled('main')(() => {
+export const Container = styled(Box)(() => {
   return {
     display: 'flex',
     justifyContent: 'space-evenly',
