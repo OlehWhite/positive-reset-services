@@ -1,7 +1,7 @@
 import { styled, Box } from '@mui/material';
 import IMGHeader from '../../assets/icons/state-license.jpg';
 
-export const Main = styled('main')(() => {
+export const Main = styled(Box)(() => {
   return {};
 });
 

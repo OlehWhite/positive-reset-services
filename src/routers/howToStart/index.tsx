@@ -25,7 +25,7 @@ export const HowToStart = () => {
       <Wrapper>
         <Block>
           <Box>
-            <Img src={IMGLogo} alt="Logo" title="Logo" />
+            <Img src={IMGLogo} alt="HOW TO START A FRANCHISING" title="HOW TO START A FRANCHISING" />
           </Box>
           <WrapperBlock>
             <Title>HOW TO START A FRANCHISING</Title>
@@ -54,7 +54,7 @@ export const HowToStart = () => {
             </Text>
           </WrapperBlock>
           <Box>
-            <Img src={IMGGrate} alt="Logo" title="Logo" />
+            <Img src={IMGGrate} alt="GREAT OPPORTUNITY FROM THE MENTAL HEALTH FRANCHISE" title="GREAT OPPORTUNITY FROM THE MENTAL HEALTH FRANCHISE" />
           </Box>
         </Block>
       </Wrapper>

@@ -46,14 +46,14 @@ import { Box } from '@mui/material';
 import axios from 'axios';
 
 const BASE_MENU = [
-  'Home',
-  'Services',
-  'Тelehealth',
-  'Appointment request',
-  'Billing and Insurances',
-  'About Us',
-  'Contact us',
-  'Career Opportunities'
+  { page: 'Home', path: '/' },
+  { page: 'Services', path: '/services' },
+  { page: 'Тelehealth', path: '/telehealth' },
+  { page: 'Appointment request', path: '/appointment-request' },
+  { page: 'Billing and Insurances', path: '/billing-and-insurances' },
+  { page: 'About Us', path: '/about-us' },
+  { page: 'Contact us', path: '/contact-us' },
+  { page: 'Career Opportunities', path: '/career-opportunities' }
 ];
 
 interface Post {
@@ -122,6 +122,13 @@ export const Footer: FC = () => {
       });
   }, []);
 
+  const handleMenuClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -147,7 +154,7 @@ export const Footer: FC = () => {
           <Ul>
             {BASE_MENU.map((link, index) => (
               <Li key={index}>
-                <Nav to="/">{link}</Nav>
+                <Nav to={link.path} onClick={handleMenuClick} >{link.page}</Nav>
               </Li>
             ))}
           </Ul>

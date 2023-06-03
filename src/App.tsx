@@ -5,17 +5,22 @@ import {
   Route,
   RouterProvider
 } from 'react-router-dom';
+import { CommunityIntegration } from './routers/communityIntegration';
+import { OfficeLayoutSetup } from './routers/officeLayoutSetup';
 import { GlobalStyle } from 'components/Layouts/styled';
+import { FindLocation } from './routers/findLocation';
 import { StateLicense } from './routers/stateLicense';
 import { OtherPage } from './components/OtherPage';
 import { HowToStart } from './routers/howToStart';
 import { Telehealth } from './routers/telehealth';
+import { Interview } from './routers/interview';
 import { ContactUs } from './routers/contactUs';
 import { Layout } from './components/Layouts';
 import { Training } from './routers/training';
-import { Interview } from './routers/interview';
 import { AboutUs } from './routers/aboutUs';
+import { Website } from './routers/website';
 import { Home } from './routers/home';
+import { Erm } from './routers/erm';
 import ROUTES from './routers/path';
 
 const router = createBrowserRouter(
@@ -31,11 +36,11 @@ const router = createBrowserRouter(
         <Route path={ROUTES.START_LICENSE} element={<StateLicense />} />
         <Route path={ROUTES.TRAINING} element={<Training />} />
         <Route path={ROUTES.INTERVIEWS} element={<Interview />} />
-        <Route path={ROUTES.ERM} element={<div>ERM</div>} />
-        <Route path={ROUTES.FIND_LOCATION} element={<div>Find Location</div>} />
-        <Route path={ROUTES.COMMUNITY_INTEGRATION} element={<div>Community Integration</div>} />
-        <Route path={ROUTES.OFFICE_LAYOUT_SETUP} element={<div>Office Layout/Setup</div>} />
-        <Route path={ROUTES.WEBSITE} element={<div>HWebsite</div>} />
+        <Route path={ROUTES.ERM} element={<Erm />} />
+        <Route path={ROUTES.FIND_LOCATION} element={<FindLocation />} />
+        <Route path={ROUTES.COMMUNITY_INTEGRATION} element={<CommunityIntegration />} />
+        <Route path={ROUTES.OFFICE_LAYOUT_SETUP} element={<OfficeLayoutSetup />} />
+        <Route path={ROUTES.WEBSITE} element={<Website />} />
       </Route>
     </Route>
   )

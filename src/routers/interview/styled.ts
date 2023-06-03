@@ -1,7 +1,7 @@
 import { Box, styled } from '@mui/material';
 import IMGHeader from '../../assets/icons/Interview.jpg';
 
-export const Main = styled('main')(() => {
+export const Main = styled(Box)(() => {
   return {
     width: '100%'
   };

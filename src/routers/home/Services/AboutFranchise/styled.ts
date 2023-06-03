@@ -5,6 +5,7 @@ export const Container = styled(Box)(() => {
     maxWidth: 635,
     width: '100%',
     border: '1px solid #e9e9e9',
+    boxSizing: 'border-box',
 
     '& .css-14novro-MuiButtonBase-root-MuiTab-root.Mui-selected': {
       color: '#3498db',
@@ -17,7 +18,7 @@ export const Container = styled(Box)(() => {
       textAlign: 'left'
     },
 
-    '& .css-heg063-MuiTabs-flexContainer': {
+    '& .MuiTabs-flexContainer': {
       justifyContent: 'space-between',
 
       '@media (max-width: 669px)': {
@@ -33,7 +34,12 @@ export const Container = styled(Box)(() => {
 });
 
 export const MUITabs = styled(Tabs)(() => {
-  return {};
+  return {
+    '@media (max-width: 669px)': {
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
+  };
 });
 
 export const Title = styled('h2')(() => {
