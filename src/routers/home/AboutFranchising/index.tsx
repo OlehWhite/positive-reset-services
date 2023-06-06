@@ -42,6 +42,7 @@ interface Post {
   img: string;
   text: string;
   button: string;
+  link: string
 }
 
 const ID = 'aboutFranchising';
@@ -61,6 +62,7 @@ export const AboutFranchising: FC = () => {
           response.data.items.map((post?: any) => {
             const imgID = post.fields.img.sys.id;
             const text = post.fields.text.content[0].content[0].value;
+            const link = post.fields.button.content[0].content[0].value;
             const button = post.fields.button.content[0].content[0].value;
 
             return axios
@@ -71,7 +73,8 @@ export const AboutFranchising: FC = () => {
                 const newPost: Post = {
                   img: response.data.fields.file.url,
                   text,
-                  button
+                  button,
+                  link
                 };
                 setPosts((prevPost) => [...prevPost, newPost]);
               });
@@ -121,7 +124,9 @@ export const AboutFranchising: FC = () => {
                   <Img src={franchising.img} alt={franchising.img} title={franchising.img} />
                 </Box>
                 <Box>
-                  <Button>{franchising.button}</Button>
+                  <Button href={franchising.link && franchising.link.length === 0 ? franchising.link : undefined} target='_blank'>
+                    {franchising.button}
+                  </Button>
                   <PostText>{franchising.text}</PostText>
                 </Box>
               </Wrapper>

@@ -24,7 +24,7 @@ export const Wrapper = styled(Box)(() => {
     display: 'flex',
     justifyContent: 'space-evenly',
     maxWidth: 1303,
-    margin: '115px auto 155px',
+    margin: '65px auto 65px',
 
     '@media (max-width: 1335px)': {
       flexDirection: 'column',

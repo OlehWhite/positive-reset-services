@@ -20,6 +20,8 @@ import { PRIVATE_DATA } from '../../privateData';
 import { Box } from '@mui/material';
 import Slider from 'react-slick';
 import axios from 'axios';
+import Drawer from '@mui/material/Drawer';
+import { AsideClinic } from './AsideClinic';
 
 const settings = {
   dots: false,
@@ -33,10 +35,10 @@ const settings = {
     {
       breakpoint: 1335,
       settings: {
-        slidesToShow: 1,
-      },
-    },
-  ],
+        slidesToShow: 1
+      }
+    }
+  ]
 };
 
 interface Post {
@@ -46,6 +48,7 @@ interface Post {
   email: string;
   telephone: string;
   webSite: string;
+  location: string;
 }
 
 const ID = 'locationClinic';
@@ -53,21 +56,24 @@ const ID = 'locationClinic';
 export const Location: FC = () => {
   const ref = useRef<Slider | null>(null);
   const [post, setPost] = useState<Post[]>([]);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   useEffect(() => {
+    setPost([]);
     axios
       .get(
         `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/entries?content_type=${ID}&access_token=${PRIVATE_DATA.accessId}`
       )
       .then((response) => {
         if (response.data.items.length > 0) {
-          response.data.items.map((post?: any) => {
+          response.data.items.forEach((post?: any) => {
             const imgID = post.fields.img.sys.id;
             const title = post.fields.title.content[0].content[0].value;
             const address = post.fields.Address.content[0].content[0].value;
             const email = post.fields.email.content[0].content[0].value;
             const telephone = post.fields.telephone.content[0].content[0].value;
             const webSite = post.fields.webSite.content[0].content[0].value;
+            const location = post.fields.googleMap.content[0].content[0].value;
 
             return axios
               .get(
@@ -80,7 +86,8 @@ export const Location: FC = () => {
                   address: address,
                   email: email,
                   telephone: telephone,
-                  webSite: webSite
+                  webSite: webSite,
+                  location: location
                 };
                 setPost((prevPost) => [...prevPost, newPost]);
               });
@@ -122,20 +129,25 @@ export const Location: FC = () => {
       </Info>
       <Carusell>
         <LeftButton src={IMGLeft} alt="Left Button" title="Left Button" onClick={onPrev} />
-        {post.length > 0 && (
+        {post && post.length > 0 && (
           <Clinicals {...settings} ref={ref}>
             {post.map((clinical, index) => (
-              <Wrapper key={index}>
-                <Box>
-                  <Img src={clinical.img} alt={clinical.img} title={clinical.img} />
+              <Wrapper key={clinical.title}>
+                <Box onClick={() => setOpenIndex(index)}>
+                  <Box>
+                    <Img src={clinical.img} alt={clinical.img} title={clinical.img} />
+                  </Box>
+                  <Box>
+                    <TitleCard>{clinical.title}</TitleCard>
+                    <Address>{clinical.address}</Address>
+                    <InfoCard>{clinical.telephone}</InfoCard>
+                    <InfoCard>{clinical.email}</InfoCard>
+                    <InfoCard>{clinical.webSite}</InfoCard>
+                  </Box>
                 </Box>
-                <Box>
-                  <TitleCard>{clinical.title}</TitleCard>
-                  <Address>{clinical.address}</Address>
-                  <InfoCard>{clinical.telephone}</InfoCard>
-                  <InfoCard>{clinical.email}</InfoCard>
-                  <InfoCard>{clinical.webSite}</InfoCard>
-                </Box>
+                <Drawer anchor="right" open={openIndex === index} onClose={() => setOpenIndex(-1)}>
+                  <AsideClinic setOpenIndex={setOpenIndex} clinical={clinical} />
+                </Drawer>
               </Wrapper>
             ))}
           </Clinicals>

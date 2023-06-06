@@ -64,6 +64,7 @@ interface Post {
 
 const ID = 'telephoneNumber';
 const IDPosts = 'aboutFranchising';
+const IDWorkingHours = 'workingHours';
 
 export const Footer: FC = () => {
   const [telNum, setTelNum] = useState<string>('');
@@ -72,6 +73,7 @@ export const Footer: FC = () => {
   const [linkLinkedin, setLinkLinkedin] = useState<string>('');
   const [linkTwitter, setTwitter] = useState<string>('');
   const [posts, setPosts] = useState<Post[]>([]);
+  const [workingHours, setWorkingHours] = useState<any>();
 
   useEffect(() => {
     axios
@@ -122,6 +124,14 @@ export const Footer: FC = () => {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get(
+        `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/entries?content_type=${IDWorkingHours}&access_token=${PRIVATE_DATA.accessId}`
+      )
+      .then((response) => setWorkingHours(response.data.items));
+  }, []);
+
   const handleMenuClick = () => {
     window.scrollTo({
       top: 0,
@@ -154,7 +164,9 @@ export const Footer: FC = () => {
           <Ul>
             {BASE_MENU.map((link, index) => (
               <Li key={index}>
-                <Nav to={link.path} onClick={handleMenuClick} >{link.page}</Nav>
+                <Nav to={link.path} onClick={handleMenuClick}>
+                  {link.page}
+                </Nav>
               </Li>
             ))}
           </Ul>
@@ -181,13 +193,14 @@ export const Footer: FC = () => {
             </WrapperAlarm>
           </WrapperPosition>
           <Days>
-            <Day>Monday: 09am - 05pm</Day>
-            <Day>Tuesday: 09am - 05pm</Day>
-            <Day>Wednesday: 09am - 05pm</Day>
-            <Day>Thursday: 09am - 05pm</Day>
-            <Day>Friday: 09am - 05pm</Day>
-            <Day>Saturday: Closed</Day>
-            <Day>Sunday: Closed</Day>
+            {workingHours &&
+              workingHours
+                .map((day: any, index: string) => (
+                  <Day key={index}>
+                    {day.fields.day}: {day.fields.hours.content[0].content[0].value}
+                  </Day>
+                ))
+                .reverse()}
           </Days>
         </WorkingHours>
       </Wrapper>

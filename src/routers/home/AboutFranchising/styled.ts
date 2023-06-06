@@ -5,7 +5,7 @@ export const Container = styled(Box)(() => {
   return {
     maxWidth: 1300,
     width: '100%',
-    margin: '105px auto'
+    margin: '65px auto'
   };
 });
 
@@ -89,8 +89,11 @@ export const Wrapper = styled(Box)(() => {
   };
 });
 
-export const Button = styled('button')(() => {
+export const Button = styled('a')(() => {
   return {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     cursor: 'pointer',
     width: 150,
     height: 30,
@@ -100,6 +103,9 @@ export const Button = styled('button')(() => {
     color: 'white',
     margin: '20px 20px',
     transition: '.3s',
+    fontSize: 14,
+    fontWeight: 600,
+    textDecoration: 'none',
 
     '&:hover': {
       transition: '.3s',
