@@ -5,6 +5,7 @@ import { PRIVATE_DATA } from '../../privateData';
 import { FC, useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import axios from 'axios';
+import {Helmet} from "react-helmet-async";
 
 const ID = 'homeRating';
 
@@ -26,6 +27,13 @@ export const FranchiseOptions: FC = () => {
 
   return (
     <Container>
+      <Helmet>
+        <meta
+          name="description12"
+          content="THE ‘MENTAL HEALTH’ FRANCHISE IS BEYOND SUCCESSFUL.
+‘Mental Health’ franchising allows to branch out and grow while giving people the opportunity to run their own business with the help and support of a larger company that has a proven formula for success."
+        />
+      </Helmet>
       <Wrapper>
         <Box style={{ width: '100%', maxWidth: 500 }}>
           <Title>THE ‘MENTAL HEALTH’ FRANCHISE IS BEYOND SUCCESSFUL.</Title>

@@ -22,6 +22,7 @@ import { Website } from './routers/website';
 import { Home } from './routers/home';
 import { Erm } from './routers/erm';
 import ROUTES from './routers/path';
+import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,7 +34,7 @@ const router = createBrowserRouter(
         <Route path={ROUTES.CONTACT_US} element={<ContactUs />} />
 
         <Route path={ROUTES.HOW_TO_START} element={<HowToStart />} />
-        <Route path={ROUTES.START_LICENSE} element={<StateLicense />} />
+        <Route path={ROUTES.STATE_LICENSE} element={<StateLicense />} />
         <Route path={ROUTES.TRAINING} element={<Training />} />
         <Route path={ROUTES.INTERVIEWS} element={<Interview />} />
         <Route path={ROUTES.ERM} element={<Erm />} />
@@ -49,8 +50,10 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <RouterProvider router={router} />
+      <HelmetProvider>
+        <GlobalStyle />
+        <RouterProvider router={router} />
+      </HelmetProvider>
     </>
   );
 }

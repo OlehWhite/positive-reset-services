@@ -28,7 +28,7 @@ export const MUIAccordion = () => {
             </AccordionSummary>
             <AccordionDetails sx={{ display: 'flex', flexDirection: 'column' }}>
               <SNav to="/how-to-start">How to Start</SNav>
-              <SNav to="/start-license">Start License</SNav>
+              <SNav to="/state-license">State License</SNav>
               <SNav to="/training">Training</SNav>
               <SNav to="/interviews">Interviews</SNav>
               <SNav to="/erm">ERM</SNav>

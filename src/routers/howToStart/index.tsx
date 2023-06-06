@@ -15,10 +15,28 @@ import { InfoBlock } from './infoBlock';
 import { Box } from '@mui/material';
 import React from 'react';
 import { Feedbacks } from 'components/Feedbacks';
+import {Helmet} from "react-helmet-async";
 
 export const HowToStart = () => {
   return (
     <Main>
+      <Helmet>
+        <title>Positive Reset Services - Call Today | How to Start</title>
+        <meta
+          name="description29"
+          content="How to Start"
+        />
+        <meta
+          name="description30"
+          content="HOW TO START A FRANCHISING
+When you’re looking to buy or start your own company in US, you have several options. You could start from scratch, building your own original business from the ground up. You could buy an existing stand-alone business someone has already built. Or, you might buy into a franchise business model, system (either an existing business or a new one). As with any of these options, franchise business models come with their own set of pros and cons, but sometimes they make a lot of sense for a business owner."
+        />
+        <meta
+          name="description31"
+          content="GREAT OPPORTUNITY FROM THE MENTAL HEALTH FRANCHISE
+The franchise has, hopefully, already done the work of building a brand and patients trust. That means you’re more likely to have customers as soon as you open, and you can even leverage on existing knowledge of the brand to build excitement for the opening beforehand. Your business is backed by the overall franchise, which means you have more leeway for growing pains than you might with a stand-alone small business."
+        />
+      </Helmet>
       <WrapperHeader>
         <TitleHeader>HOW TO START</TitleHeader>
       </WrapperHeader>

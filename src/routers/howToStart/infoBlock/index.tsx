@@ -16,10 +16,35 @@ import IMGThree from 'assets/icons/3_Icon.png';
 import IMGFour from 'assets/icons/4_Icon.png';
 import IMGGirl from 'assets/icons/05.png';
 import { Box } from '@mui/material';
+import { Helmet } from 'react-helmet-async';
 
 export const InfoBlock = () => {
   return (
     <Container>
+      <Helmet>
+        <meta
+          name="description32"
+          content="
+I WANT TO BECOME A FRANCHISOR
+If you’re thinking of starting a franchise, you’re probably thinking of becoming a franchisee. That is, you want to become a business owner by franchising under a community."
+        />
+        <meta
+          name="description33"
+          content="
+RESPONSIBILITY TO BECOME A FRANCHISOR
+As you probably know, a franchise is a business model and a brand—and when you become a franchisee or franchise owner, you’re signing a franchise contract and putting down some money for the right to use that business model, sistem and brand."
+        />
+        <meta
+          name="description34"
+          content="MENTAL HEALTH FRANCHISE IS THE BEST IN US
+Franchise brands are everywhere. If you have a favorite business joint that you know to in cities around the country, that’s almost certainly a franchise. In other words, instead of being owned by a corporation, individuals own and operate one or two or several of those business."
+        />
+        <meta
+          name="description35"
+          content="SOME BENEFITS OF FRANCHISE BUSINESS MODELS
+One of the biggest benefits of buying into a franchise is that it's an stable анд verified business. It already has an patients and clients, and someone has worked out a lot of the kinks in the process — in short, you don't have to reinvent the wheel. New owners in a franchise have distinct advantages over new owners of small businesses."
+        />
+      </Helmet>
       <Wrapper>
         <Info>
           <Post>

@@ -19,6 +19,7 @@ import { PRIVATE_DATA } from '../../privateData';
 import { Box } from '@mui/material';
 import Slider from 'react-slick';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 const settings = {
   dots: false,
@@ -42,7 +43,7 @@ interface Post {
   img: string;
   text: string;
   button: string;
-  link: string
+  link: string;
 }
 
 const ID = 'aboutFranchising';
@@ -106,6 +107,13 @@ export const AboutFranchising: FC = () => {
 
   return (
     <Container>
+      <Helmet>
+        <meta
+          name="description13"
+          content="NEWS ABOUT FRANCHISING OPPORTUNITIES
+Reading news helps you to learn something new every day, and slow down aging. Reading news helps you to distinguish truth from falsehoods. Reading news can enhance your creativity. Reading news gives you leads with events."
+        />
+      </Helmet>
       <Info>
         <Title>NEWS ABOUT FRANCHISING OPPORTUNITIES</Title>
         <Text>
@@ -124,7 +132,13 @@ export const AboutFranchising: FC = () => {
                   <Img src={franchising.img} alt={franchising.img} title={franchising.img} />
                 </Box>
                 <Box>
-                  <Button href={franchising.link && franchising.link.length === 0 ? franchising.link : undefined} target='_blank'>
+                  <Button
+                    href={
+                      franchising.link && franchising.link.length === 0
+                        ? franchising.link
+                        : undefined
+                    }
+                    target="_blank">
                     {franchising.button}
                   </Button>
                   <PostText>{franchising.text}</PostText>

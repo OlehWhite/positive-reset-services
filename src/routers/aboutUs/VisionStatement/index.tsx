@@ -5,6 +5,7 @@ import { PRIVATE_DATA } from '../../privateData';
 import { FC, useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 const ID = 'aboutUsRating';
 
@@ -26,6 +27,13 @@ export const VisionStatement: FC = () => {
 
   return (
     <Container>
+      <Helmet>
+        <meta
+          name="22"
+          content="WHAT WE INTEND TO ACCOMPLISH
+Like our Mission, our Vision is ambitious. It describes what we believe to be a future we can help create, one which has significant improvements in the state of mental well-being."
+        />
+      </Helmet>
       <Wrapper>
         <Box style={{ width: '100%', maxWidth: 500 }}>
           <Title>WHAT WE INTEND TO ACCOMPLISH</Title>

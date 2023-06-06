@@ -25,7 +25,7 @@ export const Layout: FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const triggerOffset = 100; // Встановіть відступ, який вам потрібен, перед відображенням елементу
+      const triggerOffset = 100;
 
       if (scrollTop > triggerOffset) {
         setShowImg(true);

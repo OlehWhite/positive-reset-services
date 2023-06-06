@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { DATA_INFO } from './mocData';
 import { Box } from '@mui/material';
 import axios from 'axios';
+import {Helmet} from "react-helmet-async";
 
 const ID = 'telephoneNumber';
 
@@ -27,6 +28,17 @@ export const ContactInfo = () => {
 
   return (
     <Container>
+      <Helmet>
+        <meta
+          name="description23"
+          content="CONTACT INFO
+If you WANT to be part of our franchised family;
+If you are READY to become part of a successful, proven and established system;
+If you CAN run your own business, with minimal investment and professional help;
+If you FEEL a desire to help people and save them from behavioral problems; You are in the right place and at the right time.
+Call, write and get more information."
+        />
+      </Helmet>
       <Wrapper>
         <Title>CONTACT INFO</Title>
         <Box>

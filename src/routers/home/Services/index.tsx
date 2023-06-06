@@ -1,8 +1,9 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { VideoLogo, WrapperVideo, Wrapper } from './styled';
 import IMGVideoLogo from 'assets/icons/video-logo.jpg';
 import { AboutFranchise } from './AboutFranchise/AboutFranchise';
 import { Box, Modal } from '@mui/material';
+import { Helmet } from 'react-helmet-async';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -22,6 +23,25 @@ export const Services: FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Positive Reset Services - Call Today</title>
+        <meta
+          name="description"
+          content="WHAT MAKES A FRANCHISE AN ATTRACTIVE OPPORTUNITY?
+Franchises offer easier access to financing and more predictable growth models than most sole proprietorships. To obtain financing for a sole proprietorship, you might have to convince your family and friends, a private lender, or the Small Business Association that you have a sound business plan and growth model."
+        />
+        <meta
+          name="description2"
+          content="WHAT IS A BUSINESS OPPORTUNITY?
+Business opportunities are a highly regulated method of business expansion where a company provides outsiders the opportunity, for a fee, to go into business."
+        />
+        <meta
+          name="description3"
+          content="
+WHY YOU SHOULD INVEST IN A FRANCHISE?
+The franchise organization model offers the franchisee the ability to grow under a common brand and share in the benefits of a larger group of business owners. … Training from successful business operators. A lower risk of failure and/or loss of investments than if you were to start your own business from scratch"
+        />
+      </Helmet>
       <Wrapper>
         <WrapperVideo>
           <VideoLogo onClick={handleOpen} src={IMGVideoLogo} alt="Video Logo" title="Video Logo" />

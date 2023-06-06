@@ -16,10 +16,37 @@ import IMGThree from 'assets/icons/03.png';
 import IMGFour from 'assets/icons/04.png';
 import IMGMan from 'assets/icons/Man-542x1024.png';
 import { Box } from '@mui/material';
+import { Helmet } from 'react-helmet-async';
+import React from 'react';
 
 export const MotivationalQuotes = () => {
   return (
     <Container>
+      <Helmet>
+        <title>Positive Reset Services - Call Today</title>
+        <meta
+          name="description4"
+          content="“THE SECRET OF GETTING AHEAD IS GETTING STARTED.” MARK TWAIN
+Although it may scare you to death to begin your own franchise or business, the mere fact that you’re willing to begin to work toward your goals puts you one step ahead of most others."
+        />
+        <meta
+          name="description5"
+          content="“AIM FOR THE MOON. IF YOU MISS, YOU MAY HIT A STAR.” W. CLEMENT STONE
+Life has a way of switching our paths mid-journey. Go for what you want, but if you don’t get exactly what you are wishing for, don’t forget to see the beauty in unintended results."
+        />
+        <meta
+          name="description6"
+          content="
+WHY
+“WHAT YOU DO TODAY CAN IMPROVE ALL YOUR TOMORROWS.” RALPH MARSTON
+Every decision and action you take today affects what your life will be like tomorrow. Don’t be afraid to take risks and pursue your business-related dreams as those will be the things that will increase your rewards."
+        />
+        <meta
+          name="description7"
+          content="“IF YOU’RE GOING THROUGH HELL, KEEP GOING.” WINSTON CHURCHILL
+There are going to be moments where you are ready to fly the white flag and surrender. No matter how difficult things become though, never give up on your dreams. Just keep putting one foot in front of the other and you will arrive at success."
+        />
+      </Helmet>
       <Wrapper>
         <Info>
           <Post>

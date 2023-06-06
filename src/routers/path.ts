@@ -5,7 +5,7 @@ const ROUTES = {
   ABOUT_US: '/about-us',
   CONTACT_US: '/contact-us',
   HOW_TO_START: '/how-to-start',
-  START_LICENSE: '/start-license',
+  STATE_LICENSE: '/state-license',
   TRAINING: '/training',
   INTERVIEWS: '/interviews',
   ERM: '/erm',

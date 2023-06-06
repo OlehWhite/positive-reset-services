@@ -15,13 +15,14 @@ import {
 } from './styled';
 import IMGLeft from 'assets/icons/arrow-point-to-left.png';
 import IMGRight from 'assets/icons/arrow-point-to-right.png';
-import { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { PRIVATE_DATA } from '../../privateData';
 import { Box } from '@mui/material';
 import Slider from 'react-slick';
 import axios from 'axios';
 import Drawer from '@mui/material/Drawer';
 import { AsideClinic } from './AsideClinic';
+import { Helmet } from 'react-helmet-async';
 
 const settings = {
   dots: false,
@@ -119,6 +120,13 @@ export const Location: FC = () => {
 
   return (
     <Container>
+      <Helmet>
+        <meta
+          name="description8"
+          content="POSITIVE RESET SERVICES LOCATIONS
+POSITIVE RESET SERVICES is a successful franchise company that opens Mental Health Clinics across Unlined Sates. POSITIVE RESET SERVICES works like a professional system that has stood the test of time, financial success and successful treatment outcomes."
+        />
+      </Helmet>
       <Info>
         <Title>POSITIVE RESET SERVICES LOCATIONS</Title>
         <Text>
