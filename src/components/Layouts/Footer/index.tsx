@@ -42,8 +42,9 @@ import IMGTwitter from 'assets/icons/twitter-footer.svg';
 import React, { FC, useEffect, useState } from 'react';
 import IMGPhoneLogo from 'assets/icons/phone-icon.svg';
 import IMGLogoFooter from 'assets/icons/logo.png';
-import { Box } from '@mui/material';
+import { Box, Modal } from '@mui/material';
 import axios from 'axios';
+import { ModalServices } from 'components/ModalServices';
 
 const BASE_MENU = [
   { page: 'Home', path: '/' },
@@ -164,9 +165,13 @@ export const Footer: FC = () => {
           <Ul>
             {BASE_MENU.map((link, index) => (
               <Li key={index}>
-                <Nav to={link.path} onClick={handleMenuClick}>
-                  {link.page}
-                </Nav>
+                {link.page !== 'Services' ? (
+                  <Nav to={link.path} onClick={handleMenuClick}>
+                    {link.page}
+                  </Nav>
+                ) : (
+                  <ModalServices />
+                )}
               </Li>
             ))}
           </Ul>

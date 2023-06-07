@@ -36,6 +36,11 @@ export const MUIAccordion = () => {
               <SNav to="/community-integration">Community Integration</SNav>
               <SNav to="/office-layout-setup">Office Layout/Setup</SNav>
               <SNav to="/website">Website</SNav>
+              <SNav to="/appointment-request">Appointment Request</SNav>
+              <SNav to="/billing-and-insurances">Billing and Insurances</SNav>
+              <SNav to="/career-opportunities">Career Opportunities</SNav>
+              <SNav to="/medication-management">Medication Management</SNav>
+              <SNav to="/child-and-adolescent">Child and Adolescent</SNav>
             </AccordionDetails>
           </Accordion>
           <Nav to="/telehealth">TELEHEALTH</Nav>

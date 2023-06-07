@@ -26,7 +26,7 @@ export const ContactForm: FC = () => {
   } = useForm<any>({
     mode: 'onBlur',
     defaultValues: {
-      Mail: '',
+      Email: '',
       Name: '',
       Text: ''
     }

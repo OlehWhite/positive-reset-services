@@ -6,10 +6,16 @@ import {
   RouterProvider
 } from 'react-router-dom';
 import { CommunityIntegration } from './routers/communityIntegration';
+import { BillingAndInsurances } from 'routers/billingAndInsurances';
+import { CareerOpportunities } from './routers/careerOpportunities';
+import { MedicationManagement } from 'routers/medicationManagement';
+import { AppointmentRequest } from './routers/appointmentRequest';
+import { ChildAndAdolescent } from './routers/childAndAdolescent';
 import { OfficeLayoutSetup } from './routers/officeLayoutSetup';
 import { GlobalStyle } from 'components/Layouts/styled';
 import { FindLocation } from './routers/findLocation';
 import { StateLicense } from './routers/stateLicense';
+import { HelmetProvider } from 'react-helmet-async';
 import { OtherPage } from './components/OtherPage';
 import { HowToStart } from './routers/howToStart';
 import { Telehealth } from './routers/telehealth';
@@ -22,7 +28,6 @@ import { Website } from './routers/website';
 import { Home } from './routers/home';
 import { Erm } from './routers/erm';
 import ROUTES from './routers/path';
-import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,6 +47,11 @@ const router = createBrowserRouter(
         <Route path={ROUTES.COMMUNITY_INTEGRATION} element={<CommunityIntegration />} />
         <Route path={ROUTES.OFFICE_LAYOUT_SETUP} element={<OfficeLayoutSetup />} />
         <Route path={ROUTES.WEBSITE} element={<Website />} />
+        <Route path={ROUTES.BILLING_AND_INSURANCE} element={<BillingAndInsurances />} />
+        <Route path={ROUTES.APPOINTMENT_REQUEST} element={<AppointmentRequest />} />
+        <Route path={ROUTES.CAREER_OPPORTUNITIES} element={<CareerOpportunities />} />
+        <Route path={ROUTES.MEDICATION_MANAGEMENT} element={<MedicationManagement />} />
+        <Route path={ROUTES.CHILD_AND_ADOLESCENT} element={<ChildAndAdolescent />} />
       </Route>
     </Route>
   )

@@ -1,10 +1,33 @@
 import { styled, Box } from '@mui/material';
-import Input from '../Input';
+import IMGHeader from '../../assets/icons/NAPr4GWk.jpeg';
+
+export const WrapperHeader = styled(Box)(() => {
+  return {
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+    height: 300,
+    backgroundImage: `url(${IMGHeader})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  };
+});
+
+export const Title = styled('h2')(() => {
+  return {
+    display: 'flex',
+    justifyContent: 'center',
+    color: '#3498db',
+    margin: 0,
+    fontSize: 26
+  };
+});
 
 export const Wrapper = styled(Box)(() => {
   return {
-    maxWidth: 480,
-    width: '100%'
+    margin: '65px 0'
   };
 });
 
@@ -16,40 +39,9 @@ export const InputWrapper = styled(Box)(() => {
   };
 });
 
-export const StyledInput = styled(Input)(() => {
-  return {
-    borderRadius: 0,
-    height: 26,
-    fontSize: 16,
-    border: `1px solid #eae9e9`,
-    backgroundColor: '#f7f7f7',
-    color: '#626262'
-  };
-});
-
-export const StyledFile = styled(Input)(() => {
-  return {
-    borderRadius: 0,
-    fontSize: 14,
-    color: '#626262',
-    marginTop: 20
-  };
-});
-
-export const Title = styled('h2')(() => {
-  return {
-    display: 'flex',
-    alignItems: 'center',
-    fontSize: 24,
-    fontWeight: 700,
-    color: '#3498db',
-    margin: 0
-  };
-});
-
 export const TextField = styled('textarea')(() => {
   return {
-    maxWidth: 600,
+    maxWidth: 1300,
     width: '100%',
     padding: '10px 10px 120px 10px',
     fontSize: 16,
@@ -65,7 +57,7 @@ export const TextField = styled('textarea')(() => {
 
 export const StyledForm = styled('form')(() => {
   return {
-    maxWidth: 476,
+    maxWidth: 1300,
     width: '100%',
     display: 'flex',
     alignItems: 'start',
@@ -129,6 +121,6 @@ export const Label = styled('h2')(() => {
 
 export const Success = styled(Title)(() => {
   return {
-    marginTop: 20
+    marginTop: 65
   };
 });

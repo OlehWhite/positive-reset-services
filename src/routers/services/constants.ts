@@ -7,5 +7,10 @@ export const DATA_LINKS = [
   { name: 'Find Location', path: '/find-location' },
   { name: 'Community Integration', path: '/community-integration' },
   { name: 'Office Layout/Setup', path: '/office-layout-setup' },
-  { name: 'Website', path: '/website' }
+  { name: 'Website', path: '/website' },
+  { name: 'Appointment Request', path: '/appointment-request' },
+  { name: 'Billing and Insurances', path: '/billing-and-insurances' },
+  { name: 'Career Opportunities', path: '/career-opportunities' },
+  { name: 'Medication Management', path: '/medication-management' },
+  { name: 'Child and Adolescent', path: '/child-and-adolescent' },
 ];
