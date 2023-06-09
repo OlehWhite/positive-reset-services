@@ -11,7 +11,7 @@ export const Wrapper = styled(Box)(() => {
   return {
     maxWidth: 1300,
     margin: '0 auto',
-    marginTop: 70
+    marginTop: 35
   };
 });
 
@@ -19,7 +19,7 @@ export const Block = styled(Box)(() => {
   return {
     display: 'flex',
     justifyContent: 'space-between',
-    marginTop: 60,
+    marginTop: 35,
 
     '@media (max-width: 1090px)': {
       flexDirection: 'column',
@@ -30,7 +30,7 @@ export const Block = styled(Box)(() => {
 
 export const BlockOne = styled(Box)(() => {
   return {
-    marginTop: 40
+    marginTop: 35
   };
 });
 
@@ -85,7 +85,7 @@ export const Ul = styled('ul')(() => {
     margin: '0 auto 50px',
     maxWidth: 880,
     backgroundColor: '#f5f5f5',
-    padding: '25px 50px',
+    padding: '25px 35px',
   };
 });
 

@@ -21,7 +21,7 @@ export const Title = styled('h2')(() => {
     justifyContent: 'center',
     color: '#3498db',
     fontSize: 26,
-    marginTop: 40
+    marginTop: 30
   };
 });
 
@@ -52,7 +52,7 @@ export const Block = styled(Box)(() => {
   return {
     display: 'flex',
     justifyContent: 'space-between',
-    margin: '70px 0',
+    margin: '30px 0',
 
     '@media (max-width: 1090px)': {
       flexDirection: 'column',
@@ -174,6 +174,6 @@ export const Label = styled('h2')(() => {
 
 export const Success = styled(Title)(() => {
   return {
-    marginTop: 65
+    marginTop: 35
   };
 });

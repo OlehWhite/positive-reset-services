@@ -5,7 +5,7 @@ export const Container = styled(Box)(() => {
   return {
     maxWidth: 1300,
     width: '100%',
-    margin: '45px auto 45px',
+    margin: '35px auto 35px',
   };
 });
 

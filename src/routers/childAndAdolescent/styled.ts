@@ -31,7 +31,6 @@ export const Text = styled('p')(() => {
     fontSize: 16,
     lineHeight: '26px',
     color: '#959595',
-    margin: '10px 0'
   };
 });
 
@@ -39,7 +38,7 @@ export const Block = styled(Box)(() => {
   return {
     display: 'flex',
     justifyContent: 'space-between',
-    margin: '70px 0 30px',
+    margin: '35px 0 30px',
 
     '@media (max-width: 1090px)': {
       flexDirection: 'column',
@@ -60,7 +59,7 @@ export const Wrapper = styled(Box)(() => {
   return {
     width: '100%',
     maxWidth: 1300,
-    margin: '0 auto 65px'
+    margin: '0 auto 35px'
   };
 });
 

@@ -10,7 +10,6 @@ export const Wrapper = styled(Box)(() => {
     width: '100%',
     maxWidth: 1300,
     margin: '0 auto',
-    paddingBottom: 40
   };
 });
 
@@ -42,7 +41,7 @@ export const Block = styled(Box)(() => {
   return {
     display: 'flex',
     justifyContent: 'space-between',
-    margin: '60px 0',
+    margin: '35px 0',
 
     '@media (max-width: 1090px)': {
       flexDirection: 'column',
@@ -60,7 +59,6 @@ export const Img = styled('img')(() => {
 
 export const WrapperBlock = styled(Box)(() => {
   return {
-    marginTop: 70,
     width: '100%',
     maxWidth: 620
   };

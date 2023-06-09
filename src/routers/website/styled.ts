@@ -5,7 +5,7 @@ export const Container = styled('main')(() => {
   return {
     width: '100%',
     maxWidth: 1300,
-    margin: '0 auto 100px'
+    margin: '0 auto 60px'
   };
 });
 
@@ -37,7 +37,7 @@ export const Post = styled(Box)(() => {
   return {
     display: 'flex',
     justifyContent: 'space-between',
-    marginTop: 70,
+    marginTop: 35,
 
     '@media (max-width: 1070px)': {
       flexDirection: 'column',

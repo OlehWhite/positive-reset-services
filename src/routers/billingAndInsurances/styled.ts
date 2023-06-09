@@ -35,7 +35,7 @@ export const Wrapper = styled(Box)(() => {
 
 export const WrapperBlock = styled(Box)(() => {
   return {
-    marginTop: 70,
+    marginTop: 35,
     width: '100%',
     maxWidth: 630
   };
@@ -53,7 +53,7 @@ export const Block = styled(Box)(() => {
   return {
     display: 'flex',
     justifyContent: 'space-between',
-    margin: '70px 0',
+    margin: '35px 0',
 
     '@media (max-width: 1090px)': {
       flexDirection: 'column',

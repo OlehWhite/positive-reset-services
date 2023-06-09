@@ -13,7 +13,7 @@ export const Wrapper = styled(Box)(() => {
     maxWidth: 1300,
     width: '100%',
     margin: '0 auto',
-    paddingTop: 60,
+    paddingTop: 30,
 
     '@media (max-width: 1335px)': {
       flexDirection: 'column',

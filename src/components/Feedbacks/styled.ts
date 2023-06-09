@@ -11,7 +11,6 @@ export const Wrapper = styled(Box)(() => {
     maxWidth: 1300,
     width: '100%',
     margin: '0 auto',
-    padding: '12px 0 12px',
     textAlign: 'center',
   };
 });
@@ -23,7 +22,7 @@ export const Text = styled('p')(() => {
     maxWidth: 1000,
     color: '#959595',
     margin: '0 auto',
-    padding: 34,
+    padding: 20,
     fontWeight: 400
   };
 });

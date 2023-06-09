@@ -16,7 +16,7 @@ export const WrapperHeader = styled(Box)(() => {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    marginBottom: 70
+    marginBottom: 30
   };
 });
 
@@ -43,7 +43,7 @@ export const Block = styled(Box)(() => {
   return {
     display: 'flex',
     justifyContent: 'space-between',
-    margin: '60px 0',
+    margin: '35px 0',
 
     '@media (max-width: 1090px)': {
       flexDirection: 'column',

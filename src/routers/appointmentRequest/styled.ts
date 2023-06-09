@@ -27,7 +27,7 @@ export const Title = styled('h2')(() => {
 
 export const Wrapper = styled(Box)(() => {
   return {
-    margin: '65px 0'
+    margin: '45px 0'
   };
 });
 
