@@ -11,9 +11,8 @@ export const Wrapper = styled(Box)(() => {
     maxWidth: 1300,
     width: '100%',
     margin: '0 auto',
-    padding: '15px 0 15px',
+    padding: '12px 0 12px',
     textAlign: 'center',
-    cursor: 'pointer'
   };
 });
 

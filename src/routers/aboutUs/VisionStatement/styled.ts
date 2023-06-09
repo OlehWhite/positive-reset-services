@@ -18,7 +18,7 @@ export const Wrapper = styled(Box)(() => {
     justifyContent: 'space-between',
     backgroundSize: 'cover',
     margin: '0 auto',
-    padding: '80px 0',
+    padding: '55px 0',
     maxWidth: 1300,
 
     '@media (max-width: 1335px)': {

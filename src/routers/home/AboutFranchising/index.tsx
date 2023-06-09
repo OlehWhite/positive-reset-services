@@ -59,8 +59,9 @@ export const AboutFranchising: FC = () => {
         `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/entries?content_type=${ID}&access_token=${PRIVATE_DATA.accessId}`
       )
       .then((response) => {
+        setPosts([])
         if (response.data.items.length > 0) {
-          response.data.items.map((post?: any) => {
+          response.data.items.forEach((post?: any) => {
             const imgID = post.fields.img.sys.id;
             const text = post.fields.text.content[0].content[0].value;
             const link = post.fields.button.content[0].content[0].value;

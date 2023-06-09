@@ -90,7 +90,16 @@ export const Location: FC = () => {
                   webSite: webSite,
                   location: location
                 };
-                setPost((prevPost) => [...prevPost, newPost]);
+
+                setPost((prevPost) => {
+                  const isPostExists = prevPost.some((post) => post.title === newPost.title);
+
+                  if (isPostExists) {
+                    return prevPost;
+                  }
+
+                  return [...prevPost, newPost];
+                });
               });
           });
         }

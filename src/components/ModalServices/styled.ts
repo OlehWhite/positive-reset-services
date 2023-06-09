@@ -25,7 +25,7 @@ export const Ul = styled('ul')(() => {
 export const Li = styled('li')(() => {
   return {
     listStyleType: 'none',
-    padding: '6px 0',
+    padding: '10px 0',
     borderBottom: '1px solid rgba(255,255,255,.08)',
   };
 });

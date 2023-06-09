@@ -77,7 +77,8 @@ export const RightButton = styled('img')(() => {
 
 export const Img = styled('img')(() => {
   return {
-    width: 350
+    width: 350,
+    height: 240
   };
 });
 

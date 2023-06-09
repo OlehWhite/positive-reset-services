@@ -12,12 +12,12 @@ import {
 } from './styled';
 import IMGRight from 'assets/icons/arrow-point-to-right.png';
 import IMGLeft from 'assets/icons/arrow-point-to-left.png';
+import { useEffect, useRef, useState } from 'react';
+import { PRIVATE_DATA } from 'routers/privateData';
 import { LayoutHeader } from './LayoutHeader';
 import { LayoutNav } from './LayoutNav';
 import Slider from 'react-slick';
-import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
-import { PRIVATE_DATA } from 'routers/privateData';
 
 const settings = {
   dots: false,
@@ -41,7 +41,7 @@ export const HomeHeader = () => {
         `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/entries?content_type=homeHeader&access_token=${PRIVATE_DATA.accessId}`
       )
       .then((response) => {
-        setHeaderInfo(response.data.items); // Оновлення стану `posts` зі значеннями
+        setHeaderInfo(response.data.items);
       })
       .catch((error) => {
         console.error('Error fetching posts:', error);
