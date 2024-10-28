@@ -62,7 +62,9 @@ const PersonCardComponent: FC<Props> = ({ provider }) => {
                 {provider?.firstName} {provider?.lastName}
               </Typography>
 
-              <Typography fontSize={20}>Age: {provider?.age}</Typography>
+              {provider?.age !== 0 && (
+                <Typography fontSize={20}>Age: {provider?.age}</Typography>
+              )}
             </Stack>
 
             <hr />
