@@ -29,6 +29,8 @@ export const DEFAULT_WEBSITE: Website = {
   ourPartners: [],
   providers: [],
   languages: [],
+  video: "",
+  videoIcon: "",
 };
 
 export const DEFAULT_FEEDBACK = [
