@@ -35,6 +35,7 @@ export const Services: FC = () => {
             alt="Video Logo"
             title="Video Logo"
             id="img_Logo"
+            layout="responsive"
           />
         </WrapperBox>
       )}

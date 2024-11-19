@@ -1,4 +1,6 @@
 import { Box, styled } from "@mui/material";
+import Image from "next/image";
+import { width } from "@mui/system";
 
 export const WrapperBox = styled(Box)(() => {
   return {
