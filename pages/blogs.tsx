@@ -91,6 +91,15 @@ const Blogs = () => {
         width={1}
         maxWidth={1100}
         margin="0 auto 40px"
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          "@media (max-width: 600px)": {
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          },
+        }}
       >
         <Stack
           component="section"
@@ -98,6 +107,12 @@ const Blogs = () => {
           flexWrap="wrap"
           gap={5}
           maxWidth={800}
+          sx={{
+            "@media (max-width: 600px)": {
+              alignItems: "center",
+              justifyContent: "center",
+            },
+          }}
         >
           {currentBlogs?.length !== 0 ? (
             currentBlogs

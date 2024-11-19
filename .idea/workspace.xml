@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d0662ac-54e4-4449-b5a9-cd9c27c583a2" name="Changes" comment="Fix">
+    <list default="true" id="6d0662ac-54e4-4449-b5a9-cd9c27c583a2" name="Changes" comment="Fix img size">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otherPages/home/Services/Services.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/otherPages/home/Services/Services.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otherPages/home/Services/styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/otherPages/home/Services/styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/blogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/blogs/[blogId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blogs/[blogId].tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +106,7 @@
       <workItem from="1730129571660" duration="746000" />
       <workItem from="1730130704833" duration="183000" />
       <workItem from="1730238835763" duration="888000" />
-      <workItem from="1732039744715" duration="298000" />
+      <workItem from="1732039744715" duration="2005000" />
     </task>
     <task id="LOCAL-00003" summary="update">
       <created>1686481996131</created>
@@ -451,7 +451,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687377172674</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,6 +488,7 @@
     <MESSAGE value="update" />
     <MESSAGE value="Update" />
     <MESSAGE value="Fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
+    <MESSAGE value="Fix img size" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix img size" />
   </component>
 </project>

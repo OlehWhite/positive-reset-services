@@ -88,6 +88,7 @@ const BlogId = ({ data }) => {
               minWidth: 380,
               height: 253,
               mb: 1,
+              mt: 6,
             }}
           >
             {blog?.image ? (
