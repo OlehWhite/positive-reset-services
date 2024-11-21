@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { format, parse } from "date-fns";
 
 import { Box, Pagination, Stack, Typography } from "@mui/material";
-import Image from "next/image";
+import Image from "next/image"; 
 import { Title } from "../otherPages/careerOpportunities/styled";
 
 import { useGetProjects } from "../services/getInfo";
