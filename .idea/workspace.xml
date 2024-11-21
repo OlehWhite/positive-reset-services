@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d0662ac-54e4-4449-b5a9-cd9c27c583a2" name="Changes" comment="Fix img size">
+    <list default="true" id="6d0662ac-54e4-4449-b5a9-cd9c27c583a2" name="Changes" comment="Fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/OurMission/OurMission.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/OurMission/OurMission.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otherPages/aboutUs/Mission/Mission.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/otherPages/aboutUs/Mission/Mission.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otherPages/aboutUs/VisionStatement/VisionStatement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/otherPages/aboutUs/VisionStatement/VisionStatement.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/blogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blogs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/blogs/[blogId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blogs/[blogId].tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

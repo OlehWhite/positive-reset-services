@@ -18,7 +18,7 @@ export const VisionStatement: FC = () => {
   return (
     <Container
       style={{
-        backgroundImage: `url(${IMG})`,
+        backgroundImage: `url(${IMG.src})`,
       }}
     >
       <Wrapper>

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { format, parse } from "date-fns";
 
 import { Box, Pagination, Stack, Typography } from "@mui/material";
-import Image from "next/image"; 
+import Image from "next/image";
 import { Title } from "../otherPages/careerOpportunities/styled";
 
 import { useGetProjects } from "../services/getInfo";
@@ -12,18 +12,7 @@ import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
 import Head from "next/head";
 import Button from "@mui/material/Button";
 
-const generateDateArchive = (monthsToShow = 12) => {
-  const today = new Date();
-  const dates = [];
-
-  for (let i = 0; i < monthsToShow; i++) {
-    const date = new Date(today.getFullYear(), today.getMonth() - i);
-    dates.push(format(date, "MMMM yyyy"));
-  }
-
-  return dates;
-};
-
+// Blogs Component
 const Blogs = () => {
   const router = useRouter();
   const { project } = useGetProjects();
@@ -33,6 +22,19 @@ const Blogs = () => {
 
   const blogsPerPage = 10;
 
+  // Function to extract unique months and years from blog dates
+  const getUniqueMonths = () => {
+    const months = project?.blogs.map((blog) => {
+      const blogDate = parse(blog.date, "MMMM d, yyyy", new Date());
+      return format(blogDate, "MMMM yyyy");
+    });
+
+    // Get unique months
+    const uniqueMonths = [...(new Set(months) as any)];
+    return uniqueMonths;
+  };
+
+  // Filter blogs by selected month and year
   const filteredBlogs = project?.blogs.filter((blog) => {
     if (!selectedDate) return true;
 
@@ -72,17 +74,13 @@ const Blogs = () => {
     setCurrentPage(1);
   };
 
-  const dateArchive = generateDateArchive();
-
   return (
     <>
       <Head>
         <title>Positive Reset Services - Call Today | Blogs</title>
       </Head>
       <OtherHeader />
-
       <Title>BLOGS</Title>
-
       <Box mb={5} borderBottom="1px solid #BEBEBE" />
 
       <Stack
@@ -203,7 +201,7 @@ const Blogs = () => {
 
           <Box borderBottom="1px solid #BEBEBE" mb={2} />
 
-          {dateArchive.map((date, index) => (
+          {getUniqueMonths().map((date, index) => (
             <Typography
               key={index}
               sx={{

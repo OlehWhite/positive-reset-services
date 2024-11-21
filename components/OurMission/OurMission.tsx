@@ -13,7 +13,7 @@ const Questions = () => {
   return (
     <Container id="questions">
       <BoxAccordion>
-        <Accordion>
+        <Accordion defaultExpanded>
           <AccordionSummary expandIcon={<CustomExpandIcon />}>
             <TypographyQuestion variant="h3">OUR MISSION</TypographyQuestion>
           </AccordionSummary>

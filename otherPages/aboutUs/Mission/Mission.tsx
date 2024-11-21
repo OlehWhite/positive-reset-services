@@ -4,6 +4,7 @@ import OurMission from "../../../components/OurMission/OurMission";
 import { Box, Modal } from "@mui/material";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useGetProjects } from "../../../services/getInfo";
 
 const style = {
   position: "absolute" as "absolute",
@@ -16,6 +17,8 @@ const style = {
 };
 
 export const Mission = () => {
+  const { project } = useGetProjects();
+
   const [openModalWindow, setOpenModalWindow] = useState<boolean>(false);
 
   const handleOpen = () => setOpenModalWindow(true);
@@ -35,6 +38,7 @@ export const Mission = () => {
             id="img"
           />
         </WrapperBlock>
+
         <OurMission />
       </Wrapper>
       <Modal
@@ -44,7 +48,7 @@ export const Mission = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <video width={640} controls autoPlay loop src="/videoplayback.mp4" />
+          <video width={640} controls autoPlay loop src={project?.video} />
         </Box>
       </Modal>
     </Container>
