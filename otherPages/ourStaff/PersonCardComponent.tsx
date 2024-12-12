@@ -73,9 +73,7 @@ const PersonCardComponent: FC<Props> = ({ provider }) => {
                 {provider?.title}
               </Typography>
 
-              <Typography fontSize={16} mb={3}>
-                {provider?.text}
-              </Typography>
+               <div dangerouslySetInnerHTML={{ __html: provider?.text }} />
 
               {provider?.link && (
                 <Box component="a" href={provider?.link} target="_black">
