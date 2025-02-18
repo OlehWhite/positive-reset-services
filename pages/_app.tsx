@@ -8,17 +8,13 @@ import "../styles/global.css";
 
 const theme = createTheme({});
 
-const MyApp = ({ Component, pageProps }) => (
-  <>
+const MyApp = ({ Component, pageProps }: any) => (
+  <ThemeProvider theme={theme}>
     <Layout>
-      <main>
-        <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
-          <ToastContainer hideProgressBar />
-        </ThemeProvider>
-      </main>
+      <Component {...pageProps} />
     </Layout>
-  </>
+    <ToastContainer hideProgressBar />
+  </ThemeProvider>
 );
 
 export default MyApp;

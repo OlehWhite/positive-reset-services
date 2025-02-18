@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, useEffect, useState } from "react";
+import React, { FC, ReactNode, useEffect, useState } from "react";
 import { Wrapper, Arrow, Img } from "./styled";
 import { Footer } from "./Footer/Footer";
 import Image from "next/image";
@@ -25,7 +25,7 @@ const CustomImg: FC<CustomImgProps> = ({ show, src }) => {
   );
 };
 
-export const Layout: FC = ({ children }: PropsWithChildren<{}>) => {
+export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   const [showArrow, setShowArrow] = useState(false);
 
   useEffect(() => {

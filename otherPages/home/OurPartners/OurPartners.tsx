@@ -17,24 +17,6 @@ import Slider from "react-slick";
 import Image from "next/image";
 import { useGetProjects } from "../../../services/getInfo";
 
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  arrows: false,
-  useTransform: false,
-  responsive: [
-    {
-      breakpoint: 1335,
-      settings: {
-        slidesToShow: 1,
-      },
-    },
-  ],
-};
-
 export const OurPartners: FC = () => {
   const { project } = useGetProjects();
 
@@ -58,7 +40,34 @@ export const OurPartners: FC = () => {
     ref.current?.slickPrev();
   };
 
-  if (!project?.ourPartners) return;
+  const getArrayLength = (): number => {
+    if (project) {
+      if (project?.ourPartners.length === 1) return 1;
+      else if (project?.ourPartners.length === 2) return 1;
+      else if (project?.ourPartners.length === 3) return 2;
+      else return 3;
+    }
+  };
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: getArrayLength(),
+    slidesToScroll: 1,
+    arrows: false,
+    useTransform: false,
+    responsive: [
+      {
+        breakpoint: 1335,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
+  if (project?.ourPartners.length === 0) return null;
 
   return (
     <Container>

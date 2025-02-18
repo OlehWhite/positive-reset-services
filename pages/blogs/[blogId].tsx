@@ -3,48 +3,30 @@ import { OtherHeader } from "../../components/Layout/OtherHeader/OtherHeader";
 import React, { useEffect, useState } from "react";
 import { Box, CircularProgress, Stack, Typography } from "@mui/material";
 import { useRouter } from "next/router";
-import { IBlog } from "../../services/types";
+import { IBlog, Website } from "../../services/types";
 import Image from "next/image";
 import Button from "@mui/material/Button";
 import { CURRENT_WEBSITE } from "../../services/constants";
 import { fetchProjects } from "../../services/getInfo";
-import { Title } from "../../otherPages/careerOpportunities/styled";
+import { Title } from "../../components/FormFields/styled";
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async (context) => {
+  const { blogId } = context.params;
   const data = await fetchProjects();
 
+  const project = data[0]?.[CURRENT_WEBSITE.POSITIVE_RESET_SERVICES] as Website;
+  const blog = project?.blogs.find((blog) => blog.id === blogId);
   return {
     props: {
-      data,
+      blog: blog || null,
     },
   };
 };
 
-export const getStaticPaths = async () => {
-  const data = await fetchProjects();
-  const paths = data.map((doc) => ({
-    params: { blogId: doc.id },
-  }));
-
-  return { paths, fallback: true };
-};
-
-const BlogId = ({ data }) => {
+const BlogId = ({ blog }: { blog: IBlog }) => {
   const router = useRouter();
-  const { blogId } = router.query;
 
   const [description, setDescription] = useState("");
-  const [blog, setBlog] = useState<IBlog | null>(null);
-
-  useEffect(() => {
-    if (data) {
-      const project = data[0]?.[CURRENT_WEBSITE.POSITIVE_RESET_SERVICES];
-
-      const currentBlog = project?.blogs.find((blog) => blog.id === blogId);
-
-      setBlog(currentBlog);
-    }
-  }, [data, blogId]);
 
   useEffect(() => {
     if (blog?.text) {
@@ -85,7 +67,6 @@ const BlogId = ({ data }) => {
               position: "relative",
               width: 1,
               maxWidth: 380,
-              minWidth: 380,
               height: 253,
               mb: 1,
               mt: 6,

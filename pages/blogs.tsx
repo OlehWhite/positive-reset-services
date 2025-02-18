@@ -2,15 +2,12 @@ import React, { ChangeEvent, useState } from "react";
 import { useRouter } from "next/router";
 import { format, parse } from "date-fns";
 
-import { Box, Pagination, Stack, Typography } from "@mui/material";
+import { Box, Pagination, Stack, Typography, Button } from "@mui/material";
 import Image from "next/image";
-import { Title } from "../otherPages/careerOpportunities/styled";
-
+import { Title } from "../otherPages/ourStaff/style";
 import { useGetProjects } from "../services/getInfo";
-
 import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
 import Head from "next/head";
-import Button from "@mui/material/Button";
 
 // Blogs Component
 const Blogs = () => {
@@ -30,8 +27,7 @@ const Blogs = () => {
     });
 
     // Get unique months
-    const uniqueMonths = [...(new Set(months) as any)];
-    return uniqueMonths;
+    return [...(new Set(months) as any)];
   };
 
   // Filter blogs by selected month and year
