@@ -13,9 +13,6 @@ export const Covid19: FC = () => {
   return (
     <>
       <Wrapper>
-        <Box sx={{ marginTop: "10px" }}>
-          <LogoImgDark />
-        </Box>
         <Box>
           <Title>STATEMENT TO EMPLOYEES AND PATIENTS REGARDING COVID-19</Title>
           <Text>
