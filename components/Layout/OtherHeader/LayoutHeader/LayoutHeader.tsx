@@ -22,11 +22,16 @@ import Image from "next/image";
 import LogoImgDark from "../../../LogoImgDark/LogoImgDark";
 import ROUTES from "../../../../otherPages/path";
 import { useGetProjects } from "../../../../services/getInfo";
-import { Stack } from "@mui/material";
-import GoogleTranslate from "../../../GoogleTranslate";
 
 export const LayoutHeader: FC = () => {
   const { project } = useGetProjects();
+
+  const facebookLink = project?.links.find(
+    (link) => link.title === "Facebook",
+  )?.link;
+  const linkedInLink = project?.links.find(
+    (link) => link.title === "LinkedIn",
+  )?.link;
 
   return (
     <Wrapper>
@@ -66,7 +71,7 @@ export const LayoutHeader: FC = () => {
             <Title>Follow Us</Title>
 
             <WrapperFollow>
-              <Link href={project?.links[0].link} target="_blank">
+              <Link href={facebookLink} target="_blank">
                 <Image
                   src={IMGFacebook}
                   width={12}
@@ -76,7 +81,7 @@ export const LayoutHeader: FC = () => {
                 />
               </Link>
 
-              <Link href={project?.links[1].link} target="_blank">
+              <Link href={linkedInLink} target="_blank">
                 <Image
                   src={IMGLinkedin}
                   width={12}

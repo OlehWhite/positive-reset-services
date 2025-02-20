@@ -43,18 +43,28 @@ const BlogId = ({ blog }: { blog: IBlog }) => {
     <>
       <Head>
         <title>Positive Reset Services - Call Today | Blog</title>
-        <meta name="description" content={description} />
+        <meta name="description" content={description}/>
+        <meta property="og:title" content={blog?.title}/>
+        <meta property="og:description" content={description}/>
+        <meta property="og:image" content={blog?.image}/>
+        <meta
+          property="og:url"
+          content={`https://www.positiveresetservices.com/blogs/${blog?.id}`}
+        />
+        <meta name="twitter:title" content={blog?.title}/>
+        <meta name="twitter:description" content={description}/>
+        <meta name="twitter:image" content={blog?.image}/>
       </Head>
 
-      <OtherHeader />
+      <OtherHeader/>
 
       <Title>BLOG</Title>
 
-      <Box mb={5} borderBottom="1px solid #BEBEBE" />
+      <Box mb={5} borderBottom="1px solid #BEBEBE"/>
 
       <Stack width={1} maxWidth={1100} margin="0 auto 40px" position="relative">
         <Button
-          sx={{ position: "absolute" }}
+          sx={{position: "absolute"}}
           variant="contained"
           onClick={() => router.push("/blogs")}
         >

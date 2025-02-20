@@ -263,6 +263,11 @@ export const Copyright = styled(Box)(() => {
     maxWidth: 1300,
     margin: "0 auto",
     borderTop: "1px solid rgba(255,255,255,.08)",
+
+    "@media (max-width: 1440px)": {
+      paddingTop: 25,
+      flexDirection: "column-reverse",
+    },
   };
 });
 

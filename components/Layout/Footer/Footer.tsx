@@ -55,6 +55,16 @@ const BASE_MENU = [
 export const Footer: FC = () => {
   const { project } = useGetProjects();
 
+  const facebookLink = project?.links.find(
+    (link) => link.title === "Facebook",
+  )?.link;
+  const linkedInLink = project?.links.find(
+    (link) => link.title === "LinkedIn",
+  )?.link;
+  const twitterLink = project?.links.find(
+    (link) => link.title === "Twitter",
+  )?.link;
+
   return (
     <Container>
       <Wrapper>
@@ -156,11 +166,11 @@ export const Footer: FC = () => {
 
       <Copyright>
         <TitleFooter>
-          Copyright © 2021 Vimax LLC. All rights reserved
+          Copyright © 2025 Vimax LLC. All rights reserved
         </TitleFooter>
 
         <Links>
-          <Facebook href={project?.links[0].link} target="_blank">
+          <Facebook href={facebookLink} target="_blank">
             <Image
               src={IMGFacebook}
               width={20}
@@ -170,7 +180,7 @@ export const Footer: FC = () => {
             />
           </Facebook>
 
-          <Twitter href={project?.links[2].link} target="_blank">
+          <Twitter href={twitterLink} target="_blank">
             <Image
               src={IMGTwitter}
               width={20}
@@ -180,7 +190,7 @@ export const Footer: FC = () => {
             />
           </Twitter>
 
-          <Linkedin href={project?.links[1].link} target="_blank">
+          <Linkedin href={linkedInLink} target="_blank">
             <Image
               src={IMGLinkedin}
               width={20}
