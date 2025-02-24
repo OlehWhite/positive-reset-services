@@ -180,7 +180,7 @@ export const Footer: FC = () => {
             />
           </Facebook>
 
-          <Twitter href={twitterLink} target="_blank">
+{/*           <Twitter href={twitterLink} target="_blank">
             <Image
               src={IMGTwitter}
               width={20}
@@ -188,7 +188,7 @@ export const Footer: FC = () => {
               alt="Twitter"
               title="Twitter"
             />
-          </Twitter>
+          </Twitter> */}
 
           <Linkedin href={linkedInLink} target="_blank">
             <Image
