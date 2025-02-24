@@ -36,7 +36,7 @@ import IMGFacebook from "../../../public/facebook-footer.svg";
 import IMGLinkedin from "../../../public/linkedin-footer.svg";
 import IMGAlarmClock from "../../../public/alarm-clock.png";
 import IMGPhoneLogo from "../../../public/silver-mobil.png";
-import IMGTwitter from "../../../public/twitter-footer.svg";
+import IMGInstagram from "../../../public/instagram-footer.png";
 import Image from "next/image";
 import Link from "next/link";
 import LogoImg from "../../LogoImg/LogoImg";
@@ -61,8 +61,8 @@ export const Footer: FC = () => {
   const linkedInLink = project?.links.find(
     (link) => link.title === "LinkedIn",
   )?.link;
-  const twitterLink = project?.links.find(
-    (link) => link.title === "Twitter",
+  const instagramLink = project?.links.find(
+    (link) => link.title === "Instagram",
   )?.link;
 
   return (
@@ -180,15 +180,15 @@ export const Footer: FC = () => {
             />
           </Facebook>
 
-{/*           <Twitter href={twitterLink} target="_blank">
+          <Twitter href={instagramLink} target="_blank">
             <Image
-              src={IMGTwitter}
+              src={IMGInstagram}
               width={20}
               height={20}
-              alt="Twitter"
-              title="Twitter"
+              alt="Instagram"
+              title="Instagram"
             />
-          </Twitter> */}
+          </Twitter>
 
           <Linkedin href={linkedInLink} target="_blank">
             <Image
