@@ -106,6 +106,9 @@ const Blogs = () => {
               alignItems: "center",
               justifyContent: "center",
             },
+            "@media (max-width: 1100px)": {
+              p: "0 16px",
+            },
           }}
         >
           {currentBlogs?.length !== 0 ? (

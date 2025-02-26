@@ -62,9 +62,20 @@ const BlogId = ({ blog }: { blog: IBlog }) => {
 
       <Box mb={5} borderBottom="1px solid #BEBEBE"/>
 
-      <Stack width={1} maxWidth={1100} margin="0 auto 40px" position="relative">
+      <Stack
+        width={1}
+        maxWidth={1100}
+        margin="0 auto 40px"
+        position="relative"
+        sx={{
+          "@media (max-width: 1100px)": {
+            boxSizing: "border-box",
+            p: "0 16px",
+          },
+        }}
+      >
         <Button
-          sx={{position: "absolute"}}
+          sx={{position: "absolute", top: -15}}
           variant="contained"
           onClick={() => router.push("/blogs")}
         >
