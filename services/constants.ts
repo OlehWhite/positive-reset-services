@@ -31,6 +31,7 @@ export const DEFAULT_WEBSITE: Website = {
   languages: [],
   video: "",
   videoIcon: "",
+  googleId: ""
 };
 
 export const DEFAULT_FEEDBACK = [
