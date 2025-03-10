@@ -11,11 +11,6 @@ const NameField: FC<any> = ({ register, errors }: any) => {
       registerOptions={
         {
           required: "This field is required",
-          pattern: {
-            value: /^[A-ZА-ЯҐЄІЇ][a-zA-ZА-Яа-яҐєії]*$/,
-            message:
-              "The first letter must be capitalized. Numbers and special characters are not allowed",
-          },
           minLength: {
             value: 3,
             message: "Minimum number of characters - 3",
