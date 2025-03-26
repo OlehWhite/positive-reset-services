@@ -34,6 +34,11 @@ export const Wrapper = styled(Box)(() => {
     maxWidth: 1300,
     margin: "0 auto",
     paddingBottom: 70,
+    boxSizing: "border-box",
+
+    "@media (max-width: 992px)": {
+      padding: "0 16px",
+    },
   };
 });
 

@@ -11,7 +11,7 @@ import {
   Wrapper,
   WrapperHeader,
 } from "../otherPages/appointmentRequest/styled";
-import { Box } from "@mui/material";
+import {Box, Stack, Typography} from "@mui/material";
 import PreferredDataAndTimeField from "../components/FormFields/PreferredDataAndTimeField/PreferredDataAndTimeField";
 import PhoneNumberField from "../components/FormFields/PhoneNumberField/PhoneNumberField";
 import ErrorValidation from "../components/ErrorValidation/ErrorValidation";
@@ -77,6 +77,25 @@ const AppointmentRequest = () => {
           <Title>APPOINTMENT REQUEST</Title>
         </WrapperHeader>
         <Wrapper>
+          <Stack width={1} maxWidth={1300} m="0 auto">
+            <Typography
+              sx={{
+                fontSize: 14,
+                color: "#959595",
+                fontStyle: "italic",
+                mt: "-40px",
+              }}
+            >
+              {`"By providing a telephone number and submitting this form you are
+              consenting to be contacted by call or SMS text message. Message &
+              data rates may apply. You can reply STOP to opt-out of further
+              text messaging. No mobile information will be shared with third
+              parties/affiliates for marketing/promotional purposes. All other
+              categories exclude text messaging originator opt-in data and
+              consent; this information will not be shared with any third
+              parties."`}
+            </Typography>
+          </Stack>
           <Box>
             <StyledForm onSubmit={handleSubmit(onSubmit)}>
               <InputWrapper>

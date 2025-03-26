@@ -26,6 +26,11 @@ export const Title = styled("h2")(() => {
 export const Wrapper = styled(Box)(() => {
   return {
     margin: "45px 0",
+    boxSizing: "border-box",
+
+    "@media (max-width: 992px)": {
+      padding: "0 16px",
+    },
   };
 });
 

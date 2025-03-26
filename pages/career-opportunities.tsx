@@ -8,24 +8,26 @@ import {
   Button,
   Iframe,
 } from "../otherPages/careerOpportunities/styled";
-import React, { useRef } from "react";
-import { Box } from "@mui/material";
+import React, {useRef} from "react";
+import {Box, Stack, Typography} from "@mui/material";
 import IMGOne from "../public/career.jpg";
 import IMGTwo from "../public/pexels-lukas-653429-scaled.jpg";
 import CareerOpportunitiesInfo from "../components/CareerOpportunitiesInfo";
-import { PersonalForm } from "../otherPages/careerOpportunities/PersonalForm/PersonalForm";
-import { Feedbacks } from "../components/Feedbacks/Feedbacks";
+import {PersonalForm} from "../otherPages/careerOpportunities/PersonalForm/PersonalForm";
+import {Feedbacks} from "../components/Feedbacks/Feedbacks";
 import IMGHeader from "../public/couple-with-problems02а.jpg";
 import Image from "next/image";
-import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
+import {OtherHeader} from "../components/Layout/OtherHeader/OtherHeader";
 import Head from "next/head";
+import {useGetProjects} from "../services/getInfo";
 
 const CareerOpportunities = () => {
+  const {project} = useGetProjects();
   const formRef = useRef<HTMLDivElement>(null);
 
   const scrollToForm = () => {
     if (formRef.current) {
-      formRef.current.scrollIntoView({ behavior: "smooth" });
+      formRef.current.scrollIntoView({behavior: "smooth"});
     }
   };
 
@@ -39,13 +41,13 @@ const CareerOpportunities = () => {
           name="keywords"
           content="Career opportunities, Job openings, Employment opportunities, Careers, Hiring, Job vacancies, Work with us, Join our team, Job positions, Job application."
         />
-        <meta name="description" content="CAREER OPPORTUNITIES" />
+        <meta name="description" content="CAREER OPPORTUNITIES"/>
         <meta
           name="description2"
           content="GROW WITH THE TEAM THAT PUTS PATIENTS FIRST"
         />
       </Head>
-      <OtherHeader />
+      <OtherHeader/>
       <Box>
         <WrapperHeader
           style={{
@@ -85,7 +87,7 @@ const CareerOpportunities = () => {
                 one dose of the vaccine prior to starting employment, with a
                 second dose scheduled, or submit proof of previous vaccination.
               </Text>
-              <Text sx={{ fontSize: 20 }}>
+              <Text sx={{fontSize: 20}}>
                 To apply for a position click on the link below:
               </Text>
               <Button onClick={scrollToForm}>APPLY HERE</Button>
@@ -93,7 +95,7 @@ const CareerOpportunities = () => {
           </Block>
           <Block>
             <WrapperBlock>
-              <CareerOpportunitiesInfo />
+              <CareerOpportunitiesInfo/>
             </WrapperBlock>
             <Box>
               <Image
@@ -107,13 +109,32 @@ const CareerOpportunities = () => {
             </Box>
           </Block>
           <Block>
-            <Iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2960.9976174567655!2d-87.84931488465014!3d42.08610057920619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fc78ff6fb9a55%3A0xcef7ae6ec5c39689!2sLife%20Balance%20Clinic!5e0!3m2!1sen!2sua!4v1638590254244!5m2!1sen!2sua"></Iframe>
+            <Iframe src={project?.googleMaps}/>
           </Block>
-          <Box sx={{ marginBottom: "65px" }} ref={formRef}>
-            <PersonalForm />
+          <Box sx={{marginBottom: "65px"}} ref={formRef}>
+            <PersonalForm/>
           </Box>
+          <Stack width={1} maxWidth={1300} m="0 auto">
+            <Typography
+              sx={{
+                fontSize: 14,
+                color: "#959595",
+                fontStyle: "italic",
+                mt: "-40px",
+              }}
+            >
+              {`"By providing a telephone number and submitting this form you are
+              consenting to be contacted by call or SMS text message. Message &
+              data rates may apply. You can reply STOP to opt-out of further
+              text messaging. No mobile information will be shared with third
+              parties/affiliates for marketing/promotional purposes. All other
+              categories exclude text messaging originator opt-in data and
+              consent; this information will not be shared with any third
+              parties."`}
+            </Typography>
+          </Stack>
         </Wrapper>
-        <Feedbacks />
+        <Feedbacks/>
       </Box>
     </>
   );
