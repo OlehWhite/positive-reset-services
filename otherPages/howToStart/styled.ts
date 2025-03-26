@@ -10,6 +10,11 @@ export const Wrapper = styled(Box)(() => {
   return {
     maxWidth: 1300,
     margin: "0 auto",
+    boxSizing: "border-box",
+
+    "@media (max-width: 992px)": {
+      padding: "0 16px",
+    },
   };
 });
 

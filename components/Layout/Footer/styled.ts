@@ -5,6 +5,9 @@ import Image from "next/image";
 export const Container = styled("footer")(() => {
   return {
     backgroundColor: "#2c3e50",
+    "@media (max-width: 992px)": {
+      padding: "0 16px",
+    },
   };
 });
 
@@ -57,6 +60,9 @@ export const TextLogo = styled(Text)(() => {
     marginBottom: 24,
     textAlign: "right",
     lineHeight: "26px",
+    "@media (max-width: 1335px)": {
+      textAlign: "center",
+    },
   };
 });
 
@@ -96,6 +102,7 @@ export const Email = styled(Box)(() => {
 
 export const ImgPost = styled("img")(() => {
   return {
+    position: "absolute",
     width: 60,
     height: 60,
     borderRadius: "50%",
@@ -169,11 +176,15 @@ export const Nav = styled(Link)(() => {
 export const Menu = styled("nav")(() => {
   return {
     margin: "0 24px 0",
-    maxWidth: "100%",
-    width: 390,
+    maxWidth: 390,
+    width: "100%",
 
     "@media (max-width: 1335px)": {
       marginTop: 34,
+    },
+
+    "@media (max-width: 600px)": {
+      marginLeft: 0,
     },
   };
 });

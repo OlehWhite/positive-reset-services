@@ -5,6 +5,11 @@ export const Container = styled("main")(() => {
     width: "100%",
     maxWidth: 1300,
     margin: "35px auto 35px",
+    boxSizing: "border-box",
+
+    "@media (max-width: 992px)": {
+      padding: "0 16px",
+    },
   };
 });
 
