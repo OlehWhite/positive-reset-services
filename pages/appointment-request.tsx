@@ -83,7 +83,7 @@ const AppointmentRequest = () => {
                 fontSize: 14,
                 color: "#959595",
                 fontStyle: "italic",
-                mt: "-40px",
+                mt: -1,
               }}
             >
               {`"By providing a telephone number and submitting this form you are
