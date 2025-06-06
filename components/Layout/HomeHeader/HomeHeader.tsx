@@ -16,6 +16,7 @@ import IMGRight from "../../../public/arrow-point-to-right.png";
 import IMGLeft from "../../../public/arrow-point-to-left.png";
 import Image from "next/image";
 import { useGetProjects } from "../../../services/getInfo";
+import { Stack } from "@mui/material";
 
 const settings = {
   dots: false,
@@ -65,6 +66,8 @@ export const HomeHeader = () => {
             title={item.title}
             width={1200}
             height={500}
+            priority
+            placeholder="blur"
           />
         ))}
       </Background>

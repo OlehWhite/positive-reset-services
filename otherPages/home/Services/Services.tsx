@@ -1,8 +1,7 @@
 import React, { FC, useState } from "react";
 import { Wrapper, WrapperBox } from "./styled";
-import IMGVideoLogo from "../../../public/video-logo.jpg";
 import { AboutFranchise } from "./AboutFranchise/AboutFranchise";
-import { Box, Modal } from "@mui/material";
+import { Box, CircularProgress, Modal, Stack } from "@mui/material";
 import Image from "next/image";
 import { useGetProjects } from "../../../services/getInfo";
 
@@ -26,7 +25,7 @@ export const Services: FC = () => {
 
   return (
     <Wrapper>
-      {project?.videoIcon && (
+      {project?.videoIcon ? (
         <WrapperBox onClick={handleOpen}>
           <Image
             src={project?.videoIcon}
@@ -38,6 +37,15 @@ export const Services: FC = () => {
             layout="responsive"
           />
         </WrapperBox>
+      ) : (
+        <Stack
+          alignItems="center"
+          justifyContent="center"
+          width={640}
+          height={365}
+        >
+          <CircularProgress size={80} />
+        </Stack>
       )}
       <AboutFranchise />
 
