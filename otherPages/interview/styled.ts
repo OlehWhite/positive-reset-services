@@ -61,13 +61,6 @@ export const Title = styled("h2")(() => {
   };
 });
 
-export const Img = styled("img")(() => {
-  return {
-    width: "100%",
-    maxWidth: 630,
-  };
-});
-
 export const Text = styled("p")(() => {
   return {
     fontSize: 16,

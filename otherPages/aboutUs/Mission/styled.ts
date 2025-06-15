@@ -20,20 +20,6 @@ export const Wrapper = styled(Box)(() => {
   };
 });
 
-export const WrapperVideo = styled(Box)(() => {
-  return {
-    cursor: "pointer",
-
-    "&:hover": {
-      background: "white",
-    },
-
-    "@media (max-width: 1250px)": {
-      marginBottom: 40,
-    },
-  };
-});
-
 export const WrapperBlock = styled(Box)(() => {
   return {
     display: "flex",

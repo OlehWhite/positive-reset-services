@@ -26,16 +26,6 @@ export const Title = styled(Box)(() => {
   };
 });
 
-export const WrapperImg = styled(Box)(() => {
-  return {
-    padding: "24px 20px",
-
-    "&:hover": {
-      backgroundColor: "#3498db",
-    },
-  };
-});
-
 export const Img = styled("img")(() => {
   return {
     display: "flex",

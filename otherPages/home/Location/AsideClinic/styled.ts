@@ -20,26 +20,6 @@ export const Button = styled(MUIButton)(() => {
   };
 });
 
-export const Img = styled("img")(() => {
-  return {
-    width: "100%",
-    maxWidth: 300,
-    padding: "20px 40px 0 40px",
-
-    "@media (max-width: 470px)": {
-      maxWidth: 200,
-    },
-
-    "@media (max-width: 370px)": {
-      maxWidth: 150,
-    },
-
-    "@media (max-width: 400px)": {
-      width: 100,
-    },
-  };
-});
-
 export const BoxWrapper = styled(Box)({
   maxWidth: 700,
   width: "100%",

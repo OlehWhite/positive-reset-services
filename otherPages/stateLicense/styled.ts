@@ -54,13 +54,6 @@ export const Block = styled(Box)(() => {
   };
 });
 
-export const Img = styled("img")(() => {
-  return {
-    width: "100%",
-    maxWidth: 630,
-  };
-});
-
 export const WrapperBlock = styled(Box)(() => {
   return {
     marginTop: 70,

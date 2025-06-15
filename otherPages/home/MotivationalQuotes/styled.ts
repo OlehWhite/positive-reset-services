@@ -67,13 +67,6 @@ export const Text = styled("p")(() => {
   };
 });
 
-export const Img = styled("img")(() => {
-  return {
-    width: 82,
-    borderRadius: "50%",
-  };
-});
-
 export const WrapperBox = styled("div")(() => {
   return {
     width: 82,

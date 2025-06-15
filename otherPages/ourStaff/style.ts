@@ -36,10 +36,6 @@ export const Title = styled("h2")(() => {
   };
 });
 
-export const Counselors = styled("div")(() => {
-  return {};
-});
-
 export const Prescribers = styled("div")(() => {
   return {};
 });

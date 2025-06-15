@@ -48,28 +48,6 @@ export const Buttons = styled(Box)(() => {
   };
 });
 
-export const LeftButton = styled(Image)(() => {
-  return {
-    width: 48,
-    cursor: "pointer",
-
-    "@media (max-width: 1023px)": {
-      display: "none",
-    },
-  };
-});
-
-export const RightButton = styled(Image)(() => {
-  return {
-    width: 48,
-    cursor: "pointer",
-
-    "@media (max-width: 1023px)": {
-      display: "none",
-    },
-  };
-});
-
 export const Title = styled("h2")(() => {
   return {
     fontSize: 28,

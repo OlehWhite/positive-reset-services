@@ -74,10 +74,3 @@ export const Text = styled("p")(() => {
     lineHeight: "26px",
   };
 });
-
-export const Img = styled("img")(() => {
-  return {
-    width: 68,
-    borderRadius: "50%",
-  };
-});

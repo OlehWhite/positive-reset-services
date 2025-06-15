@@ -33,30 +33,12 @@ export const Text = styled("p")(() => {
   };
 });
 
-export const Tel = styled("p")(() => {
-  return {
-    color: "#555555",
-    fontWeight: 600,
-    fontSize: 14,
-    margin: "25px 0",
-  };
-});
-
 export const Email = styled("p")(() => {
   return {
     color: "#b7b7b7",
     fontWeight: 400,
     fontSize: 14,
     margin: 0,
-  };
-});
-
-export const Address = styled("p")(() => {
-  return {
-    color: "#b7b7b7",
-    fontWeight: 400,
-    fontSize: 16,
-    margin: "4px 0 10px",
   };
 });
 
