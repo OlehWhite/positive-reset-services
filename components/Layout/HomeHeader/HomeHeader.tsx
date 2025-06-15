@@ -16,6 +16,7 @@ import IMGRight from "../../../public/arrow-point-to-right.png";
 import IMGLeft from "../../../public/arrow-point-to-left.png";
 import Image from "next/image";
 import { useGetProjects } from "../../../services/getInfo";
+import { LinearProgress, Stack } from "@mui/material";
 
 const settings = {
   dots: false,
@@ -56,18 +57,24 @@ export const HomeHeader = () => {
 
   return (
     <HeaderContainer>
-      <Background ref={ref} {...settings}>
-        {project?.headerImages.map((item, index) => (
-          <Img
-            key={index}
-            src={item.image}
-            alt={item.title}
-            title={item.title}
-            width={1200}
-            height={500}
-          />
-        ))}
-      </Background>
+      {project?.headerImages ? (
+        <Background ref={ref} {...settings}>
+          {project?.headerImages.map((item, index) => (
+            <Img
+              key={index}
+              src={item.image}
+              alt={item.title}
+              title={item.title}
+              width={1200}
+              height={500}
+            />
+          ))}
+        </Background>
+      ) : (
+        <Stack>
+          <LinearProgress />
+        </Stack>
+      )}
 
       <BackgroundTwo ref={refTwo} {...settings}>
         {project?.headerImages.map((item, index) => (

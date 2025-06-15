@@ -9,6 +9,8 @@ import Button from "@mui/material/Button";
 import { CURRENT_WEBSITE } from "../../services/constants";
 import { fetchProjects } from "../../services/getInfo";
 import { Title } from "../../components/FormFields/styled";
+import { WrapperHeader } from "../../otherPages/aboutUs/Header/styled";
+import IMGHeader from "../../public/about-us.jpg";
 
 export const getServerSideProps = async (context) => {
   const { blogId } = context.params;
@@ -43,30 +45,27 @@ const BlogId = ({ blog }: { blog: IBlog }) => {
     <>
       <Head>
         <title>Positive Reset Services - Call Today | Blog</title>
-        <meta name="description" content={description}/>
-        <meta property="og:title" content={blog?.title}/>
-        <meta property="og:description" content={description}/>
-        <meta property="og:image" content={blog?.image}/>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={blog?.title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={blog?.image} />
         <meta
           property="og:url"
           content={`https://www.positiveresetservices.com/blogs/${blog?.id}`}
         />
-        <meta name="twitter:title" content={blog?.title}/>
-        <meta name="twitter:description" content={description}/>
-        <meta name="twitter:image" content={blog?.image}/>
+        <meta name="twitter:title" content={blog?.title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={blog?.image} />
       </Head>
 
-      <OtherHeader/>
-
-      <Title>BLOG</Title>
-
-      <Box mb={5} borderBottom="1px solid #BEBEBE"/>
+      <OtherHeader />
 
       <Stack
         width={1}
         maxWidth={1100}
         margin="0 auto 40px"
         position="relative"
+        mt={3}
         sx={{
           "@media (max-width: 1100px)": {
             boxSizing: "border-box",
@@ -75,7 +74,7 @@ const BlogId = ({ blog }: { blog: IBlog }) => {
         }}
       >
         <Button
-          sx={{position: "absolute", top: -15}}
+          sx={{ position: "absolute", top: -15 }}
           variant="contained"
           onClick={() => router.push("/blogs")}
         >

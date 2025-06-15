@@ -75,9 +75,8 @@ const Blogs = () => {
       <Head>
         <title>Positive Reset Services - Call Today | Blogs</title>
       </Head>
+
       <OtherHeader />
-      <Title>BLOGS</Title>
-      <Box mb={5} borderBottom="1px solid #BEBEBE" />
 
       <Stack
         direction="row"
@@ -85,6 +84,7 @@ const Blogs = () => {
         width={1}
         maxWidth={1100}
         margin="0 auto 40px"
+        mt={3}
         sx={{
           display: "flex",
           flexDirection: "row",
@@ -133,7 +133,7 @@ const Blogs = () => {
                     }}
                   >
                     <Image
-                     src={blog?.image}
+                      src={blog?.image}
                       alt={blog?.title}
                       title={blog?.title}
                       width={380}

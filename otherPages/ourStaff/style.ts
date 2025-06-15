@@ -32,7 +32,7 @@ export const Title = styled("h2")(() => {
     justifyContent: "center",
     color: "#3498db",
     margin: 0,
-    fontSize: 26,
+    fontSize: 24,
   };
 });
 
