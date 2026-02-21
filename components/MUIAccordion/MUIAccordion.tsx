@@ -1,11 +1,16 @@
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import SvgIcon from "@mui/material/SvgIcon";
 import Accordion from "@mui/material/Accordion";
-import { Menu } from "./styled";
-import * as React from "react";
 import { Box } from "@mui/material";
 import Link from "next/link";
+import { Menu } from "./styled";
+
+const ExpandMoreIcon = () => (
+  <SvgIcon>
+    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
+  </SvgIcon>
+);
 
 export const MUIAccordion = () => {
   return (
@@ -45,7 +50,7 @@ export const MUIAccordion = () => {
                 Interviews
               </Link>
               <Link href="/emr" id="dark-link">
-                ERM
+                EMR
               </Link>
               <Link href="/find-location" id="dark-link">
                 Find Location

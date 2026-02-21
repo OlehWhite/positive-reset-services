@@ -1,19 +1,21 @@
+import type { GetStaticProps } from "next";
 import React from "react";
-import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
+import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
 import {
   Container,
   Title,
   WrapperHeader,
   WrapperCards,
   Prescribers,
-} from "../otherPages/ourStaff/style";
+} from "@/otherPages/ourStaff/style";
 import Head from "next/head";
-import PersonCardComponent from "../otherPages/ourStaff/PersonCardComponent";
-import IMGHeader from "../public/4Z8WMNtQ.jpeg";
-import { useGetProjects } from "../services/getInfo";
+import PersonCardComponent from "@/otherPages/ourStaff/PersonCardComponent";
+import IMGHeader from "@/public/4Z8WMNtQ.jpeg";
+import { useProject } from "@/context/ProjectContext";
+import { getProjectData } from "@/services/getInfo";
 
 const OurStaff = () => {
-  const { project } = useGetProjects();
+  const { project } = useProject();
 
   return (
     <>
@@ -29,9 +31,7 @@ const OurStaff = () => {
         <Title>OUR STAFF MEMBERS</Title>
       </WrapperHeader>
       {project?.providers.length === 0 ? (
-        <Title sx={{ fontSize: "50px", margin: "40px 0" }}>
-          Coming soon...
-        </Title>
+        <Title sx={{ fontSize: "50px", margin: "40px 0" }}>Coming soon...</Title>
       ) : (
         <Container>
           <Prescribers>
@@ -46,6 +46,18 @@ const OurStaff = () => {
       )}
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    const project = await getProjectData();
+    return {
+      props: { project },
+      revalidate: 60,
+    };
+  } catch {
+    return { props: { project: null }, revalidate: 60 };
+  }
 };
 
 export default OurStaff;

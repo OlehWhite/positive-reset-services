@@ -1,10 +1,10 @@
-import { Feedbacks } from "../components/Feedbacks/Feedbacks";
+import { Feedbacks } from "@/components/Feedbacks/Feedbacks";
 import React from "react";
 import { Box } from "@mui/material";
-import { Header } from "../otherPages/aboutUs/Header/Header";
-import { Mission } from "../otherPages/aboutUs/Mission/Mission";
-import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
-import { VisionStatement } from "../otherPages/aboutUs/VisionStatement/VisionStatement";
+import { Header } from "@/otherPages/aboutUs/Header/Header";
+import { Mission } from "@/otherPages/aboutUs/Mission/Mission";
+import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
+import { VisionStatement } from "@/otherPages/aboutUs/VisionStatement/VisionStatement";
 import Head from "next/head";
 
 const AboutUs = () => {
@@ -25,10 +25,7 @@ Mental health awareness,
 Stress management,
 Emotional support"
         />
-        <meta
-          name="description"
-          content="OUR MISSION OUR VALUES OUR VISION OUR GOAL"
-        />
+        <meta name="description" content="OUR MISSION OUR VALUES OUR VISION OUR GOAL" />
       </Head>
       <OtherHeader />
       <Header />

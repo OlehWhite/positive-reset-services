@@ -1,19 +1,10 @@
-import {
-  Container,
-  Wrapper,
-  Title,
-  Ul,
-  Li,
-  Text,
-  TContact,
-  Contact,
-} from "./styled";
+import { Container, Wrapper, Title, Ul, Li, Text, TContact, Contact } from "./styled";
 import { DATA_INFO } from "./mocData";
 import { Box } from "@mui/material";
-import { useGetProjects } from "../../../services/getInfo";
+import { useProject } from "@/context/ProjectContext";
 
 export const ContactInfo = () => {
-  const { project } = useGetProjects();
+  const { project } = useProject();
 
   return (
     <Container>

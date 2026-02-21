@@ -3,7 +3,7 @@ import { Wrapper, WrapperBox } from "./styled";
 import { AboutFranchise } from "./AboutFranchise/AboutFranchise";
 import { Box, CircularProgress, Modal, Stack } from "@mui/material";
 import Image from "next/image";
-import { useGetProjects } from "../../../services/getInfo";
+import { useProject } from "@/context/ProjectContext";
 
 const style = {
   position: "absolute" as "absolute",
@@ -16,7 +16,7 @@ const style = {
 };
 
 export const Services: FC = () => {
-  const { project } = useGetProjects();
+  const { project } = useProject();
 
   const [openModalWindow, setOpenModalWindow] = useState<boolean>(false);
 
@@ -38,12 +38,7 @@ export const Services: FC = () => {
           />
         </WrapperBox>
       ) : (
-        <Stack
-          alignContent="center"
-          justifyContent="center"
-          width={640}
-          height={365}
-        >
+        <Stack alignContent="center" justifyContent="center" width={640} height={365}>
           <CircularProgress />
         </Stack>
       )}

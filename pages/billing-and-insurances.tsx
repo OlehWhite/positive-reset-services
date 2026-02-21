@@ -5,14 +5,14 @@ import {
   Block,
   Text,
   WrapperBlock,
-} from "../otherPages/billingAndInsurances/styled";
+} from "@/otherPages/billingAndInsurances/styled";
 import React from "react";
 import { Box } from "@mui/material";
-import IMGOne from "../public/Billing01.jpg";
-import IMGTwo from "../public/Billing02.jpg";
-import IMGHeader from "../public/xGbNIxtA.jpeg";
-import { Feedbacks } from "../components/Feedbacks/Feedbacks";
-import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
+import IMGOne from "@/public/Billing01.jpg";
+import IMGTwo from "@/public/Billing02.jpg";
+import IMGHeader from "@/public/xGbNIxtA.jpeg";
+import { Feedbacks } from "@/components/Feedbacks/Feedbacks";
+import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
 import Image from "next/image";
 import Head from "next/head";
 
@@ -20,9 +20,7 @@ const BillingAndInsurances = () => {
   return (
     <>
       <Head>
-        <title>
-          Positive Reset Services - Call Today | Billing and Insurances
-        </title>
+        <title>Positive Reset Services - Call Today | Billing and Insurances</title>
         <meta
           name="keywords"
           content="Billing and insurances, Insurance coverage, Payment options, Medical billing, Insurance claims, Billing services, Healthcare billing, Insurance reimbursement, Insurance providers, Payment assistance"
@@ -54,10 +52,9 @@ const BillingAndInsurances = () => {
             <WrapperBlock>
               <Title>BILLING & INSURANCES</Title>
               <Text>
-                We accept Medicaid, Medicare, all commercial insurance plans and
-                private pay. In situations where individuals have no insurance
-                coverage and have financiial eligibility, payment is adjusted to
-                a sliding scale.
+                We accept Medicaid, Medicare, all commercial insurance plans and private pay. In
+                situations where individuals have no insurance coverage and have financiial
+                eligibility, payment is adjusted to a sliding scale.
               </Text>
             </WrapperBlock>
           </Block>
@@ -65,19 +62,17 @@ const BillingAndInsurances = () => {
             <WrapperBlock>
               <Title>FINANCIAL RESOURCES</Title>
               <Text>We accept all Credit and Debit cards and Cash.</Text>
+              <Text>Refund Policy: Once service is rendered the payment is final.</Text>
               <Text>
-                Refund Policy: Once service is rendered the payment is final.
+                If you have questions about your bill, please contact our billing department at
+                847-729-6001. For questions regarding your insurance, please contact your insurance
+                company directly.
               </Text>
               <Text>
-                If you have questions about your bill, please contact our
-                billing department at 847-729-6001. For questions regarding your
-                insurance, please contact your insurance company directly.
-              </Text>
-              <Text>
-                Our Clinic does not discriminate on the basis of race, color,
-                religion, sex, national origin, creed, alienage, citizenship
-                status age, marital status, partnership status, disability,
-                sexual orientation, conviction record, or source of payment.
+                Our Clinic does not discriminate on the basis of race, color, religion, sex,
+                national origin, creed, alienage, citizenship status age, marital status,
+                partnership status, disability, sexual orientation, conviction record, or source of
+                payment.
               </Text>
             </WrapperBlock>
             <Box>

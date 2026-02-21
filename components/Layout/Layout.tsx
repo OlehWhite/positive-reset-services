@@ -2,10 +2,10 @@ import React, { FC, ReactNode, useEffect, useState } from "react";
 import { Wrapper, Arrow, Img } from "./styled";
 import { Footer } from "./Footer/Footer";
 import Image from "next/image";
-import IMGLogo from "../../public/down-arrow.png";
-import GoogleTranslate from "../GoogleTranslate";
+import IMGLogo from "@/public/down-arrow.png";
+import GoogleTranslate from "@/components/GoogleTranslate";
 import PhoneIcon from "./PhoneIcon";
-import { useGetProjects } from "../../services/getInfo";
+import { useProject } from "@/context/ProjectContext";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 interface CustomImgProps {
@@ -28,15 +28,14 @@ const CustomImg: FC<CustomImgProps> = ({ show, src }) => {
 };
 
 export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
-  const { project } = useGetProjects();
+  const { project } = useProject();
   const [showArrow, setShowArrow] = useState(false);
 
   const gaId = project?.googleId;
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const triggerOffset = 100;
 
       if (scrollTop > triggerOffset) {
@@ -60,12 +59,7 @@ export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
         {children}
         <Footer />
         <Arrow>
-          <CustomImg
-            show={showArrow}
-            src={IMGLogo.src}
-            alt="Arrow"
-            title="Arrow"
-          />
+          <CustomImg show={showArrow} src={IMGLogo.src} alt="Arrow" title="Arrow" />
         </Arrow>
       </Wrapper>
     </>

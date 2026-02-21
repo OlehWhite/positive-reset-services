@@ -15,8 +15,7 @@ export const Sidebar: FC = () => {
   const currentPath = router.pathname;
 
   const toggleDrawer =
-    (index: number, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
+    (index: number, open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
         event.type === "keydown" &&
         ((event as React.KeyboardEvent).key === "Tab" ||
@@ -50,11 +49,7 @@ export const Sidebar: FC = () => {
           >
             COVID-19
           </Link>
-          <Drawer
-            anchor="right"
-            open={drawer.right}
-            onClose={toggleDrawer(index, false)}
-          >
+          <Drawer anchor="right" open={drawer.right} onClose={toggleDrawer(index, false)}>
             {list("right", index)}
           </Drawer>
         </div>

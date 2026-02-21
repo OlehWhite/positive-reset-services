@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useForm as useFormspree } from "@formspree/react";
+import { useSubmit } from "@formspree/react";
 import {
   ButtonSubmit,
   InputWrapper,
@@ -10,18 +10,18 @@ import {
   Title,
   Wrapper,
   WrapperHeader,
-} from "../otherPages/appointmentRequest/styled";
-import {Box, Stack, Typography} from "@mui/material";
-import PreferredDataAndTimeField from "../components/FormFields/PreferredDataAndTimeField/PreferredDataAndTimeField";
-import PhoneNumberField from "../components/FormFields/PhoneNumberField/PhoneNumberField";
-import ErrorValidation from "../components/ErrorValidation/ErrorValidation";
-import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
-import EmailField from "../components/FormFields/EmailField/EmailField";
-import NameField from "../components/FormFields/NameField/NameField";
-import { Feedbacks } from "../components/Feedbacks/Feedbacks";
-import IMGHeader from "../public/NAPr4GWk.jpeg";
-import React from "react";
-import { PRIVATE_DATA } from "../otherPages/privateData";
+} from "@/otherPages/appointmentRequest/styled";
+import { Box, Stack, Typography } from "@mui/material";
+import PreferredDataAndTimeField from "@/components/FormFields/PreferredDataAndTimeField/PreferredDataAndTimeField";
+import PhoneNumberField from "@/components/FormFields/PhoneNumberField/PhoneNumberField";
+import ErrorValidation from "@/components/ErrorValidation/ErrorValidation";
+import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
+import EmailField from "@/components/FormFields/EmailField/EmailField";
+import NameField from "@/components/FormFields/NameField/NameField";
+import { Feedbacks } from "@/components/Feedbacks/Feedbacks";
+import IMGHeader from "@/public/NAPr4GWk.jpeg";
+import React, { useState } from "react";
+import { PRIVATE_DATA } from "@/otherPages/privateData";
 import Head from "next/head";
 
 interface IForm {
@@ -48,19 +48,23 @@ const AppointmentRequest = () => {
       Message: "",
     },
   });
-  const [state, stateSubmit] = useFormspree(`${PRIVATE_DATA.keyID}`);
+  const [submitted, setSubmitted] = useState(false);
+  const submit = useSubmit(PRIVATE_DATA.keyID, {
+    onSuccess: () => setSubmitted(true),
+  });
 
-  const onSubmit = async (data: any) => {
-    await stateSubmit(data);
+  const onSubmit = async (data: IForm) => {
+    setSubmitted(false);
+    await (submit as (data: Record<string, unknown>) => Promise<void>)(
+      data as unknown as Record<string, unknown>
+    );
     reset();
   };
 
   return (
     <>
       <Head>
-        <title>
-          Positive Reset Services - Call Today | Appointment Request
-        </title>
+        <title>Positive Reset Services - Call Today | Appointment Request</title>
         <meta
           name="keywords"
           content="Appointment request, Book appointment, Schedule appointment, Online appointment, Request appointment, Book online, Healthcare appointment, Medical appointment, Appointment booking, Patient appointment"
@@ -115,10 +119,7 @@ const AppointmentRequest = () => {
               </InputWrapper>
               <InputWrapper>
                 <Label>Preferred Date and Time</Label>
-                <PreferredDataAndTimeField
-                  register={register}
-                  errors={errors}
-                />
+                <PreferredDataAndTimeField register={register} errors={errors} />
               </InputWrapper>
               <InputWrapper>
                 <Label>Your Message</Label>
@@ -135,9 +136,7 @@ const AppointmentRequest = () => {
                 Submit
               </ButtonSubmit>
             </StyledForm>
-            {state.succeeded && (
-              <Success>Your message was sent successfully!</Success>
-            )}
+            {submitted && <Success>Your message was sent successfully!</Success>}
           </Box>
         </Wrapper>
         <Feedbacks />

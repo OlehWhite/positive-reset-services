@@ -12,11 +12,11 @@ import {
   Button,
   PostText,
 } from "./styled";
-import IMGRight from "../../../public/arrow-point-to-right.png";
-import IMGLeft from "../../../public/arrow-point-to-left.png";
+import IMGRight from "@/public/arrow-point-to-right.png";
+import IMGLeft from "@/public/arrow-point-to-left.png";
 
 import Image from "next/image";
-import { useGetProjects } from "../../../services/getInfo";
+import { useProject } from "@/context/ProjectContext";
 import { useRouter } from "next/router";
 import { Typography } from "@mui/material";
 
@@ -40,7 +40,7 @@ const settings = {
 
 export const AboutFranchising: FC = () => {
   const router = useRouter();
-  const { project } = useGetProjects();
+  const { project } = useProject();
 
   const ref = useRef<Slider | null>(null);
 
@@ -73,10 +73,9 @@ export const AboutFranchising: FC = () => {
       <Info>
         <Title>NEWS ABOUT FRANCHISING OPPORTUNITIES</Title>
         <Text>
-          Reading news helps you to learn something new every day, and slow down
-          aging. Reading news helps you to distinguish truth from falsehoods.
-          Reading news can enhance your creativity. Reading news gives you leads
-          with events.
+          Reading news helps you to learn something new every day, and slow down aging. Reading news
+          helps you to distinguish truth from falsehoods. Reading news can enhance your creativity.
+          Reading news gives you leads with events.
         </Text>
       </Info>
       <Carusell>

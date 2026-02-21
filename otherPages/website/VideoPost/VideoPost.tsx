@@ -1,4 +1,4 @@
-import IMGVideoLogo from "../../../public/website-logo-wideo.jpg";
+import IMGVideoLogo from "@/public/website-logo-wideo.jpg";
 import { VideoLogo, Wrapper } from "./styled";
 import { Box, Modal } from "@mui/material";
 import { useState } from "react";
@@ -40,13 +40,7 @@ export const VideoPost = () => {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
-            <video
-              width={640}
-              controls
-              autoPlay
-              loop
-              src="/videoplayback.mp4"
-            />
+            <video width={640} controls autoPlay loop src="/videoplayback.mp4" />
           </Box>
         </Modal>
       </Wrapper>

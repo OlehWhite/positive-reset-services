@@ -1,14 +1,14 @@
-import { styled } from '@mui/material';
+import { styled } from "@mui/material";
 
-export const Link = styled('a')(() => {
+export const Link = styled("a")(() => {
   return {
     fontSize: 14,
-    cursor: 'pointer',
+    cursor: "pointer",
     fontWeight: 600,
-    transition: '.3s',
+    transition: ".3s",
 
-    '&:hover': {
-      color: '#3498db'
-    }
+    "&:hover": {
+      color: "#3498db",
+    },
   };
 });

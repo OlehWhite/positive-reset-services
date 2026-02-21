@@ -1,4 +1,4 @@
-import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
+import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
 
 const Error = () => {
   return (

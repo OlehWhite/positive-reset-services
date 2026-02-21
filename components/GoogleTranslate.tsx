@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useGetProjects } from "../services/getInfo";
+import { useProject } from "@/context/ProjectContext";
 import { Box } from "@mui/material";
 
 const GTranslate = () => {
-  const { project } = useGetProjects();
+  const { project } = useProject();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

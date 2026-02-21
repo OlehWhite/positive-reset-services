@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import IMGMinus from "../../../public/minus.png";
-import IMGPlus from "../../../public/plus.png";
+import IMGMinus from "@/public/minus.png";
+import IMGPlus from "@/public/plus.png";
 import Image from "next/image";
 
 const CustomExpandIcon = () => {
@@ -19,13 +19,7 @@ const CustomExpandIcon = () => {
       }}
     >
       <div className="expandIconWrapper">
-        <Image
-          src={IMGMinus}
-          width={20}
-          height={20}
-          alt="Minus"
-          title="Minus"
-        />
+        <Image src={IMGMinus} width={20} height={20} alt="Minus" title="Minus" />
       </div>
 
       <div className="collapsIconWrapper">

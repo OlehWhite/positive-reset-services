@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Box } from "@mui/material";
-import { IMGLogo } from "../Layout/Footer/styled";
-import IMGLogoFooter from "../../public/logo.png";
+import { IMGLogo } from "@/components/Layout/Footer/styled";
+import IMGLogoFooter from "@/public/logo.png";
 import React from "react";
 
 const LogoImg = () => {
@@ -12,9 +12,7 @@ const LogoImg = () => {
           <IMGLogo src={IMGLogoFooter} alt="Logo" title="Logo" />
         </Box>
         <Box>
-          <Box sx={{ color: "#fff", fontWeight: "600", fontSize: 18 }}>
-            POSITIVE RESET SERVICES
-          </Box>
+          <Box sx={{ color: "#fff", fontWeight: "600", fontSize: 18 }}>POSITIVE RESET SERVICES</Box>
           <Box
             sx={{
               color: "rgba(57,138,243,0.98)",
@@ -24,9 +22,7 @@ const LogoImg = () => {
           >
             Mental Health Clinic
           </Box>
-          <Box sx={{ color: "#fff", fontWeight: "600", fontSize: 14 }}>
-            FRANCHISING OPPORTUNITY
-          </Box>
+          <Box sx={{ color: "#fff", fontWeight: "600", fontSize: 14 }}>FRANCHISING OPPORTUNITY</Box>
         </Box>
       </Box>
     </Link>

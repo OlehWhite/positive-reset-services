@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledInput } from "../styled";
+import { StyledInput } from "@/components/FormFields/styled";
 
 const PreferredDataAndTimeField = ({ register }: any) => {
   return (

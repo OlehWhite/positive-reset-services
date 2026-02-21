@@ -5,17 +5,17 @@ import {
   Text,
   Title,
   WrapperHeader,
-} from "../otherPages/findLocation/styled";
+} from "@/otherPages/findLocation/styled";
 import { Box } from "@mui/material";
-import IMGOne from "../public/03-4.jpg";
-import IMGTwo from "../public/01-3.jpg";
-import IMGThree from "../public/04-5.jpg";
-import IMGFour from "../public/05-3.jpg";
-import IMGHeader from "../public/Location-Background-1.jpg";
-import { Feedbacks } from "../components/Feedbacks/Feedbacks";
+import IMGOne from "@/public/03-4.jpg";
+import IMGTwo from "@/public/01-3.jpg";
+import IMGThree from "@/public/04-5.jpg";
+import IMGFour from "@/public/05-3.jpg";
+import IMGHeader from "@/public/Location-Background-1.jpg";
+import { Feedbacks } from "@/components/Feedbacks/Feedbacks";
 import React from "react";
 import Image from "next/image";
-import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
+import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
 import Head from "next/head";
 
 const FindLocation = () => {
@@ -66,11 +66,10 @@ Behavioral Health Facilities"
             <Info>
               <Title>HOW TO PICK A FRANCHISE LOCATION?</Title>
               <Text>
-                For Mental Health franchises, the right location is key to
-                success. The catch is that franchisor willingness to help find
-                the site and negotiate the lease varies tremendously. When
-                you’re on the lookout for the perfect location for your shiny
-                new franchise, here are three key considerations.
+                For Mental Health franchises, the right location is key to success. The catch is
+                that franchisor willingness to help find the site and negotiate the lease varies
+                tremendously. When you’re on the lookout for the perfect location for your shiny new
+                franchise, here are three key considerations.
               </Text>
             </Info>
           </Post>
@@ -78,15 +77,14 @@ Behavioral Health Facilities"
             <Info>
               <Title>GET EXPERIENCED SUPPORT</Title>
               <Text>
-                Although your franchise agreement might include the rights to a
-                particular geographic region, there are often umpteen potential
-                sites. It’s important to identify the best environment for your
-                fledgling business to succeed. That analysis requires an
-                experienced franchisor with a team that has studied the best
-                environments for the franchise’s success, and that works with
-                experienced real estate brokers or a commercial broker network.
-                Positive Reset Services has such experience and connections. We
-                will always support you in finding a location for your clinic.
+                Although your franchise agreement might include the rights to a particular
+                geographic region, there are often umpteen potential sites. It’s important to
+                identify the best environment for your fledgling business to succeed. That analysis
+                requires an experienced franchisor with a team that has studied the best
+                environments for the franchise’s success, and that works with experienced real
+                estate brokers or a commercial broker network. Positive Reset Services has such
+                experience and connections. We will always support you in finding a location for
+                your clinic.
               </Text>
             </Info>
             <Box>
@@ -114,12 +112,11 @@ Behavioral Health Facilities"
             <Info>
               <Title>ANALYZE THE AREA</Title>
               <Text>
-                A suitable building is one part of the equation, but it’s
-                equally important to understand the area, including traffic
-                patterns, demographics and future building plans. Even if a
-                location looks great on paper, it’s important to inspect the
-                traffic patterns around it. If it’s too difficult to access,
-                patients might not bother.
+                A suitable building is one part of the equation, but it’s equally important to
+                understand the area, including traffic patterns, demographics and future building
+                plans. Even if a location looks great on paper, it’s important to inspect the
+                traffic patterns around it. If it’s too difficult to access, patients might not
+                bother.
               </Text>
             </Info>
           </Post>
@@ -127,11 +124,10 @@ Behavioral Health Facilities"
             <Info>
               <Title>SWEAT THE LEASE DETAILS</Title>
               <Text>
-                Positive Reset Services strongly recommends all franchisees
-                retain legal counsel to review their leases to protect their
-                best interests and ensure the lease allows for fulfillment of
-                the franchise agreements, including space configuration, signage
-                and other factors.
+                Positive Reset Services strongly recommends all franchisees retain legal counsel to
+                review their leases to protect their best interests and ensure the lease allows for
+                fulfillment of the franchise agreements, including space configuration, signage and
+                other factors.
               </Text>
             </Info>
             <Box>

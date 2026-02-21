@@ -11,15 +11,15 @@ import {
   Address,
   Wrapper,
 } from "./styled";
-import IMGLeft from "../../../public/arrow-point-to-left.png";
-import IMGRight from "../../../public/arrow-point-to-right.png";
+import IMGLeft from "@/public/arrow-point-to-left.png";
+import IMGRight from "@/public/arrow-point-to-right.png";
 import React, { FC, useEffect, useRef, useState } from "react";
 import { Box } from "@mui/material";
 import Slider from "react-slick";
 import Drawer from "@mui/material/Drawer";
 import { AsideClinic } from "./AsideClinic/AsideClinic";
 import Image from "next/image";
-import { useGetProjects } from "../../../services/getInfo";
+import { useProject } from "@/context/ProjectContext";
 
 const settings = {
   dots: false,
@@ -40,7 +40,7 @@ const settings = {
 };
 
 export const Location: FC = () => {
-  const { project } = useGetProjects();
+  const { project } = useProject();
 
   const ref = useRef<Slider | null>(null);
   const [openIndex, setOpenIndex] = useState(-1);
@@ -73,10 +73,9 @@ export const Location: FC = () => {
         <Title>POSITIVE RESET SERVICES LOCATIONS</Title>
 
         <Text>
-          POSITIVE RESET SERVICES is a successful franchise company that opens
-          Mental Health Clinics across Unlined Sates. POSITIVE RESET SERVICES
-          works like a professional system that has stood the test of time,
-          financial success and successful treatment outcomes.
+          POSITIVE RESET SERVICES is a successful franchise company that opens Mental Health Clinics
+          across Unlined Sates. POSITIVE RESET SERVICES works like a professional system that has
+          stood the test of time, financial success and successful treatment outcomes.
         </Text>
       </Info>
 
@@ -96,11 +95,7 @@ export const Location: FC = () => {
             <Wrapper key={index}>
               <Box onClick={() => setOpenIndex(index)}>
                 <Img
-                  src={
-                    location.open
-                      ? "/location-open.png"
-                      : "/location-opening-soon.png"
-                  }
+                  src={location.open ? "/location-open.png" : "/location-opening-soon.png"}
                   alt={location.address}
                   title={location.address}
                 />
@@ -114,11 +109,7 @@ export const Location: FC = () => {
                 </Box>
               </Box>
 
-              <Drawer
-                anchor="right"
-                open={openIndex === index}
-                onClose={() => setOpenIndex(-1)}
-              >
+              <Drawer anchor="right" open={openIndex === index} onClose={() => setOpenIndex(-1)}>
                 <AsideClinic setOpenIndex={setOpenIndex} location={location} />
               </Drawer>
             </Wrapper>

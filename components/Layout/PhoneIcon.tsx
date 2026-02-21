@@ -1,10 +1,10 @@
 import { Stack } from "@mui/material";
 import Image from "next/image";
 import React from "react";
-import { useGetProjects } from "../../services/getInfo";
+import { useProject } from "@/context/ProjectContext";
 
 const PhoneIcon = () => {
-  const { project } = useGetProjects();
+  const { project } = useProject();
 
   return (
     <Stack
@@ -27,13 +27,7 @@ const PhoneIcon = () => {
         },
       }}
     >
-      <Image
-        src="/call-icon.png"
-        width={40}
-        height={40}
-        alt="Phone icon"
-        title="Phone icon"
-      />
+      <Image src="/call-icon.png" width={40} height={40} alt="Phone icon" title="Phone icon" />
     </Stack>
   );
 };

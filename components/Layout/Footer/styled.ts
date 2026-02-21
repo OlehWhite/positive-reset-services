@@ -182,7 +182,6 @@ export const Menu = styled("nav")(() => {
     "@media (max-width: 1335px)": {
       marginTop: 34,
     },
-
   };
 });
 

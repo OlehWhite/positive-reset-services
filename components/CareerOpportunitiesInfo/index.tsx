@@ -1,7 +1,7 @@
-import React from 'react';
-import { Accordion, BoxAccordion, Container, TypographyQuestion, TypographyText } from './styled';
-import { AccordionSummary, AccordionDetails } from '@mui/material';
-import CustomExpandIcon from './CustomExpandIcon';
+import React from "react";
+import { Accordion, BoxAccordion, Container, TypographyQuestion, TypographyText } from "./styled";
+import { AccordionSummary, AccordionDetails } from "@mui/material";
+import CustomExpandIcon from "./CustomExpandIcon";
 
 const CareerOpportunitiesInfo = () => {
   return (

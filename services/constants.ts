@@ -31,7 +31,7 @@ export const DEFAULT_WEBSITE: Website = {
   languages: [],
   video: "",
   videoIcon: "",
-  googleId: ""
+  googleId: "",
 };
 
 export const DEFAULT_FEEDBACK = [
@@ -40,8 +40,7 @@ export const DEFAULT_FEEDBACK = [
     text: "I was quite literally standing on an edge, ready to jump off. And now I haven’t had a thought like that in weeks. I’m feeling a lot more like myself from my golden days. I’m, like, ready to start working on things again. It’s been really, really exciting. Having the energy to do that, just do things again.",
   },
   {
-    title:
-      "- Christopher - PTSD, Anxiety, Depression, Veteran, Work, TMS, Ketamine",
+    title: "- Christopher - PTSD, Anxiety, Depression, Veteran, Work, TMS, Ketamine",
     text: "When you’re stuck in these places of depression and PTSD and anxiety, it’s like, you’re not really living a life, you’re just trying to manage a life. And, you know, I feel like, for the first time in a really long time, I’m living a life.",
   },
   {

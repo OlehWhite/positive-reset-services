@@ -3,10 +3,10 @@ import { Box } from "@mui/material";
 import { useRouter } from "next/router";
 import { Container, Wrapper, WrapperMenu, WrapperSidebar } from "./styled";
 import { BASE_NAV } from "./constants";
-import { MUIAccordion } from "../../../MUIAccordion/MUIAccordion";
+import { MUIAccordion } from "@/components/MUIAccordion/MUIAccordion";
 import Link from "next/link";
-import { Services } from "../../../Services/Services";
-import { Sidebar } from "../../../../otherPages/home/Sidebar/Sidebar";
+import { Services } from "@/components/Services/Services";
+import { Sidebar } from "@/otherPages/home/Sidebar/Sidebar";
 
 export const LayoutNavHed: FC = () => {
   const [active, setActive] = useState("/");

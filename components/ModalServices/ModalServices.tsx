@@ -3,7 +3,7 @@ import { Box, Modal } from "@mui/material";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { DATA_LINKS } from "../Services/constants";
+import { DATA_LINKS } from "@/components/Services/constants";
 
 const style = {
   position: "absolute",

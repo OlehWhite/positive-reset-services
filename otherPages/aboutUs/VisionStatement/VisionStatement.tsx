@@ -1,17 +1,9 @@
-import {
-  Container,
-  Title,
-  Text,
-  Label,
-  Wrapper,
-  Rating,
-  TextRating,
-} from "./styled";
-import IGMLabel from "../../../public/signature-white-img.png";
+import { Container, Title, Text, Label, Wrapper, Rating, TextRating } from "./styled";
+import IGMLabel from "@/public/signature-white-img.png";
 import { FC } from "react";
 import { Box } from "@mui/material";
-import { LinearProgressWithLabel } from "../../../components/LinearProgressWithLabel/LinearProgressWithLabel";
-import IMG from "../../../public/h9-parallax-1-1.jpg";
+import { LinearProgressWithLabel } from "@/components/LinearProgressWithLabel/LinearProgressWithLabel";
+import IMG from "@/public/h9-parallax-1-1.jpg";
 import Image from "next/image";
 
 export const VisionStatement: FC = () => {
@@ -26,19 +18,13 @@ export const VisionStatement: FC = () => {
           <Title>WHAT WE INTEND TO ACCOMPLISH</Title>
 
           <Text>
-            Like our Mission, our Vision is ambitious. It describes what we
-            believe to be a future we can help create, one which has significant
-            improvements in the state of mental well-being.
+            Like our Mission, our Vision is ambitious. It describes what we believe to be a future
+            we can help create, one which has significant improvements in the state of mental
+            well-being.
           </Text>
 
           <Label>
-            <Image
-              src={IGMLabel}
-              width={231}
-              height={55}
-              alt="Signature"
-              title="Signature"
-            />
+            <Image src={IGMLabel} width={231} height={55} alt="Signature" title="Signature" />
           </Label>
         </Box>
 

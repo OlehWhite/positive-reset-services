@@ -1,38 +1,7 @@
-import { useEffect, useState } from "react";
-import { collection, getDocs, onSnapshot } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
 import { Website } from "./types";
-import { DEFAULT_WEBSITE } from "./constants";
-
-export const useGetProjects = () => {
-  const [projects, setProjects] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const unsubscribe = onSnapshot(
-      collection(db, "projects"),
-      (snapshot) => {
-        const projectsData = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setProjects(projectsData);
-      },
-      (error) => {
-        setError(error);
-        console.error("Error fetching projects:", error);
-      },
-    );
-
-    return () => unsubscribe();
-  }, []);
-
-  const project: Website = projects
-    ? projects[0]?.["POSITIVE_RESET_SERVICES"]
-    : DEFAULT_WEBSITE;
-
-  return { project, error };
-};
+import { CURRENT_WEBSITE } from "./constants";
 
 export const fetchProjects = async () => {
   try {
@@ -49,3 +18,8 @@ export const fetchProjects = async () => {
     return [];
   }
 };
+
+export async function getProjectData(): Promise<Website | null> {
+  const data = await fetchProjects();
+  return (data[0]?.[CURRENT_WEBSITE.POSITIVE_RESET_SERVICES] as Website) ?? null;
+}

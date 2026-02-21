@@ -7,12 +7,7 @@ interface IInput extends React.InputHTMLAttributes<any> {
   registerOptions?: RegisterOptions;
 }
 
-const Input: React.FC<IInput> = ({
-  name = "",
-  register,
-  registerOptions,
-  ...rest
-}) => {
+const Input: React.FC<IInput> = ({ name = "", register, registerOptions, ...rest }) => {
   return <StyledInput {...rest} {...register(name, { ...registerOptions })} />;
 };
 export default Input;

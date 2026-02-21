@@ -12,10 +12,10 @@ import { useEffect, useRef } from "react";
 import { LayoutHeader } from "./LayoutHeader/LayoutHeader";
 import { LayoutNavHed } from "./LayoutNavHed/LayoutNavHed";
 import Slider from "react-slick";
-import IMGRight from "../../../public/arrow-point-to-right.png";
-import IMGLeft from "../../../public/arrow-point-to-left.png";
+import IMGRight from "@/public/arrow-point-to-right.png";
+import IMGLeft from "@/public/arrow-point-to-left.png";
 import Image from "next/image";
-import { useGetProjects } from "../../../services/getInfo";
+import { useProject } from "@/context/ProjectContext";
 import { LinearProgress, Stack } from "@mui/material";
 
 const settings = {
@@ -30,7 +30,7 @@ const settings = {
 };
 
 export const HomeHeader = () => {
-  const { project } = useGetProjects();
+  const { project } = useProject();
 
   const ref = useRef<Slider | null>(null);
   const refTwo = useRef<Slider | null>(null);
@@ -67,6 +67,8 @@ export const HomeHeader = () => {
               title={item.title}
               width={1200}
               height={500}
+              priority={index === 0}
+              sizes="100vw"
             />
           ))}
         </Background>

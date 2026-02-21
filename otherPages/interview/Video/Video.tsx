@@ -1,5 +1,5 @@
-import { WrapperBox, WrapperVideo } from "../../home/Services/styled";
-import IMGVideoLogo from "../../../public/Interview-Video02.jpg";
+import { WrapperBox, WrapperVideo } from "@/otherPages/home/Services/styled";
+import IMGVideoLogo from "@/public/Interview-Video02.jpg";
 import { Modal } from "@mui/material";
 import React, { useState } from "react";
 import Image from "next/image";

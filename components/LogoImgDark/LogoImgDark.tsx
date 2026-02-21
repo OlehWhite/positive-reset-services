@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Box } from "@mui/material";
-import { IMGLogo } from "../Layout/Footer/styled";
-import IMGLogoFooter from "../../public/logo.png";
+import { IMGLogo } from "@/components/Layout/Footer/styled";
+import IMGLogoFooter from "@/public/logo.png";
 import React from "react";
 
 const LogoImgDark = () => {

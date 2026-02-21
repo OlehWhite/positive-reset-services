@@ -31,16 +31,16 @@ import {
 } from "./styled";
 import React, { FC } from "react";
 import { Box } from "@mui/material";
-import ModalServices from "../../ModalServices/ModalServices";
-import IMGFacebook from "../../../public/facebook-footer.svg";
-import IMGLinkedin from "../../../public/linkedin-footer.svg";
-import IMGAlarmClock from "../../../public/alarm-clock.png";
-import IMGPhoneLogo from "../../../public/silver-mobil.png";
-import IMGInstagram from "../../../public/instagram-footer.png";
+import ModalServices from "@/components/ModalServices/ModalServices";
+import IMGFacebook from "@/public/facebook-footer.svg";
+import IMGLinkedin from "@/public/linkedin-footer.svg";
+import IMGAlarmClock from "@/public/alarm-clock.png";
+import IMGPhoneLogo from "@/public/silver-mobil.png";
+import IMGInstagram from "@/public/instagram-footer.png";
 import Image from "next/image";
 import Link from "next/link";
-import LogoImg from "../../LogoImg/LogoImg";
-import { useGetProjects } from "../../../services/getInfo";
+import LogoImg from "@/components/LogoImg/LogoImg";
+import { useProject } from "@/context/ProjectContext";
 
 const BASE_MENU = [
   { page: "Home", path: "/" },
@@ -53,17 +53,11 @@ const BASE_MENU = [
 ];
 
 export const Footer: FC = () => {
-  const { project } = useGetProjects();
+  const { project } = useProject();
 
-  const facebookLink = project?.links.find(
-    (link) => link.title === "Facebook",
-  )?.link;
-  const linkedInLink = project?.links.find(
-    (link) => link.title === "LinkedIn",
-  )?.link;
-  const instagramLink = project?.links.find(
-    (link) => link.title === "Instagram",
-  )?.link;
+  const facebookLink = project?.links.find((link) => link.title === "Facebook")?.link;
+  const linkedInLink = project?.links.find((link) => link.title === "LinkedIn")?.link;
+  const instagramLink = project?.links.find((link) => link.title === "Instagram")?.link;
 
   return (
     <Container>
@@ -71,23 +65,16 @@ export const Footer: FC = () => {
         <Logo>
           <LogoImg />
           <TextLogo>
-            POSITIVE RESET SERVICES is a successful franchise company that opens
-            Mental Health Clinics across United States.
+            POSITIVE RESET SERVICES is a successful franchise company that opens Mental Health
+            Clinics across United States.
             <br />
-            POSITIVE RESET SERVICES operates as a professional system that has
-            stood the test of time, achieving financial success and delivering
-            successful treatment outcomes.
+            POSITIVE RESET SERVICES operates as a professional system that has stood the test of
+            time, achieving financial success and delivering successful treatment outcomes.
           </TextLogo>
 
           <Contact>
             <WrapperImg>
-              <Image
-                src={IMGPhoneLogo}
-                width={25}
-                height={40}
-                alt="Phone"
-                title="Phone"
-              />
+              <Image src={IMGPhoneLogo} width={25} height={40} alt="Phone" title="Phone" />
             </WrapperImg>
 
             <ContactInfo>
@@ -105,12 +92,7 @@ export const Footer: FC = () => {
             {BASE_MENU.map((link, index) => (
               <Li key={index}>
                 {link.page !== "Services" ? (
-                  <Link
-                    style={{ margin: 0 }}
-                    href={link.path}
-                    passHref
-                    id="white-footer-link"
-                  >
+                  <Link style={{ margin: 0 }} href={link.path} passHref id="white-footer-link">
                     {link.page}
                   </Link>
                 ) : (
@@ -129,11 +111,7 @@ export const Footer: FC = () => {
               {project?.blogs
                 ?.map((blog, index) => (
                   <Post key={index}>
-                    <ImgPost
-                      src={blog.image}
-                      alt="First Post"
-                      title="Second Post"
-                    />
+                    <ImgPost src={blog.image} alt="First Post" title="Second Post" />
 
                     <Box sx={{ display: "flex", alignItems: "center", ml: 10 }}>
                       <Text>{blog?.title}</Text>
@@ -149,13 +127,7 @@ export const Footer: FC = () => {
         <WorkingHours>
           <WrapperPosition>
             <WrapperAlarm>
-              <Image
-                src={IMGAlarmClock}
-                width={45}
-                height={45}
-                alt="Alar"
-                title="Alarm"
-              />
+              <Image src={IMGAlarmClock} width={45} height={45} alt="Alar" title="Alarm" />
             </WrapperAlarm>
           </WrapperPosition>
 
@@ -170,39 +142,19 @@ export const Footer: FC = () => {
       </Wrapper>
 
       <Copyright>
-        <TitleFooter>
-          Copyright © 2025 Vimax LLC. All rights reserved
-        </TitleFooter>
+        <TitleFooter>Copyright © 2025 Vimax LLC. All rights reserved</TitleFooter>
 
         <Links>
           <Facebook href={facebookLink} target="_blank">
-            <Image
-              src={IMGFacebook}
-              width={20}
-              height={20}
-              alt="Facebook"
-              title="Facebook"
-            />
+            <Image src={IMGFacebook} width={20} height={20} alt="Facebook" title="Facebook" />
           </Facebook>
 
           <Twitter href={instagramLink} target="_blank">
-            <Image
-              src={IMGInstagram}
-              width={20}
-              height={20}
-              alt="Instagram"
-              title="Instagram"
-            />
+            <Image src={IMGInstagram} width={20} height={20} alt="Instagram" title="Instagram" />
           </Twitter>
 
           <Linkedin href={linkedInLink} target="_blank">
-            <Image
-              src={IMGLinkedin}
-              width={20}
-              height={20}
-              alt="Linkedin"
-              title="Linkedin"
-            />
+            <Image src={IMGLinkedin} width={20} height={20} alt="Linkedin" title="Linkedin" />
           </Linkedin>
         </Links>
       </Copyright>

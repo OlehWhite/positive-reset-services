@@ -8,7 +8,7 @@ const ROUTES = {
   STATE_LICENSE: "/state-license",
   TRAINING: "/training",
   INTERVIEWS: "/interview",
-  ERM: "/emr",
+  EMR: "/emr",
   FIND_LOCATION: "/find-location",
   COMMUNITY_INTEGRATION: "/community-integration",
   OFFICE_LAYOUT_SETUP: "/office-layout-setup",

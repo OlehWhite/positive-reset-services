@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import {
   TextField,
   Wrapper,
@@ -7,15 +7,15 @@ import {
   Title,
   Label,
   Success,
-} from "../../../components/FormFields/styled";
-import { ButtonSubmit } from "../../../components/FormFields/styled";
-import { useForm as useFormspree } from "@formspree/react";
-import EmailField from "../../../components/FormFields/EmailField/EmailField";
-import ErrorValidation from "../../../components/ErrorValidation/ErrorValidation";
-import NameField from "../../../components/FormFields/NameField/NameField";
+} from "@/components/FormFields/styled";
+import { ButtonSubmit } from "@/components/FormFields/styled";
+import { useSubmit } from "@formspree/react";
+import EmailField from "@/components/FormFields/EmailField/EmailField";
+import ErrorValidation from "@/components/ErrorValidation/ErrorValidation";
+import NameField from "@/components/FormFields/NameField/NameField";
 import { useForm } from "react-hook-form";
 import { Box } from "@mui/material";
-import { PRIVATE_DATA } from "../../privateData";
+import { PRIVATE_DATA } from "@/otherPages/privateData";
 
 interface FormData {
   Email: string;
@@ -37,10 +37,16 @@ export const ContactForm: FC = () => {
       Text: "",
     },
   });
-  const [state, stateSubmit] = useFormspree(`${PRIVATE_DATA.keyID}`);
+  const [submitted, setSubmitted] = useState(false);
+  const submit = useSubmit(PRIVATE_DATA.keyID, {
+    onSuccess: () => setSubmitted(true),
+  });
 
   const onSubmit = async (data: FormData) => {
-    await stateSubmit(data);
+    setSubmitted(false);
+    await (submit as (data: Record<string, unknown>) => Promise<void>)(
+      data as unknown as Record<string, unknown>
+    );
     reset();
   };
 
@@ -81,9 +87,7 @@ export const ContactForm: FC = () => {
           </ButtonSubmit>
         </StyledForm>
 
-        {state.succeeded && (
-          <Success>Your message was sent successfully!</Success>
-        )}
+        {submitted && <Success>Your message was sent successfully!</Success>}
       </Box>
     </Wrapper>
   );

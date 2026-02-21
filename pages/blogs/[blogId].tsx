@@ -1,19 +1,20 @@
+import type { GetServerSideProps } from "next";
 import Head from "next/head";
-import { OtherHeader } from "../../components/Layout/OtherHeader/OtherHeader";
+import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
 import React, { useEffect, useState } from "react";
 import { Box, CircularProgress, Stack, Typography } from "@mui/material";
 import { useRouter } from "next/router";
-import { IBlog, Website } from "../../services/types";
+import { IBlog, Website } from "@/services/types";
 import Image from "next/image";
 import Button from "@mui/material/Button";
-import { CURRENT_WEBSITE } from "../../services/constants";
-import { fetchProjects } from "../../services/getInfo";
-import { Title } from "../../components/FormFields/styled";
-import { WrapperHeader } from "../../otherPages/aboutUs/Header/styled";
-import IMGHeader from "../../public/about-us.jpg";
+import { CURRENT_WEBSITE } from "@/services/constants";
+import { fetchProjects } from "@/services/getInfo";
+import { Title } from "@/components/FormFields/styled";
+import { WrapperHeader } from "@/otherPages/aboutUs/Header/styled";
+import IMGHeader from "@/public/about-us.jpg";
 
-export const getServerSideProps = async (context) => {
-  const { blogId } = context.params;
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { blogId } = context.params as { blogId: string };
   const data = await fetchProjects();
 
   const project = data[0]?.[CURRENT_WEBSITE.POSITIVE_RESET_SERVICES] as Website;
@@ -107,23 +108,13 @@ const BlogId = ({ blog }: { blog: IBlog }) => {
                 }}
               />
             ) : (
-              <Stack
-                width={1}
-                height={1}
-                justifyContent="center"
-                alignItems="center"
-              >
+              <Stack width={1} height={1} justifyContent="center" alignItems="center">
                 <CircularProgress size={70} />
               </Stack>
             )}
           </Stack>
 
-          <Typography
-            fontStyle="italic"
-            fontWeight={300}
-            color="#a8a8a8"
-            fontSize={16}
-          >
+          <Typography fontStyle="italic" fontWeight={300} color="#a8a8a8" fontSize={16}>
             {blog?.date}
           </Typography>
         </Stack>

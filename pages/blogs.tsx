@@ -1,18 +1,19 @@
+import type { GetStaticProps } from "next";
 import React, { ChangeEvent, useState } from "react";
 import { useRouter } from "next/router";
 import { format, parse } from "date-fns";
 
 import { Box, Pagination, Stack, Typography, Button } from "@mui/material";
 import Image from "next/image";
-import { Title } from "../otherPages/ourStaff/style";
-import { useGetProjects } from "../services/getInfo";
-import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
+import { Title } from "@/otherPages/ourStaff/style";
+import { useProject } from "@/context/ProjectContext";
+import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
 import Head from "next/head";
+import { getProjectData } from "@/services/getInfo";
 
-// Blogs Component
 const Blogs = () => {
   const router = useRouter();
-  const { project } = useGetProjects();
+  const { project } = useProject();
 
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
@@ -139,6 +140,7 @@ const Blogs = () => {
                       width={380}
                       height={300}
                       sizes="(min-width: 808px) 50vw, 100vw"
+                      loading="lazy"
                       style={{
                         objectFit: "contain",
                         height: "auto",
@@ -170,11 +172,7 @@ const Blogs = () => {
 
                     <Box borderBottom="1px solid #BEBEBE" />
 
-                    <Typography
-                      fontStyle="italic"
-                      fontWeight={300}
-                      color="#a8a8a8"
-                    >
+                    <Typography fontStyle="italic" fontWeight={300} color="#a8a8a8">
                       {blog?.date}
                     </Typography>
                   </Stack>
@@ -232,9 +230,7 @@ const Blogs = () => {
 
       <Stack alignItems="center" my={5}>
         <Pagination
-          count={
-            filteredBlogs ? Math.ceil(filteredBlogs.length / blogsPerPage) : 1
-          }
+          count={filteredBlogs ? Math.ceil(filteredBlogs.length / blogsPerPage) : 1}
           page={currentPage}
           onChange={handlePageChange}
           variant="outlined"
@@ -243,6 +239,18 @@ const Blogs = () => {
       </Stack>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    const project = await getProjectData();
+    return {
+      props: { project },
+      revalidate: 60,
+    };
+  } catch {
+    return { props: { project: null }, revalidate: 60 };
+  }
 };
 
 export default Blogs;

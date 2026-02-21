@@ -1,39 +1,39 @@
-import { styled } from '@mui/material';
+import { styled } from "@mui/material";
 
-export const HeaderContainer = styled('header')(() => {
+export const HeaderContainer = styled("header")(() => {
   return {
-    overflowX: 'hidden'
+    overflowX: "hidden",
   };
 });
 
-export const Img = styled('img')(() => {
+export const Img = styled("img")(() => {
   return {
-    objectFit: 'cover',
-    objectPosition: 'center center',
-    transition: 'opacity 0.5s ease-in-out'
+    objectFit: "cover",
+    objectPosition: "center center",
+    transition: "opacity 0.5s ease-in-out",
   };
 });
 
-export const Title = styled('h2')(() => {
+export const Title = styled("h2")(() => {
   return {
     fontSize: 28,
     fontWeight: 600,
-    color: '#fff',
+    color: "#fff",
 
-    '@media (max-width: 1023px)': {
-      fontSize: 18
-    }
+    "@media (max-width: 1023px)": {
+      fontSize: 18,
+    },
   };
 });
 
-export const Text = styled('p')(() => {
+export const Text = styled("p")(() => {
   return {
     fontSize: 22,
     fontWeight: 400,
-    color: '#fff',
+    color: "#fff",
 
-    '@media (max-width: 1023px)': {
-      fontSize: 16
-    }
+    "@media (max-width: 1023px)": {
+      fontSize: 16,
+    },
   };
 });

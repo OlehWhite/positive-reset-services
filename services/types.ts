@@ -16,7 +16,7 @@ export interface Website {
   languages: string[];
   video: string;
   videoIcon: string;
-  googleId: string
+  googleId: string;
 }
 
 export interface IOurPartner {

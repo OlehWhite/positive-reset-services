@@ -1,7 +1,7 @@
-import { styled } from '@mui/material';
+import { styled } from "@mui/material";
 
-export const StyledInput = styled('input')(() => {
+export const StyledInput = styled("input")(() => {
   return {
-    padding: '10px'
+    padding: "10px",
   };
 });

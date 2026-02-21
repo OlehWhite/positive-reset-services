@@ -7,16 +7,16 @@ import {
   Text,
   Title,
   WrapperBlock,
-} from "../otherPages/stateLicense/styled";
+} from "@/otherPages/stateLicense/styled";
 import React from "react";
-import IMGOne from "../public/StateLicense-01.jpg";
-import IMGTwo from "../public/StateLicense-02.jpg";
-import IMGThee from "../public/StateLicense-03.jpg";
+import IMGOne from "@/public/StateLicense-01.jpg";
+import IMGTwo from "@/public/StateLicense-02.jpg";
+import IMGThee from "@/public/StateLicense-03.jpg";
 import { Box } from "@mui/material";
-import { Feedbacks } from "../components/Feedbacks/Feedbacks";
+import { Feedbacks } from "@/components/Feedbacks/Feedbacks";
 import Image from "next/image";
-import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
-import IMGHeader from "../public/state-license.jpg";
+import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
+import IMGHeader from "@/public/state-license.jpg";
 import Head from "next/head";
 
 const StateLicense = () => {
@@ -71,11 +71,10 @@ State license verification"
             <WrapperBlock>
               <Title>GETTING STATE LICENSE</Title>
               <Text>
-                POSITIVE RESET SERVICES Franchise has developed a one-stop
-                approach and a successful system for complying with state
-                requirements, adjusting policies and procedures to meet those
-                requirements, and using sound business judgment to create
-                profitable and effective mental health programs.
+                POSITIVE RESET SERVICES Franchise has developed a one-stop approach and a successful
+                system for complying with state requirements, adjusting policies and procedures to
+                meet those requirements, and using sound business judgment to create profitable and
+                effective mental health programs.
               </Text>
             </WrapperBlock>
           </Block>
@@ -83,11 +82,10 @@ State license verification"
             <WrapperBlock>
               <Title>UNIVERSAL SYSTEM</Title>
               <Text>
-                There are many hurdles and red tape involved in becoming a
-                licensed mental health facility. At POSITIVE RESET SERVICES,
-                we’ve made it our mission to cut through the red tape and help
-                you overcome obstacles to make your vision a reality – not just
-                a reality, but a profitable one.
+                There are many hurdles and red tape involved in becoming a licensed mental health
+                facility. At POSITIVE RESET SERVICES, we’ve made it our mission to cut through the
+                red tape and help you overcome obstacles to make your vision a reality – not just a
+                reality, but a profitable one.
               </Text>
             </WrapperBlock>
             <Box>
@@ -113,28 +111,23 @@ State license verification"
               />
             </Box>
             <WrapperBlock>
-              <Title>
-                LICENSE OF BEHAVIORAL HEALTH CLINIC | HOW CAN WE HELP?
-              </Title>
+              <Title>LICENSE OF BEHAVIORAL HEALTH CLINIC | HOW CAN WE HELP?</Title>
               <Text>
-                The franchise has, hopefully, already done the work of building
-                a brand and patients trust. That means you’re more likely to
-                have customers as soon as you open, and you can even leverage on
-                existing knowledge of the brand to build excitement for the
-                opening beforehand. Your business is backed by the overall
-                franchise, which means you have more leeway for growing pains
-                than you might with a stand-alone small business.
+                The franchise has, hopefully, already done the work of building a brand and patients
+                trust. That means you’re more likely to have customers as soon as you open, and you
+                can even leverage on existing knowledge of the brand to build excitement for the
+                opening beforehand. Your business is backed by the overall franchise, which means
+                you have more leeway for growing pains than you might with a stand-alone small
+                business.
               </Text>
             </WrapperBlock>
           </Block>
           <Text>
-            POSITIVE RESET SERVICES takes the responsibility of developing a
-            successful franchise system and obtaining a license for a mental
-            health clinic, you can get a profitable business with a reliable
-            system. Our experience allows you to combine your vision with
-            acceptable standards and corresponding paid services. You manage the
-            project with your vision, and we will make sure that its parts bring
-            you a successful future.
+            POSITIVE RESET SERVICES takes the responsibility of developing a successful franchise
+            system and obtaining a license for a mental health clinic, you can get a profitable
+            business with a reliable system. Our experience allows you to combine your vision with
+            acceptable standards and corresponding paid services. You manage the project with your
+            vision, and we will make sure that its parts bring you a successful future.
           </Text>
         </Wrapper>
         <Feedbacks />

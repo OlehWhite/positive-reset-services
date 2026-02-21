@@ -1,36 +1,36 @@
-import { styled, Box } from '@mui/material';
+import { styled, Box } from "@mui/material";
 
 export const Container = styled(Box)(() => {
   return {
-    background: '#f7f7f7',
+    background: "#f7f7f7",
   };
 });
 
 export const Wrapper = styled(Box)(() => {
   return {
     maxWidth: 1300,
-    width: '100%',
-    margin: '0 auto',
-    textAlign: 'center',
+    width: "100%",
+    margin: "0 auto",
+    textAlign: "center",
   };
 });
 
-export const Text = styled('p')(() => {
+export const Text = styled("p")(() => {
   return {
     fontSize: 18,
-    lineHeight: '26px',
+    lineHeight: "26px",
     maxWidth: 1000,
-    color: '#959595',
-    margin: '0 auto',
+    color: "#959595",
+    margin: "0 auto",
     padding: 20,
-    fontWeight: 400
+    fontWeight: 400,
   };
 });
 
-export const Name = styled('p')(() => {
+export const Name = styled("p")(() => {
   return {
     fontSize: 16,
-    color: '#b7b7b7',
-    lineHeight: '24px'
+    color: "#b7b7b7",
+    lineHeight: "24px",
   };
 });

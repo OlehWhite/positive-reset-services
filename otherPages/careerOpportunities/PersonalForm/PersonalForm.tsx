@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useForm as useFormspree } from "@formspree/react";
+import { useSubmit } from "@formspree/react";
 import {
   ButtonSubmit,
   InputWrapper,
@@ -7,15 +7,15 @@ import {
   StyledForm,
   Success,
   Title,
-} from "../../careerOpportunities/styled";
-import NameField from "../../../components/FormFields/NameField/NameField";
-import ErrorValidation from "../../../components/ErrorValidation/ErrorValidation";
-import PhoneNumberField from "../../../components/FormFields/PhoneNumberField/PhoneNumberField";
-import EmailField from "../../../components/FormFields/EmailField/EmailField";
-import PositionYouAreApplyingFor from "../../../components/FormFields/PositionField/PositionField";
-import DateField from "../../../components/FormFields/DateField/DateField";
-import React from "react";
-import { PRIVATE_DATA } from "../../privateData";
+} from "@/otherPages/careerOpportunities/styled";
+import NameField from "@/components/FormFields/NameField/NameField";
+import ErrorValidation from "@/components/ErrorValidation/ErrorValidation";
+import PhoneNumberField from "@/components/FormFields/PhoneNumberField/PhoneNumberField";
+import EmailField from "@/components/FormFields/EmailField/EmailField";
+import PositionYouAreApplyingFor from "@/components/FormFields/PositionField/PositionField";
+import DateField from "@/components/FormFields/DateField/DateField";
+import React, { useState } from "react";
+import { PRIVATE_DATA } from "@/otherPages/privateData";
 
 interface IForm {
   Name: string;
@@ -41,10 +41,16 @@ export const PersonalForm = () => {
       Date: "",
     },
   });
-  const [state, stateSubmit] = useFormspree(`${PRIVATE_DATA.keyID}`);
+  const [submitted, setSubmitted] = useState(false);
+  const submit = useSubmit(PRIVATE_DATA.keyID, {
+    onSuccess: () => setSubmitted(true),
+  });
 
-  const onSubmit = async (data: any) => {
-    await stateSubmit(data);
+  const onSubmit = async (data: IForm) => {
+    setSubmitted(false);
+    await (submit as (data: Record<string, unknown>) => Promise<void>)(
+      data as unknown as Record<string, unknown>
+    );
     reset();
   };
 
@@ -82,9 +88,7 @@ export const PersonalForm = () => {
           Submit
         </ButtonSubmit>
       </StyledForm>
-      {state.succeeded && (
-        <Success>Your message was sent successfully!</Success>
-      )}
+      {submitted && <Success>Your message was sent successfully!</Success>}
     </>
   );
 };

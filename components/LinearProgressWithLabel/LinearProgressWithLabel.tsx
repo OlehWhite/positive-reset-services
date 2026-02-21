@@ -1,6 +1,6 @@
-import LinearProgress, { LinearProgressProps } from '@mui/material/LinearProgress';
-import { Box, Typography } from '@mui/material';
-import { Container, Wrapper } from './style';
+import LinearProgress, { LinearProgressProps } from "@mui/material/LinearProgress";
+import { Box, Typography } from "@mui/material";
+import { Container, Wrapper } from "./style";
 
 export function LinearProgressWithLabel(props: LinearProgressProps & { value: number }) {
   return (

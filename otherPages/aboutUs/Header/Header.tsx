@@ -1,6 +1,6 @@
 import { Title, WrapperHeader } from "./styled";
 import React from "react";
-import IMGHeader from "../../../public/about-us.jpg";
+import IMGHeader from "@/public/about-us.jpg";
 
 export const Header = () => {
   return (

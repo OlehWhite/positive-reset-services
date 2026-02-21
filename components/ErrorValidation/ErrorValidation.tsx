@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import { Text } from './styled';
+import React, { FC } from "react";
+import { Text } from "./styled";
 
 interface IErrorValidation {
   errors: any;

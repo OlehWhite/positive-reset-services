@@ -1,8 +1,8 @@
-import { Address, InfoCard, InfoCardLink, TitleCard } from "../styled";
+import { Address, InfoCard, InfoCardLink, TitleCard } from "@/otherPages/home/Location/styled";
 import { Wrapper, Iframe, Block, Button, BoxWrapper } from "./styled";
 import React, { FC, Dispatch, SetStateAction } from "react";
 import { Box, Stack } from "@mui/material";
-import LogoImgDark from "../../../../components/LogoImgDark/LogoImgDark";
+import LogoImgDark from "@/components/LogoImgDark/LogoImgDark";
 
 type TAsideClinic = {
   location: any;
@@ -26,13 +26,7 @@ export const AsideClinic: FC<TAsideClinic> = ({ setOpenIndex, location }) => {
         <InfoCard>{location?.tel}</InfoCard>
         <InfoCardLink>{location?.email}</InfoCardLink>
 
-        <Stack
-          component="a"
-          href={location?.link}
-          fontSize={14}
-          mb={2}
-          target="_blank"
-        >
+        <Stack component="a" href={location?.link} fontSize={14} mb={2} target="_blank">
           {location?.link}
         </Stack>
       </BoxWrapper>

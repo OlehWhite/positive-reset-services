@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { StyledInput } from "../styled";
+import { StyledInput } from "@/components/FormFields/styled";
 
 const DateField: FC<any> = ({ register, errors }: any) => {
   return (

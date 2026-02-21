@@ -1,10 +1,10 @@
 import { Container, Wrapper, Name, Text } from "./styled";
 import { FC, useEffect, useRef, useState } from "react";
-import IMGIcon from "../../public/icons8.png";
+import IMGIcon from "@/public/icons8.png";
 import { Box } from "@mui/material";
 import Slider from "react-slick";
 import Image from "next/image";
-import { DEFAULT_FEEDBACK } from "../../services/constants";
+import { DEFAULT_FEEDBACK } from "@/services/constants";
 
 const settings = {
   dots: false,

@@ -7,47 +7,42 @@ import {
   WrapperBlock,
   Button,
   Iframe,
-} from "../otherPages/careerOpportunities/styled";
-import React, {useRef} from "react";
-import {Box, Stack, Typography} from "@mui/material";
-import IMGOne from "../public/career.jpg";
-import IMGTwo from "../public/pexels-lukas-653429-scaled.jpg";
-import CareerOpportunitiesInfo from "../components/CareerOpportunitiesInfo";
-import {PersonalForm} from "../otherPages/careerOpportunities/PersonalForm/PersonalForm";
-import {Feedbacks} from "../components/Feedbacks/Feedbacks";
-import IMGHeader from "../public/couple-with-problems02а.jpg";
+} from "@/otherPages/careerOpportunities/styled";
+import React, { useRef } from "react";
+import { Box, Stack, Typography } from "@mui/material";
+import IMGOne from "@/public/career.jpg";
+import IMGTwo from "@/public/pexels-lukas-653429-scaled.jpg";
+import CareerOpportunitiesInfo from "@/components/CareerOpportunitiesInfo";
+import { PersonalForm } from "@/otherPages/careerOpportunities/PersonalForm/PersonalForm";
+import { Feedbacks } from "@/components/Feedbacks/Feedbacks";
+import IMGHeader from "@/public/couple-with-problems02а.jpg";
 import Image from "next/image";
-import {OtherHeader} from "../components/Layout/OtherHeader/OtherHeader";
+import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
 import Head from "next/head";
-import {useGetProjects} from "../services/getInfo";
+import { useProject } from "@/context/ProjectContext";
 
 const CareerOpportunities = () => {
-  const {project} = useGetProjects();
+  const { project } = useProject();
   const formRef = useRef<HTMLDivElement>(null);
 
   const scrollToForm = () => {
     if (formRef.current) {
-      formRef.current.scrollIntoView({behavior: "smooth"});
+      formRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <>
       <Head>
-        <title>
-          Positive Reset Services - Call Today | Career Opportunities
-        </title>
+        <title>Positive Reset Services - Call Today | Career Opportunities</title>
         <meta
           name="keywords"
           content="Career opportunities, Job openings, Employment opportunities, Careers, Hiring, Job vacancies, Work with us, Join our team, Job positions, Job application."
         />
-        <meta name="description" content="CAREER OPPORTUNITIES"/>
-        <meta
-          name="description2"
-          content="GROW WITH THE TEAM THAT PUTS PATIENTS FIRST"
-        />
+        <meta name="description" content="CAREER OPPORTUNITIES" />
+        <meta name="description2" content="GROW WITH THE TEAM THAT PUTS PATIENTS FIRST" />
       </Head>
-      <OtherHeader/>
+      <OtherHeader />
       <Box>
         <WrapperHeader
           style={{
@@ -71,31 +66,27 @@ const CareerOpportunities = () => {
             <WrapperBlock>
               <Title>GROW WITH THE TEAM THAT PUTS PATIENTS FIRST</Title>
               <Text>
-                As an employer, our clinic offers professional opportunities
-                that will challenge your abilities, expand your skills, and
-                reward your contributions. Ours is a positive work environment
-                that encourages both personal and professional growth for every
-                employee. A philosophy of mutual respect is fostered; as a
-                result, many of our team members have been with us for years.
+                As an employer, our clinic offers professional opportunities that will challenge
+                your abilities, expand your skills, and reward your contributions. Ours is a
+                positive work environment that encourages both personal and professional growth for
+                every employee. A philosophy of mutual respect is fostered; as a result, many of our
+                team members have been with us for years.
               </Text>
               <Text>
-                Ensuring the safety and well-being of our patients, visitors,
-                staff, and communities is our deepest commitment at our clinic.
-                As a condition of employment, in our clinic requires all new
-                hires to be fully vaccinated for COVID-19, unless there is an
-                approved exemption. New hires will be required to have at least
-                one dose of the vaccine prior to starting employment, with a
-                second dose scheduled, or submit proof of previous vaccination.
+                Ensuring the safety and well-being of our patients, visitors, staff, and communities
+                is our deepest commitment at our clinic. As a condition of employment, in our clinic
+                requires all new hires to be fully vaccinated for COVID-19, unless there is an
+                approved exemption. New hires will be required to have at least one dose of the
+                vaccine prior to starting employment, with a second dose scheduled, or submit proof
+                of previous vaccination.
               </Text>
-              <Text sx={{fontSize: 20}}>
-                To apply for a position click on the link below:
-              </Text>
+              <Text sx={{ fontSize: 20 }}>To apply for a position click on the link below:</Text>
               <Button onClick={scrollToForm}>APPLY HERE</Button>
             </WrapperBlock>
           </Block>
           <Block>
             <WrapperBlock>
-              <CareerOpportunitiesInfo/>
+              <CareerOpportunitiesInfo />
             </WrapperBlock>
             <Box>
               <Image
@@ -109,10 +100,10 @@ const CareerOpportunities = () => {
             </Box>
           </Block>
           <Block>
-            <Iframe src={project?.googleMaps}/>
+            <Iframe src={project?.googleMaps} />
           </Block>
-          <Box sx={{marginBottom: "65px"}} ref={formRef}>
-            <PersonalForm/>
+          <Box sx={{ marginBottom: "65px" }} ref={formRef}>
+            <PersonalForm />
           </Box>
           <Stack width={1} maxWidth={1300} m="0 auto">
             <Typography
@@ -134,7 +125,7 @@ const CareerOpportunities = () => {
             </Typography>
           </Stack>
         </Wrapper>
-        <Feedbacks/>
+        <Feedbacks />
       </Box>
     </>
   );

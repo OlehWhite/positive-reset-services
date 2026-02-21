@@ -1,12 +1,12 @@
 import { Container, Wrapper, WrapperSidebar } from "./styled";
 import { Box } from "@mui/material";
 import { BASE_NAV } from "./constants";
-import { MUIAccordion } from "../../../MUIAccordion/MUIAccordion";
-import { WrapperMenu } from "../../HomeHeader/LayoutNavHed/styled";
+import { MUIAccordion } from "@/components/MUIAccordion/MUIAccordion";
+import { WrapperMenu } from "@/components/Layout/HomeHeader/LayoutNavHed/styled";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Services } from "../../../Services/Services";
-import { Sidebar } from "../../../../otherPages/home/Sidebar/Sidebar";
+import { Services } from "@/components/Services/Services";
+import { Sidebar } from "@/otherPages/home/Sidebar/Sidebar";
 import React from "react";
 
 export const LayoutNav = () => {

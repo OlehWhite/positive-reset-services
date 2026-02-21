@@ -7,27 +7,25 @@ import {
   Container,
   Ul,
   Li,
-} from "../otherPages/communityIntegration/styled";
+} from "@/otherPages/communityIntegration/styled";
 import React from "react";
 import { Box } from "@mui/material";
-import IMGOne from "../public/01-4.jpg";
-import IMGTwo from "../public/04-6.jpg";
-import IMGThree from "../public/02b.jpg";
-import IMGFour from "../public/03-5.jpg";
-import IMGHeader from "../public/Integration-Background.jpg";
-import { BigPost } from "../otherPages/communityIntegration/BigPost/BigPost";
-import { Feedbacks } from "../components/Feedbacks/Feedbacks";
+import IMGOne from "@/public/01-4.jpg";
+import IMGTwo from "@/public/04-6.jpg";
+import IMGThree from "@/public/02b.jpg";
+import IMGFour from "@/public/03-5.jpg";
+import IMGHeader from "@/public/Integration-Background.jpg";
+import { BigPost } from "@/otherPages/communityIntegration/BigPost/BigPost";
+import { Feedbacks } from "@/components/Feedbacks/Feedbacks";
 import Image from "next/image";
-import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
+import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
 import Head from "next/head";
 
 const CommunityIntegration = () => {
   return (
     <>
       <Head>
-        <title>
-          Positive Reset Services - Call Today | Community Integration
-        </title>
+        <title>Positive Reset Services - Call Today | Community Integration</title>
         <meta
           name="keywords"
           content="Community Integration Programs,
@@ -48,10 +46,7 @@ Community Integration Resources"
           content="HOW POSITIVE RESET SERVICES CAN PROMOTE MENTAL HEALTH COMMUNITY INTEGRATION?"
         />
         <meta name="description4" content="EXPERIENCE OF OUR PARTNERS" />
-        <meta
-          name="description5"
-          content="THREE OBSERVABLE TRENDS EMERGING ACROSS THE INDUSTRY"
-        />
+        <meta name="description5" content="THREE OBSERVABLE TRENDS EMERGING ACROSS THE INDUSTRY" />
       </Head>
       <OtherHeader />
       <Box>
@@ -76,25 +71,21 @@ Community Integration Resources"
             </Box>
             <Info>
               <Title>
-                HOW POSITIVE RESET SERVICES CAN PROMOTE MENTAL HEALTH COMMUNITY
-                INTEGRATION?
+                HOW POSITIVE RESET SERVICES CAN PROMOTE MENTAL HEALTH COMMUNITY INTEGRATION?
               </Title>
               <Ul>
                 <Li>
-                  Identify barriers to community integration and target
-                  obstacles that prevent people from being full members of their
-                  communities
+                  Identify barriers to community integration and target obstacles that prevent
+                  people from being full members of their communities
                 </Li>
                 <Li>
-                  Provide supports which bring about meaningful changes in the
-                  lives of people with psychiatric disabilities (i.e. –
-                  Supported Education, Supported Employment, Self-Help Groups,
-                  Parenting Classes, etc.)
+                  Provide supports which bring about meaningful changes in the lives of people with
+                  psychiatric disabilities (i.e. – Supported Education, Supported Employment,
+                  Self-Help Groups, Parenting Classes, etc.)
                 </Li>
                 <Li>
-                  Expand the range of opportunities for people who have mental
-                  illnesses to participate in their communities as active, equal
-                  members
+                  Expand the range of opportunities for people who have mental illnesses to
+                  participate in their communities as active, equal members
                 </Li>
               </Ul>
             </Info>
@@ -103,11 +94,10 @@ Community Integration Resources"
             <Info>
               <Title>OUR RESEARCH ON HUMAN INTEGRATION</Title>
               <Text>
-                Community integration is integral to recovery for individuals
-                with severe mental illness. We explored the integration of
-                individuals with severe mental illness into mental health and
-                non–mental health communities and associations with mental
-                health service intensity.
+                Community integration is integral to recovery for individuals with severe mental
+                illness. We explored the integration of individuals with severe mental illness into
+                mental health and non–mental health communities and associations with mental health
+                service intensity.
               </Text>
             </Info>
             <Box>
@@ -135,23 +125,19 @@ Community Integration Resources"
             <Info>
               <Title>EXPERIENCE OF OUR PARTNERS</Title>
               <Text>
-                We are working with our partners to survey mental health clinics
-                to better understand their experience of integrating behavioral
-                health care lines with physical care. In our practice, we use
-                survey results and highlight three trends emerging in the mental
-                health industry.
+                We are working with our partners to survey mental health clinics to better
+                understand their experience of integrating behavioral health care lines with
+                physical care. In our practice, we use survey results and highlight three trends
+                emerging in the mental health industry.
               </Text>
             </Info>
           </Post>
           <Post>
             <Info>
-              <Title>
-                THREE OBSERVABLE TRENDS EMERGING ACROSS THE INDUSTRY:
-              </Title>
+              <Title>THREE OBSERVABLE TRENDS EMERGING ACROSS THE INDUSTRY:</Title>
               <Text>
                 1. EHR optimization is needed for successful integration <br />
-                2. Patient experience and care coordination drive improvements{" "}
-                <br />
+                2. Patient experience and care coordination drive improvements <br />
                 3. Full integration is deemed desirable and attainable
               </Text>
             </Info>

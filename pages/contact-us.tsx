@@ -1,7 +1,7 @@
-import { Container } from "../otherPages/contactUs/styled";
-import { ContactInfo } from "../otherPages/contactUs/ContactInfo/ContactInfo";
-import { ContactForm } from "../otherPages/contactUs/ContactForm/ContactForm";
-import { OtherHeader } from "../components/Layout/OtherHeader/OtherHeader";
+import { Container } from "@/otherPages/contactUs/styled";
+import { ContactInfo } from "@/otherPages/contactUs/ContactInfo/ContactInfo";
+import { ContactForm } from "@/otherPages/contactUs/ContactForm/ContactForm";
+import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
 import Head from "next/head";
 import React from "react";
 

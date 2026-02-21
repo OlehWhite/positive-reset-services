@@ -1,24 +1,15 @@
 import { FC, useEffect, useRef } from "react";
-import {
-  Container,
-  Wrapper,
-  Title,
-  Img,
-  Carusell,
-  Clinicals,
-  Link,
-  Block,
-} from "./styled";
-import IMGRight from "../../../public/arrow-point-to-right.png";
-import IMGLeft from "../../../public/arrow-point-to-left.png";
+import { Container, Wrapper, Title, Img, Carusell, Clinicals, Link, Block } from "./styled";
+import IMGRight from "@/public/arrow-point-to-right.png";
+import IMGLeft from "@/public/arrow-point-to-left.png";
 
 import { Box } from "@mui/material";
 import Slider from "react-slick";
 import Image from "next/image";
-import { useGetProjects } from "../../../services/getInfo";
+import { useProject } from "@/context/ProjectContext";
 
 export const OurPartners: FC = () => {
-  const { project } = useGetProjects();
+  const { project } = useProject();
 
   const ref = useRef<Slider | null>(null);
 
@@ -90,11 +81,7 @@ export const OurPartners: FC = () => {
             {project?.ourPartners.map((partner, index) => (
               <Block key={index}>
                 <Link href={partner?.link} target="_blank">
-                  <Img
-                    src={partner?.image}
-                    alt={partner?.title}
-                    title={partner?.title}
-                  />
+                  <Img src={partner?.image} alt={partner?.title} title={partner?.title} />
                 </Link>
               </Block>
             ))}

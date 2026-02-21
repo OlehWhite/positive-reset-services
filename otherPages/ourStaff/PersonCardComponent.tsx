@@ -9,9 +9,9 @@ import {
   TextName,
   ModalText,
   ModalImg,
-} from "../../otherPages/ourStaff/style";
+} from "@/otherPages/ourStaff/style";
 import { Box, Modal, Stack, Typography } from "@mui/material";
-import { IProvider } from "../../services/types";
+import { IProvider } from "@/services/types";
 
 interface Props {
   provider: IProvider;
@@ -43,28 +43,16 @@ const PersonCardComponent: FC<Props> = ({ provider }) => {
         aria-describedby="modal-modal-description"
       >
         <ModalContainer>
-          <Box
-            width="100%"
-            maxWidth={270}
-            height={400}
-            borderRadius="15px"
-            overflow="hidden"
-          >
+          <Box width="100%" maxWidth={270} height={400} borderRadius="15px" overflow="hidden">
             <ModalImg src={provider?.image} alt={provider?.firstName} />
           </Box>
           <Box width="100%">
-            <Stack
-              direction="row"
-              alignItems="center"
-              justifyContent="space-between"
-            >
+            <Stack direction="row" alignItems="center" justifyContent="space-between">
               <Typography fontSize={20}>
                 {provider?.firstName} {provider?.lastName}
               </Typography>
 
-              {provider?.age !== 0 && (
-                <Typography fontSize={20}>Age: {provider?.age}</Typography>
-              )}
+              {provider?.age !== 0 && <Typography fontSize={20}>Age: {provider?.age}</Typography>}
             </Stack>
 
             <hr />
@@ -73,7 +61,7 @@ const PersonCardComponent: FC<Props> = ({ provider }) => {
                 {provider?.title}
               </Typography>
 
-               <div dangerouslySetInnerHTML={{ __html: provider?.text }} />
+              <div dangerouslySetInnerHTML={{ __html: provider?.text }} />
 
               {provider?.link && (
                 <Box component="a" href={provider?.link} target="_black">

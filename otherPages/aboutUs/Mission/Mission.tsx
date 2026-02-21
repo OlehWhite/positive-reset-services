@@ -1,10 +1,10 @@
 import { Container, Wrapper, WrapperBlock } from "./styled";
-import IMGVideoLogo from "../../../public/video-logo.jpg";
-import OurMission from "../../../components/OurMission/OurMission";
+import IMGVideoLogo from "@/public/video-logo.jpg";
+import OurMission from "@/components/OurMission/OurMission";
 import { Box, Modal } from "@mui/material";
 import React, { useState } from "react";
 import Image from "next/image";
-import { useGetProjects } from "../../../services/getInfo";
+import { useProject } from "@/context/ProjectContext";
 
 const style = {
   position: "absolute" as "absolute",
@@ -17,7 +17,7 @@ const style = {
 };
 
 export const Mission = () => {
-  const { project } = useGetProjects();
+  const { project } = useProject();
 
   const [openModalWindow, setOpenModalWindow] = useState<boolean>(false);
 

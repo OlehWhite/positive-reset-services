@@ -1,14 +1,32 @@
-import { HomeHeader } from "../components/Layout/HomeHeader/HomeHeader";
-import { MotivationalQuotes } from "../otherPages/home/MotivationalQuotes/MotivationalQuotes";
-import { FranchiseOptions } from "../otherPages/home/FranchiseOptions/FranchiseOptions";
-import { AboutFranchising } from "../otherPages/home/AboutFranchising/AboutFranchising";
-import { Feedbacks } from "../components/Feedbacks/Feedbacks";
-import { OurPartners } from "../otherPages/home/OurPartners/OurPartners";
-import { Location } from "../otherPages/home/Location/Location";
-import { Services } from "../otherPages/home/Services/Services";
-import { Box } from "@mui/material";
-import React from "react";
+import dynamic from "next/dynamic";
+import { HomeHeader } from "@/components/Layout/HomeHeader/HomeHeader";
+import { Services } from "@/otherPages/home/Services/Services";
 import Head from "next/head";
+
+const MotivationalQuotes = dynamic(
+  () => import("@/otherPages/home/MotivationalQuotes/MotivationalQuotes").then((m) => m.MotivationalQuotes),
+  { loading: () => null }
+);
+const Location = dynamic(
+  () => import("@/otherPages/home/Location/Location").then((m) => m.Location),
+  { loading: () => null }
+);
+const Feedbacks = dynamic(
+  () => import("@/components/Feedbacks/Feedbacks").then((m) => m.Feedbacks),
+  { loading: () => null }
+);
+const FranchiseOptions = dynamic(
+  () => import("@/otherPages/home/FranchiseOptions/FranchiseOptions").then((m) => m.FranchiseOptions),
+  { loading: () => null }
+);
+const AboutFranchising = dynamic(
+  () => import("@/otherPages/home/AboutFranchising/AboutFranchising").then((m) => m.AboutFranchising),
+  { loading: () => null }
+);
+const OurPartners = dynamic(
+  () => import("@/otherPages/home/OurPartners/OurPartners").then((m) => m.OurPartners),
+  { loading: () => null }
+);
 
 const Home = () => {
   return (
@@ -21,7 +39,7 @@ const Home = () => {
         />
       </Head>
       <HomeHeader />
-      <>
+      <div>
         <Services />
         <MotivationalQuotes />
         <Location />
@@ -29,7 +47,7 @@ const Home = () => {
         <FranchiseOptions />
         <AboutFranchising />
         <OurPartners />
-      </>
+      </div>
     </>
   );
 };
