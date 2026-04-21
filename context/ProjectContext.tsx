@@ -23,31 +23,15 @@ export const ProjectProvider: React.FC<{
   const [project, setProject] = useState<Website>(
     initialProject || DEFAULT_WEBSITE
   );
-  const [isLoading, setIsLoading] = useState(!initialProject);
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(
-      collection(db, "projects"),
-      (snapshot) => {
-        const projectsData = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        const websiteData =
-          projectsData[0]?.[CURRENT_WEBSITE.POSITIVE_RESET_SERVICES];
-        if (websiteData) {
-          setProject(websiteData as Website);
-        }
-        setIsLoading(false);
-      },
-      () => setIsLoading(false)
-    );
-
-    return () => unsubscribe();
-  }, []);
+    if (initialProject) {
+      setProject(initialProject);
+    }
+  }, [initialProject]);
 
   return (
-    <ProjectContext.Provider value={{ project, isLoading }}>
+    <ProjectContext.Provider value={{ project, isLoading: !initialProject }}>
       {children}
     </ProjectContext.Provider>
   );

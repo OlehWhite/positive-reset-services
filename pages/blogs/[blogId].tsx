@@ -14,6 +14,11 @@ import { WrapperHeader } from "@/otherPages/aboutUs/Header/styled";
 import IMGHeader from "@/public/about-us.jpg";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  context.res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10800, stale-while-revalidate=59'
+  );
+
   const { blogId } = context.params as { blogId: string };
   const data = await fetchProjects();
 
@@ -22,6 +27,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       blog: blog || null,
+      project: project || null,
     },
   };
 };

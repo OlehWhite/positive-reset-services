@@ -2,6 +2,13 @@ import dynamic from "next/dynamic";
 import { HomeHeader } from "@/components/Layout/HomeHeader/HomeHeader";
 import { Services } from "@/otherPages/home/Services/Services";
 import Head from "next/head";
+import React from 'react';
+import { useInView } from "react-intersection-observer";
+
+const LazyLoadSection = ({ children }: { children: React.ReactNode }) => {
+  const { ref, inView } = useInView({ triggerOnce: true, rootMargin: "300px 0px" });
+  return <div ref={ref}>{inView ? children : <div style={{ minHeight: "300px" }} />}</div>;
+};
 
 const MotivationalQuotes = dynamic(
   () => import("@/otherPages/home/MotivationalQuotes/MotivationalQuotes").then((m) => m.MotivationalQuotes),
@@ -41,12 +48,12 @@ const Home = () => {
       <HomeHeader />
       <div>
         <Services />
-        <MotivationalQuotes />
-        <Location />
-        <Feedbacks />
-        <FranchiseOptions />
-        <AboutFranchising />
-        <OurPartners />
+        <LazyLoadSection><MotivationalQuotes /></LazyLoadSection>
+        <LazyLoadSection><Location /></LazyLoadSection>
+        <LazyLoadSection><Feedbacks /></LazyLoadSection>
+        <LazyLoadSection><FranchiseOptions /></LazyLoadSection>
+        <LazyLoadSection><AboutFranchising /></LazyLoadSection>
+        <LazyLoadSection><OurPartners /></LazyLoadSection>
       </div>
     </>
   );

@@ -53,10 +53,10 @@ export const getStaticProps: GetStaticProps = async () => {
     const project = await getProjectData();
     return {
       props: { project },
-      revalidate: 60,
+      revalidate: 10800,
     };
   } catch {
-    return { props: { project: null }, revalidate: 60 };
+    return { props: { project: null }, revalidate: 10800 };
   }
 };
 
