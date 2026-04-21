@@ -1,4 +1,4 @@
-import type { GetServerSideProps } from "next";
+import type { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import { OtherHeader } from "@/components/Layout/OtherHeader/OtherHeader";
 import React, { useEffect, useState } from "react";
@@ -13,12 +13,14 @@ import { Title } from "@/components/FormFields/styled";
 import { WrapperHeader } from "@/otherPages/aboutUs/Header/styled";
 import IMGHeader from "@/public/about-us.jpg";
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  context.res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10800, stale-while-revalidate=59'
-  );
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: "blocking" // shows the page when ready and cache it on the edge/server
+  };
+};
 
+export const getStaticProps: GetStaticProps = async (context) => {
   const { blogId } = context.params as { blogId: string };
   const data = await fetchProjects();
 
@@ -29,6 +31,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       blog: blog || null,
       project: project || null,
     },
+    revalidate: 10800, // re-fetch data not more than once every 3 hours
   };
 };
 

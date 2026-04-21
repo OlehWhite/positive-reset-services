@@ -12,27 +12,27 @@ const LazyLoadSection = ({ children }: { children: React.ReactNode }) => {
 
 const MotivationalQuotes = dynamic(
   () => import("@/otherPages/home/MotivationalQuotes/MotivationalQuotes").then((m) => m.MotivationalQuotes),
-  { loading: () => null }
+  { ssr: false }
 );
 const Location = dynamic(
   () => import("@/otherPages/home/Location/Location").then((m) => m.Location),
-  { loading: () => null }
+  { ssr: false }
 );
 const Feedbacks = dynamic(
   () => import("@/components/Feedbacks/Feedbacks").then((m) => m.Feedbacks),
-  { loading: () => null }
+  { ssr: false }
 );
 const FranchiseOptions = dynamic(
   () => import("@/otherPages/home/FranchiseOptions/FranchiseOptions").then((m) => m.FranchiseOptions),
-  { loading: () => null }
+  { ssr: false }
 );
 const AboutFranchising = dynamic(
   () => import("@/otherPages/home/AboutFranchising/AboutFranchising").then((m) => m.AboutFranchising),
-  { loading: () => null }
+  { ssr: false }
 );
 const OurPartners = dynamic(
   () => import("@/otherPages/home/OurPartners/OurPartners").then((m) => m.OurPartners),
-  { loading: () => null }
+  { ssr: false }
 );
 
 const Home = () => {
