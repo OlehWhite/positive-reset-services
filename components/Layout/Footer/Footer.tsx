@@ -1,3 +1,4 @@
+import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 import {
   Container,
   Wrapper,
@@ -61,85 +62,87 @@ export const Footer: FC = () => {
 
   return (
     <Container>
-      <Wrapper>
-        <Logo>
-          <LogoImg />
-          <TextLogo>
-            POSITIVE RESET SERVICES is a successful franchise company that opens Mental Health
-            Clinics across United States.
-            <br />
-            POSITIVE RESET SERVICES operates as a professional system that has stood the test of
-            time, achieving financial success and delivering successful treatment outcomes.
-          </TextLogo>
+      <AnimateOnScroll direction="up">
+        <Wrapper>
+          <Logo>
+            <LogoImg />
+            <TextLogo>
+              POSITIVE RESET SERVICES is a successful franchise company that opens Mental Health
+              Clinics across United States.
+              <br />
+              POSITIVE RESET SERVICES operates as a professional system that has stood the test of
+              time, achieving financial success and delivering successful treatment outcomes.
+            </TextLogo>
 
-          <Contact>
-            <WrapperImg>
-              <Image src={IMGPhoneLogo} width={25} height={40} alt="Phone" title="Phone" />
-            </WrapperImg>
+            <Contact>
+              <WrapperImg>
+                <Image src={IMGPhoneLogo} width={25} height={40} alt="Phone" title="Phone" />
+              </WrapperImg>
 
-            <ContactInfo>
-              <Tel href={`tel:${project?.tel}`}>{project?.tel}</Tel>
+              <ContactInfo>
+                <Tel href={`tel:${project?.tel}`}>{project?.tel}</Tel>
 
-              <Email>{project?.email}</Email>
-            </ContactInfo>
-          </Contact>
-        </Logo>
+                <Email>{project?.email}</Email>
+              </ContactInfo>
+            </Contact>
+          </Logo>
 
-        <Menu>
-          <Title>MENU</Title>
+          <Menu>
+            <Title>MENU</Title>
 
-          <Ul>
-            {BASE_MENU.map((link, index) => (
-              <Li key={index}>
-                {link.page !== "Services" ? (
-                  <Link style={{ margin: 0 }} href={link.path} passHref id="white-footer-link">
-                    {link.page}
-                  </Link>
-                ) : (
-                  <ModalServices />
-                )}
-              </Li>
-            ))}
-          </Ul>
-        </Menu>
+            <Ul>
+              {BASE_MENU.map((link, index) => (
+                <Li key={index}>
+                  {link.page !== "Services" ? (
+                    <Link style={{ margin: 0 }} href={link.path} passHref id="white-footer-link">
+                      {link.page}
+                    </Link>
+                  ) : (
+                    <ModalServices />
+                  )}
+                </Li>
+              ))}
+            </Ul>
+          </Menu>
 
-        {project?.blogs.length > 0 && (
-          <RecentPosts>
-            <Title>RECENT BLOG</Title>
+          {project?.blogs.length > 0 && (
+            <RecentPosts>
+              <Title>RECENT BLOG</Title>
 
-            <WrapperPost>
-              {project?.blogs
-                ?.map((blog, index) => (
-                  <Post key={index}>
-                    <ImgPost src={blog.image} alt="First Post" title="Second Post" />
+              <WrapperPost>
+                {project?.blogs
+                  ?.map((blog, index) => (
+                    <Post key={index}>
+                      <ImgPost src={blog.image} alt="First Post" title="Second Post" />
 
-                    <Box sx={{ display: "flex", alignItems: "center", ml: 10 }}>
-                      <Text>{blog?.title}</Text>
-                    </Box>
-                  </Post>
-                ))
-                .reverse()
-                .slice(0, 3)}
-            </WrapperPost>
-          </RecentPosts>
-        )}
+                      <Box sx={{ display: "flex", alignItems: "center", ml: 10 }}>
+                        <Text>{blog?.title}</Text>
+                      </Box>
+                    </Post>
+                  ))
+                  .reverse()
+                  .slice(0, 3)}
+              </WrapperPost>
+            </RecentPosts>
+          )}
 
-        <WorkingHours>
-          <WrapperPosition>
-            <WrapperAlarm>
-              <Image src={IMGAlarmClock} width={45} height={45} alt="Alar" title="Alarm" />
-            </WrapperAlarm>
-          </WrapperPosition>
+          <WorkingHours>
+            <WrapperPosition>
+              <WrapperAlarm>
+                <Image src={IMGAlarmClock} width={45} height={45} alt="Alar" title="Alarm" />
+              </WrapperAlarm>
+            </WrapperPosition>
 
-          <Days>
-            {project?.schedule.map((day, index) => (
-              <Day key={index}>
-                {day.day}: {day.open} - {day.close}
-              </Day>
-            ))}
-          </Days>
-        </WorkingHours>
-      </Wrapper>
+            <Days>
+              {project?.schedule.map((day, index) => (
+                <Day key={index}>
+                  {day.day}: {day.open} - {day.close}
+                </Day>
+              ))}
+            </Days>
+          </WorkingHours>
+        </Wrapper>
+      </AnimateOnScroll>
 
       <Copyright>
         <TitleFooter>Copyright © 2025 Vimax LLC. All rights reserved</TitleFooter>

@@ -5,6 +5,7 @@ import { Box } from "@mui/material";
 import Slider from "react-slick";
 import Image from "next/image";
 import { DEFAULT_FEEDBACK } from "@/services/constants";
+import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 
 const settings = {
   dots: false,
@@ -34,23 +35,25 @@ export const Feedbacks: FC = () => {
   }, [activeSlide]);
 
   return (
-    <Container>
-      <Wrapper>
-        <Slider ref={ref} {...settings}>
-          {DEFAULT_FEEDBACK.map((feedback: any, index: number) => (
-            <Wrapper key={index}>
-              <Box style={{ display: "flex", justifyContent: "center" }}>
-                <Image src={IMGIcon} alt="Img" title="Img" />
-              </Box>
+    <AnimateOnScroll direction="right">
+      <Container>
+        <Wrapper>
+          <Slider ref={ref} {...settings}>
+            {DEFAULT_FEEDBACK.map((feedback: any, index: number) => (
+              <Wrapper key={index}>
+                <Box style={{ display: "flex", justifyContent: "center" }}>
+                  <Image src={IMGIcon} alt="Img" title="Img" />
+                </Box>
 
-              <Box>
-                <Text>{feedback.text}</Text>
-                <Name>{feedback.title}</Name>
-              </Box>
-            </Wrapper>
-          ))}
-        </Slider>
-      </Wrapper>
-    </Container>
+                <Box>
+                  <Text>{feedback.text}</Text>
+                  <Name>{feedback.title}</Name>
+                </Box>
+              </Wrapper>
+            ))}
+          </Slider>
+        </Wrapper>
+      </Container>
+    </AnimateOnScroll>
   );
 };

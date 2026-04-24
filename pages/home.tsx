@@ -1,3 +1,4 @@
+import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 import dynamic from "next/dynamic";
 import { HomeHeader } from "@/components/Layout/HomeHeader/HomeHeader";
 import { Services } from "@/otherPages/home/Services/Services";
@@ -46,14 +47,38 @@ const Home = () => {
         />
       </Head>
       <HomeHeader />
-      <div>
-        <Services />
-        <LazyLoadSection><MotivationalQuotes /></LazyLoadSection>
-        <LazyLoadSection><Location /></LazyLoadSection>
-        <LazyLoadSection><Feedbacks /></LazyLoadSection>
-        <LazyLoadSection><FranchiseOptions /></LazyLoadSection>
-        <LazyLoadSection><AboutFranchising /></LazyLoadSection>
-        <LazyLoadSection><OurPartners /></LazyLoadSection>
+      <div style={{ overflow: "hidden" }}>
+        <AnimateOnScroll direction="up">
+          <Services />
+        </AnimateOnScroll>
+        <LazyLoadSection>
+          <AnimateOnScroll direction="left" delay={0.2}>
+            <MotivationalQuotes />
+          </AnimateOnScroll>
+        </LazyLoadSection>
+        <LazyLoadSection>
+          <AnimateOnScroll direction="up">
+            <Location />
+          </AnimateOnScroll>
+        </LazyLoadSection>
+        <LazyLoadSection>
+          <Feedbacks />
+        </LazyLoadSection>
+        <LazyLoadSection>
+          <AnimateOnScroll direction="up">
+            <FranchiseOptions />
+          </AnimateOnScroll>
+        </LazyLoadSection>
+        <LazyLoadSection>
+          <AnimateOnScroll direction="left">
+            <AboutFranchising />
+          </AnimateOnScroll>
+        </LazyLoadSection>
+        <LazyLoadSection>
+          <AnimateOnScroll direction="up">
+            <OurPartners />
+          </AnimateOnScroll>
+        </LazyLoadSection>
       </div>
     </>
   );

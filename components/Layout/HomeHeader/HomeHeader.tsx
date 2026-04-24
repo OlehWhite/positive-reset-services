@@ -1,3 +1,4 @@
+import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 import {
   HeaderContainer,
   Background,
@@ -81,8 +82,10 @@ export const HomeHeader = () => {
       <BackgroundTwo ref={refTwo} {...settings}>
         {project?.headerImages.map((item, index) => (
           <WrapperInfo key={index}>
-            <Title>{item?.title}</Title>
-            <Text>{item?.text}</Text>
+            <AnimateOnScroll direction="up" delay={0.2}>
+              <Title>{item?.title}</Title>
+              <Text>{item?.text}</Text>
+            </AnimateOnScroll>
           </WrapperInfo>
         ))}
       </BackgroundTwo>
